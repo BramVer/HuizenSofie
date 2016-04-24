@@ -18,7 +18,7 @@ class House(models.Model):
     xx_energy = fields.Float('Energy', required=True)
     xx_unique_epc = fields.Float('EPC code', required=True)
 
-
+    xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
 
 
     @api.depends('xx_street', 'xx_street_number')
