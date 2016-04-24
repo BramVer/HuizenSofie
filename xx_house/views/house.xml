@@ -1,23 +1,23 @@
 <openerp>
     <data>
-        <record model="ir.actions.act_window" id="user_list_action">
-            <field name="name">Residents</field>
+        <record model="ir.actions.act_window" id="residence_list_action">
+            <field name="name">Residences</field>
             <field name="res_model">product.template</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Create the first house
+                <p class="oe_view_nocontent_create">Create the first residence
                 </p>
             </field>
         </record>
 
-        <menuitem id="main_users_menu" name="Residents"/>
+        <menuitem id="main_residences_menu" name="Residences"/>
 
-        <menuitem id="users_menu" name="Residents"
-                  parent="main_users_menu"/>
+        <menuitem id="residences_menu" name="Residences"
+                  parent="main_residences_menu"/>
 
-        <menuitem id="userList_menu" name="Residents" parent="users_menu"
-                  action="user_list_action"/>
+        <menuitem id="residenceList_menu" name="Residences" parent="residences_menu"
+                  action="residence_list_action"/>
 
         <record id="product_template_empty" model="ir.ui.view">
             <field name="name">product.template.test</field>
@@ -30,6 +30,7 @@
                 <xpath expr="//sheet" position="before">
                     <sheet>
                         <group>
+                            <field name="xx_seller_id"/>
                             <field name="xx_house_type"/>
                             <field name="xx_street"/>
                             <field name="xx_street_number"/>

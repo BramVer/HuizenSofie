@@ -18,6 +18,9 @@ class House(models.Model):
     xx_energy = fields.Float('Energy', required=True)
     xx_unique_epc = fields.Float('EPC code', required=True)
 
+
+
+
     @api.depends('xx_street', 'xx_street_number')
     def _get_name(self):
         if self.xx_street and self.xx_street_number:

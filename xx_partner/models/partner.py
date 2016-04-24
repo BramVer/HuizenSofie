@@ -3,7 +3,7 @@
 from openerp import models, fields, api, exceptions
 
 class User(models.Model):
-    _name = 'xx.partner.user'
+    _name = 'res.partner'
     _inherit = 'res.partner'
 
     name = fields.Char(compute = "_createName", store=True, default="")
@@ -20,6 +20,7 @@ class User(models.Model):
     xx_supplier = fields.Boolean(string="Is verkoper")
 
     xx_buyTransaction_ids = fields.One2many('xx.transaction','xx_buyer_id', string='Houses bought')
+    #xx_housesOnSale_ids = fields.One2many('product.template','xx_seller_id', string='Houses on sale')
 
     @api.depends('xx_firstName', 'xx_lastName')
     def _createName(self):
@@ -30,3 +31,4 @@ class User(models.Model):
         for r in self:
             if not r.telephone and not r.cellphone:
                 raise exceptions.ValidationError("Telefoon of gsm nummer moet ingevuld zijn")
+
