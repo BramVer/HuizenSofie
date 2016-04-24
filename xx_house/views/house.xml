@@ -1,0 +1,52 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="user_list_action">
+            <field name="name">Residents</field>
+            <field name="res_model">product.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first house
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="main_users_menu" name="Residents"/>
+
+        <menuitem id="users_menu" name="Residents"
+                  parent="main_users_menu"/>
+
+        <menuitem id="userList_menu" name="Residents" parent="users_menu"
+                  action="user_list_action"/>
+
+        <record id="product_template_empty" model="ir.ui.view">
+            <field name="name">product.template.test</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//sheet" position="before">
+                    <sheet>
+                        <group>
+                            <field name="xx_house_type"/>
+                            <field name="xx_street"/>
+                            <field name="xx_street_number"/>
+                            <field name="xx_city"/>
+                            <field name="xx_zip"/>
+                            <field name="xx_city"/>
+                            <field name="xx_provence"/>
+                            <field name="xx_starting_price"/>
+                            <field name="xx_current_price"/>
+                            <field name="xx_total_area"/>
+                            <field name="xx_living_area"/>
+                            <field name="xx_energy"/>
+                            <field name="xx_unique_epc"/>
+                        </group>
+                    </sheet>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

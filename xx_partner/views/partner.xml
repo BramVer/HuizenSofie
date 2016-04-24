@@ -60,7 +60,7 @@
         <!-- the following menuitem should appear *after*
              its parent openacademy_menu and *after* its
              action course_list_action -->
-        <menuitem id="userList_menu" name="UserList" parent="users_menu"
+        <menuitem id="userList_menu" name="Customers" parent="users_menu"
                   action="user_list_action"/>
         <!-- Full id location:
              action="openacademy.course_list_action"
