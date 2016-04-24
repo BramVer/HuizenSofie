@@ -8,20 +8,31 @@
                     <sheet>
                         <group col="2">
                             <group col="2">
-                                <field name="name"/>
-                                <field name="firstName"/>
-                                <field name="email"/>
-                                <field name="telephone"/>
-                                <field name="cellphone"/>
-                                <field name="supplier"/>
+                                <field name="xx_lastName"/>
+                                <field name="xx_firstName"/>
+                                <field name="xx_email"/>
+                                <field name="xx_telephone"/>
+                                <field name="xx_cellphone"/>
+                                <field name="xx_supplier"/>
                             </group>
                             <group col="2">
-                                <field name="street"/>
-                                <field name="houseNumber"/>
-                                <field name="city"/>
-                                <field name="areaCode"/>
+                                <field name="xx_street"/>
+                                <field name="xx_houseNumber"/>
+                                <field name="xx_city"/>
+                                <field name="xx_areaCode"/>
                             </group>
                         </group>
+
+                        <notebook>
+                            <page string="Houses bought">
+                                <field name="xx_buyTransaction_ids">
+                                    <tree string="Registered transactions">
+                                        <field name="name"/>
+                                        <field name="xx_date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
 
                     </sheet>
                 </form>
@@ -35,7 +46,7 @@
             <field name="arch" type="xml">
                 <tree string="Course Tree">
                     <field name="name"/>
-                    <field name="firstName"/>
+                    <field name="xx_firstName"/>
                 </tree>
             </field>
         </record>
