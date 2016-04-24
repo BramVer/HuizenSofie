@@ -1,0 +1,61 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="xx_transaction_form_view">
+            <field name="name">transaction</field>
+            <field name="model">xx.transaction</field>
+            <field name="arch" type="xml">
+                <form string="Transaction Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="xx_buyer_id"/>
+                        </group>
+                        <group>
+                            <field name="xx_date"/>
+                            <field name="xx_price"/>
+                            <field name="xx_notaris"/>
+
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="user_tree_view">
+            <field name="name">transaction.tree</field>
+            <field name="model">xx.transaction</field>
+            <field name="arch" type="xml">
+                <tree string="Course Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="transaction_list_action">
+            <field name="name">Transactions</field>
+            <field name="res_model">xx.transaction</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first transaction
+                </p>
+            </field>
+        </record>
+
+        <!-- top level menu: no parent -->
+        <menuitem id="main_transactions_menu" name="Transactions"/>
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+        <menuitem id="transactions_menu" name="Transactions"
+                  parent="main_transactions_menu"/>
+        <!-- the following menuitem should appear *after*
+             its parent openacademy_menu and *after* its
+             action course_list_action -->
+        <menuitem id="transactionList_menu" name="TransactionList" parent="transactions_menu"
+                  action="transaction_list_action"/>
+        <!-- Full id location:
+             action="openacademy.course_list_action"
+             It is not required when it is the same module -->
+    </data>
+</openerp>
