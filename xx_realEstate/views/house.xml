@@ -1,0 +1,189 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="residence_list_action">
+            <field name="name">Residences</field>
+            <field name="res_model">product.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first residence
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="house_attribute_type_action">
+            <field name="name">House attribute types</field>
+            <field name="res_model">xx.house.attribute.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first house attribute type
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem id="main_residences_menu" name="Residences"/>
+
+        <menuitem id="residences_menu" name="Residences"
+                  parent="main_residences_menu"/>
+
+        <menuitem id="residenceList_menu" name="Residences" parent="residences_menu"
+                  action="residence_list_action"/>
+
+        <menuitem id="house_attribute_type" name="House attribute types" parent="residences_menu"
+                  action="house_attribute_type_action"/>
+
+        <record id="xx_house_form" model="ir.ui.view">
+            <field name="name">product.template.test</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//sheet" position="before">
+                    <header>
+                    </header>
+                    <sheet>
+                        <separator string="House details"/>
+                        <group>
+                            <group>
+                                <field name="xx_seller_id"/>
+                                <field name="xx_house_type"/>
+                                <field name="xx_starting_price"/>
+                                <field name="xx_current_price"/>
+                            </group>
+                            <group>
+                                <field name="xx_total_area"/>
+                                <field name="xx_living_area"/>
+                                <field name="xx_energy"/>
+                                <field name="xx_unique_epc"/>
+                            </group>
+                            <group>
+                                <field name="xx_sold"/>
+                                <field name="xx_transaction_id"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Attributes">
+                                <field name="xx_attribute">
+                                    <tree string="House attributes">
+                                        <field name="name"/>
+                                        <field name="xx_amount"/>
+                                        <field name="xx_surface"/>
+                                        <field name="xx_note"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Photo's">
+                                <group>
+                                    <group>
+                                        <field name="xx_image1" widget="image" height="400" width="400" nolabel="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="xx_image2" widget="image" height="400" width="400" nolabel="1"/>
+                                    </group>
+                                </group>
+                                <separator/>
+                                <group>
+                                    <group>
+                                        <field name="xx_image3" widget="image" height="400" width="400" nolabel="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="xx_image4" widget="image" height="400" width="400" nolabel="1"/>
+                                    </group>
+                                </group>
+                                <separator/>
+                                <group>
+                                    <group>
+                                        <field name="xx_image5" widget="image" height="400" width="400" nolabel="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="xx_image6" widget="image" height="400" width="400" nolabel="1"/>
+                                    </group>
+                                </group>
+                                <separator/>
+                                <group>
+                                    <group>
+                                        <field name="xx_image7" widget="image" height="400" width="400" nolabel="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="xx_image8" widget="image" height="400" width="400" nolabel="1"/>
+                                    </group>
+                                </group>
+                                <separator/>
+                                <group>
+                                    <group>
+                                        <field name="xx_image9" widget="image" height="400" width="400" nolabel="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="xx_image10" widget="image" height="400" width="400" nolabel="1"/>
+                                    </group>
+                                </group>
+                            </page>
+
+                            <page string="Location">
+                                <group>
+                                    <group>
+                                        <field name="xx_street"/>
+                                        <field name="xx_city"/>
+                                        <field name="xx_provence"/>
+                                    </group>
+                                    <group>
+                                        <field name="xx_street_number"/>
+                                        <field name="xx_zip"/>
+                                    </group>
+                                </group>
+
+                            </page>
+                            <page string="Energy">
+                            </page>
+
+
+                            <page string="QR code">
+                                <group>
+                                    <group>
+                                        <button name="generate_image" string="Generate Barcode Image" type="object"/>
+                                        <newline/>
+                                        <field name="image" widget="image" readonly="1" nolabel="1" height="500"
+                                               width="500"/>
+                                    </group>
+                                    <group>
+                                        <p>Leave blank for default size</p>
+                                        <newline/>
+                                        <field name="xx_width"/>
+                                        <field name="xx_height"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="xx_house_tree" model="ir.ui.view">
+            <field name="name">xx.house.tree</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="standard_price" position="replace"/>
+                <field name="volume" position="replace"/>
+                <field name="weight" position="replace"/>
+                <field name="categ_id" position="replace"/>
+                <field name="type" position="replace"/>
+                <field name="state" position="replace"/>
+                <field name="uom_id" position="replace"/>
+
+                <field name="name" position="after">
+                    <field name="xx_house_type"/>
+                    <field name="xx_city"/>
+                    <field name="xx_provence"/>
+                    <field name="xx_starting_price"/>
+                </field>
+            </field>
+
+        </record>
+    </data>
+</openerp>

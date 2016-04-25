@@ -36,13 +36,13 @@
                                    </tree>
                                </field>
                            </page>
-                           <!--<page string="Houses on sale">
+                           <page string="Houses on sale">
                                <field name="xx_housesOnSale_ids">
                                    <tree string="Houses on sale">
                                        <field name="name"/>
                                    </tree>
                                </field>
-                           </page>-->
+                           </page>
                        </notebook>
 
                    </sheet>
