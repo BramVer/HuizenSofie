@@ -7,6 +7,6 @@ Dit is de module waarin huizen kunnen beheerd worden
 """,
     'version': '1.0',
     'depends': ['base', 'product'],
-    'data': ['views/house.xml'],
+    'data': ['views/house.xml', 'views/attribute.xml'],
     'installable': True,
 }
