@@ -8,4 +8,4 @@ class Transaction(models.Model):
     xx_price = fields.Integer(string="Prijs", required=True)
     xx_notaris = fields.Char(string="Notaris")
 
-    xx_buyer_id = fields.Many2one('xx.partner.user', string="Koper", required=True)
+    xx_buyer_id = fields.Many2one('res.partner', string="Koper", required=True)

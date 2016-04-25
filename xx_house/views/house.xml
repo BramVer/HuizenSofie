@@ -1,16 +1,17 @@
 <openerp>
     <data>
-        <record model="ir.actions.act_window" id="user_list_action">
-            <field name="name">Residents</field>
+        <record model="ir.actions.act_window" id="residence_list_action">
+            <field name="name">Residences</field>
             <field name="res_model">product.template</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Create the first house
+                <p class="oe_view_nocontent_create">Create the first residence
                 </p>
             </field>
         </record>
 
+<<<<<<< HEAD
         <record model="ir.actions.act_window" id="house_attribute_type_action">
             <field name="name">House attribute types</field>
             <field name="res_model">xx.house.attribute.type</field>
@@ -24,12 +25,15 @@
 
 
         <menuitem id="main_users_menu" name="Residents"/>
+=======
+        <menuitem id="main_residences_menu" name="Residences"/>
+>>>>>>> f7d7a5c69215bb7781df4ab9e0ab93f6612b7447
 
-        <menuitem id="users_menu" name="Residents"
-                  parent="main_users_menu"/>
+        <menuitem id="residences_menu" name="Residences"
+                  parent="main_residences_menu"/>
 
-        <menuitem id="userList_menu" name="Residents" parent="users_menu"
-                  action="user_list_action"/>
+        <menuitem id="residenceList_menu" name="Residences" parent="residences_menu"
+                  action="residence_list_action"/>
 
         <menuitem id="house_attribute_type" name="House attribute types" parent="users_menu"
                   action="house_attribute_type_action"/>
@@ -48,6 +52,7 @@
                     <sheet>
                         <separator string="House details"/>
                         <group>
+<<<<<<< HEAD
                             <group>
                                 <field name="xx_house_type"/>
                                 <field name="xx_starting_price"/>
@@ -59,6 +64,22 @@
                                 <field name="xx_energy"/>
                                 <field name="xx_unique_epc"/>
                             </group>
+=======
+                            <field name="xx_seller_id"/>
+                            <field name="xx_house_type"/>
+                            <field name="xx_street"/>
+                            <field name="xx_street_number"/>
+                            <field name="xx_city"/>
+                            <field name="xx_zip"/>
+                            <field name="xx_city"/>
+                            <field name="xx_provence"/>
+                            <field name="xx_starting_price"/>
+                            <field name="xx_current_price"/>
+                            <field name="xx_total_area"/>
+                            <field name="xx_living_area"/>
+                            <field name="xx_energy"/>
+                            <field name="xx_unique_epc"/>
+>>>>>>> f7d7a5c69215bb7781df4ab9e0ab93f6612b7447
                         </group>
                         <notebook colspan="4">
                             <page string="Attributes">

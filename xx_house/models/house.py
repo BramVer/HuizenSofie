@@ -24,6 +24,9 @@ class House(models.Model):
     xx_unique_epc = fields.Float('EPC code', required=True)
     xx_attribute = fields.One2many('xx.house.attribute', 'name', 'Attributes')
 
+    xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
+
+
     @api.depends('xx_street', 'xx_street_number')
     def _get_name(self):
         if self.xx_street and self.xx_street_number:

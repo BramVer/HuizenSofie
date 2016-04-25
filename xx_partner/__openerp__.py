@@ -1,5 +1,5 @@
 {
-    'name': 'xx_realestate',
+    'name': 'xx_partner',
     'author': 'Immomakers',
     'category': 'Company',
     'description': """
