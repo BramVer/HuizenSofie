@@ -11,7 +11,6 @@
             </field>
         </record>
 
-<<<<<<< HEAD
         <record model="ir.actions.act_window" id="house_attribute_type_action">
             <field name="name">House attribute types</field>
             <field name="res_model">xx.house.attribute.type</field>
@@ -24,10 +23,7 @@
         </record>
 
 
-        <menuitem id="main_users_menu" name="Residents"/>
-=======
         <menuitem id="main_residences_menu" name="Residences"/>
->>>>>>> f7d7a5c69215bb7781df4ab9e0ab93f6612b7447
 
         <menuitem id="residences_menu" name="Residences"
                   parent="main_residences_menu"/>
@@ -35,7 +31,7 @@
         <menuitem id="residenceList_menu" name="Residences" parent="residences_menu"
                   action="residence_list_action"/>
 
-        <menuitem id="house_attribute_type" name="House attribute types" parent="users_menu"
+        <menuitem id="house_attribute_type" name="House attribute types" parent="residences_menu"
                   action="house_attribute_type_action"/>
 
         <record id="xx_house_form" model="ir.ui.view">
@@ -52,8 +48,8 @@
                     <sheet>
                         <separator string="House details"/>
                         <group>
-<<<<<<< HEAD
                             <group>
+                                <field name="xx_seller_id"/>
                                 <field name="xx_house_type"/>
                                 <field name="xx_starting_price"/>
                                 <field name="xx_current_price"/>
@@ -64,22 +60,6 @@
                                 <field name="xx_energy"/>
                                 <field name="xx_unique_epc"/>
                             </group>
-=======
-                            <field name="xx_seller_id"/>
-                            <field name="xx_house_type"/>
-                            <field name="xx_street"/>
-                            <field name="xx_street_number"/>
-                            <field name="xx_city"/>
-                            <field name="xx_zip"/>
-                            <field name="xx_city"/>
-                            <field name="xx_provence"/>
-                            <field name="xx_starting_price"/>
-                            <field name="xx_current_price"/>
-                            <field name="xx_total_area"/>
-                            <field name="xx_living_area"/>
-                            <field name="xx_energy"/>
-                            <field name="xx_unique_epc"/>
->>>>>>> f7d7a5c69215bb7781df4ab9e0ab93f6612b7447
                         </group>
                         <notebook colspan="4">
                             <page string="Attributes">
@@ -93,7 +73,6 @@
                                 </field>
                             </page>
                             <page string="Photo's">
-
                                 <group>
                                     <group>
                                         <field name="xx_image1" widget="image" height="400" width="400" nolabel="1"/>
@@ -179,7 +158,6 @@
                 </xpath>
             </field>
         </record>
-
 
         <record id="xx_house_tree" model="ir.ui.view">
             <field name="name">xx.house.tree</field>
