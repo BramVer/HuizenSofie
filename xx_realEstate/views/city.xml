@@ -1,0 +1,33 @@
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="xx_city_form">
+            <field name="name">xx.city.form</field>
+            <field name="model">xx.city</field>
+            <field name="arch" type="xml">
+                <form string="City Form">
+                    <sheet>
+                        <separator string="City details"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="xx_zip"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="city_tree_view">
+            <field name="name">xx.city.tree</field>
+            <field name="model">xx.city</field>
+            <field name="arch" type="xml">
+                <tree string="City Tree">
+                    <field name="name"/>
+                    <field name="xx_zip"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

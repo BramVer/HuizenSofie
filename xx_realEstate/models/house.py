@@ -7,27 +7,27 @@ class House(models.Model):
     _name = 'product.template'
     _inherit = 'product.template'
 
-    xx_display_name = fields.Char('Display name')
-    xx_house_type = fields.Many2one('xx.house.type', 'House type')
-    name = fields.Char(compute='_get_name', store=True, default='', string='Address')
-    xx_street = fields.Char('Street name', required=True)
-    xx_street_number = fields.Char('Street number', required=True)
+    xx_display_name = fields.Char('Display naam')
+    xx_house_type = fields.Many2one('xx.house.type', 'Huis type')
+    name = fields.Char(compute='_get_name', store=True, default='', string='Adres')
+    xx_street = fields.Char('Straatnaam', required=True)
+    xx_street_number = fields.Char('Huisnummer', required=True)
     xx_city = fields.Many2one('xx.city', 'City')
-    xx_zip = fields.Char('Zip code', required=True)
+    xx_zip = fields.Char('Postcode', required=True)
     xx_provence = fields.Selection(
         [('antwerpen', 'Antwerpen'), ('limburg', 'Limburg'), ('oostvlaanderen', 'Oost-Vlaanderen'),
          ('westvlaanderen', 'West-Vlaanderen'), ('brussel', 'Brussel'), ('henegouwen', 'Henegouwen'), ('luik', 'Luik'),
-         ('namen', 'Namen'), ('luxemburg', 'Luxemburg')], string='Provence', required=True)
-    xx_starting_price = fields.Float('Starting price', required=True)
-    xx_current_price = fields.Float('Current price')
-    xx_total_area = fields.Integer('Total surface', required=True)
-    xx_living_area = fields.Integer('Total living area', required=True)
-    xx_energy = fields.Float('Energy', required=True)
+         ('namen', 'Namen'), ('luxemburg', 'Luxemburg')], string='Provincie', required=True)
+    xx_starting_price = fields.Float('Start prijs', required=True)
+    xx_current_price = fields.Float('Huidige prijs')
+    xx_total_area = fields.Integer('Totale oppervlakte', required=True)
+    xx_living_area = fields.Integer('Bewoonbare oppervlakte', required=True)
+    xx_energy = fields.Float('Energie', required=True)
     xx_unique_epc = fields.Float('EPC code', required=True)
     xx_sold = fields.Boolean('Verkocht')
 
-    xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributes')
-    xx_documents = fields.One2many('xx.house.document', 'name', 'Documents')
+    xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
+    xx_documents = fields.One2many('xx.house.document', 'name', 'Documenten')
 
 
     xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
@@ -48,7 +48,7 @@ class House(models.Model):
 class HouseType(models.Model):
     _name = 'xx.house.type'
 
-    name = fields.Char('House type', required=True)
+    name = fields.Char('Huis type', required=True)
 
 
 class QrCode(models.Model):
@@ -76,7 +76,7 @@ class HouseAttribute(models.Model):
     _name = 'xx.house.attribute'
 
     name = fields.Many2one('xx.house.attribute.type', 'Attribuut', required=True)
-    xx_house = fields.Many2one('product.template', 'house')
+    xx_house = fields.Many2one('product.template', 'Huis')
     xx_exists = fields.Boolean('Zichtbaar')
     xx_value = fields.Char('Waarde')
     xx_unit_type = fields.Char('Eenheid')
@@ -91,7 +91,7 @@ class HouseAttribute(models.Model):
 class HouseAttributeType(models.Model):
     _name = 'xx.house.attribute.type'
 
-    name = fields.Char('Attribute type', required=True)
+    name = fields.Char('Attribuut type', required=True)
     xx_unit = fields.Char('Eenheid')
 
 
@@ -115,8 +115,8 @@ class Image(models.Model):
 class City(models.Model):
     _name = 'xx.city'
 
-    name = fields.Char('City name', required=True)
-    xx_zip = fields.Char('Zip code', required=True)
+    name = fields.Char('Gemeente', required=True)
+    xx_zip = fields.Char('Postcode', required=True)
 
 class HouseDocument(models.Model):
     _name = 'xx.house.document'

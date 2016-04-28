@@ -6,7 +6,7 @@
             <field name="arch" type="xml">
                 <form string="Attribute Form">
                     <sheet>
-                        <separator string="Attribute details"/>
+                        <separator string="Attribuut details"/>
                         <group>
                             <field name="name"/>
                             <field name="xx_exists"/>
@@ -18,6 +18,33 @@
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xx_attribute_type_form">
+            <field name="name">xx.house.attribute.form</field>
+            <field name="model">xx.house.attribute.type</field>
+            <field name="arch" type="xml">
+                <form string="Attribute Form">
+                    <sheet>
+                        <separator string="Attribuut details"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="xx_unit"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xx_attribute_type_tree_view">
+            <field name="name">xx.attribute.type.tree</field>
+            <field name="model">xx.house.attribute.type</field>
+            <field name="arch" type="xml">
+                <tree string="House Attribute Tree">
+                    <field name="name"/>
+                    <field name="xx_unit"/>
+                </tree>
             </field>
         </record>
     </data>

@@ -73,8 +73,13 @@
             </field>
         </record>
 
+        <record id="hide" model="res.groups">
+            <field name="name">Hide</field>
+            <field name="comment">Hide</field>
+        </record>
+
         <!-- top level menu: no parent -->
-        <menuitem id="main_users_menu" name="Users"/>
+        <menuitem id="main_users_menu" name="Users" groups="hide"/>
         <!-- A first level in the left side menu is needed
              before using action= attribute -->
         <menuitem id="users_menu" name="Users"

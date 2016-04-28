@@ -22,17 +22,51 @@
             </field>
         </record>
 
+        <record model="ir.actions.act_window" id="house_type_list_action">
+            <field name="name">House types</field>
+            <field name="res_model">xx.house.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first house type
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="house_city_action">
+            <field name="name">Gemeentes</field>
+            <field name="res_model">xx.city</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Maak de eerste gemeente
+                </p>
+            </field>
+        </record>
 
         <menuitem id="main_residences_menu" name="Residences"/>
 
-        <menuitem id="residences_menu" name="Residences"
+        <menuitem id="residences_menu" name="Woningen"
                   parent="main_residences_menu"/>
 
-        <menuitem id="residenceList_menu" name="Residences" parent="residences_menu"
+        <menuitem id="attributes_menu" name="Attributen"
+                  parent="main_residences_menu"/>
+
+        <menuitem id="location_menu" name="Locatie"
+                  parent="main_residences_menu"/>
+
+        <menuitem id="residenceList_menu" name="Woningen" parent="residences_menu"
                   action="residence_list_action"/>
 
-        <menuitem id="house_attribute_type" name="House attribute types" parent="residences_menu"
+        <menuitem id="houseTypeList_menu" name="Huistypes" parent="residences_menu"
+                  action="house_type_list_action"/>
+
+
+        <menuitem id="house_attribute_type" name="Huis attribuut types" parent="attributes_menu"
                   action="house_attribute_type_action"/>
+
+        <menuitem id="house_city" name="Gemeentes" parent="location_menu"
+                  action="house_city_action"/>
 
         <record id="xx_house_form" model="ir.ui.view">
             <field name="name">product.template.test</field>
@@ -67,6 +101,21 @@
                             </group>
                         </group>
                         <notebook colspan="4">
+                            <page string="Location">
+                                <group>
+                                    <group>
+                                        <field name="xx_street"/>
+                                        <field name="xx_city"/>
+                                        <field name="xx_provence"/>
+                                    </group>
+                                    <group>
+                                        <field name="xx_street_number"/>
+                                        <field name="xx_zip"/>
+                                    </group>
+                                </group>
+
+                            </page>
+
                             <page string="Attributes">
                                 <field name="xx_attribute">
                                     <tree string="House attributes">
@@ -133,20 +182,7 @@
                                 </group>
                             </page>
 
-                            <page string="Location">
-                                <group>
-                                    <group>
-                                        <field name="xx_street"/>
-                                        <field name="xx_city"/>
-                                        <field name="xx_provence"/>
-                                    </group>
-                                    <group>
-                                        <field name="xx_street_number"/>
-                                        <field name="xx_zip"/>
-                                    </group>
-                                </group>
 
-                            </page>
                             <page string="Energy">
                             </page>
 
@@ -195,5 +231,9 @@
             </field>
 
         </record>
+
+
+
+
     </data>
 </openerp>
