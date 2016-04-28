@@ -43,10 +43,11 @@
                     <attribute name="invisible">1</attribute>
                 </xpath>
                 <xpath expr="//sheet" position="before">
-                    <header>
-                    </header>
                     <sheet>
                         <separator string="House details"/>
+                        <label for="xx_display_name" string="Display name"/>
+                        <field name="xx_display_name"/>
+                        <separator/>
                         <group>
                             <group>
                                 <field name="xx_seller_id"/>
@@ -70,9 +71,18 @@
                                 <field name="xx_attribute">
                                     <tree string="House attributes">
                                         <field name="name"/>
-                                        <field name="xx_amount"/>
-                                        <field name="xx_surface"/>
+                                        <field name="xx_exists"/>
+                                        <field name="xx_value"/>
+                                        <field name="xx_unit_type"/>
                                         <field name="xx_note"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Documents">
+                                <field name="xx_documents">
+                                    <tree string="House documents">
+                                        <field name="name"/>
+                                        <field name="xx_exists"/>
                                     </tree>
                                 </field>
                             </page>

@@ -9,7 +9,7 @@
                         <group>
                             <field name="name"/>
                             <field name="xx_buyer_id"/>
-                            <!--field name="xx_transactionSeller_id" context="{'xx_seller_id':xx_seller_id}"/-->
+                            <field name="xx_transactionSeller_id"/>
                             <field name="xx_house_id"/>
                         </group>
                         <group>

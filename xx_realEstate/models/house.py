@@ -7,6 +7,7 @@ class House(models.Model):
     _name = 'product.template'
     _inherit = 'product.template'
 
+    xx_display_name = fields.Char('Display name')
     xx_house_type = fields.Many2one('xx.house.type', 'House type')
     name = fields.Char(compute='_get_name', store=True, default='', string='Address')
     xx_street = fields.Char('Street name', required=True)
@@ -25,7 +26,8 @@ class House(models.Model):
     xx_unique_epc = fields.Float('EPC code', required=True)
     xx_sold = fields.Boolean('Verkocht')
 
-    xx_attribute = fields.One2many('xx.house.attribute', 'name', 'Attributes')
+    xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributes')
+    xx_documents = fields.One2many('xx.house.document', 'name', 'Documents')
 
 
     xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
@@ -73,16 +75,26 @@ class QrCode(models.Model):
 class HouseAttribute(models.Model):
     _name = 'xx.house.attribute'
 
-    name = fields.Many2one('xx.house.attribute.type', 'Attribute', required=True)
-    xx_amount = fields.Integer('Amount')
-    xx_surface = fields.Integer('Square feet')
+    name = fields.Many2one('xx.house.attribute.type', 'Attribuut', required=True)
+    xx_house = fields.Many2one('product.template', 'house')
+    xx_exists = fields.Boolean('Zichtbaar')
+    xx_value = fields.Char('Waarde')
+    xx_unit_type = fields.Char('Eenheid')
     xx_note = fields.Text('Extra info')
+
+    @api.onchange('name')
+    def _onchange_attribute(self):
+        current_attributetype_obj = self.name
+        self.xx_unit_type = current_attributetype_obj.xx_unit
 
 
 class HouseAttributeType(models.Model):
     _name = 'xx.house.attribute.type'
 
     name = fields.Char('Attribute type', required=True)
+    xx_unit = fields.Char('Eenheid')
+
+
 
 
 class Image(models.Model):
@@ -105,3 +117,17 @@ class City(models.Model):
 
     name = fields.Char('City name', required=True)
     xx_zip = fields.Char('Zip code', required=True)
+
+class HouseDocument(models.Model):
+    _name = 'xx.house.document'
+
+    name = fields.Many2one('xx.house.document.type', 'Document', required=True)
+    xx_exists = fields.Boolean('Aanwezig')
+
+
+class HouseDocumentType(models.Model):
+    _name = 'xx.house.document.type'
+
+    name = fields.Char('Document type', required=True)
+
+

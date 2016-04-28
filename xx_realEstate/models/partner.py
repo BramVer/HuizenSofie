@@ -10,17 +10,22 @@ class User(models.Model):
     xx_firstName = fields.Char(string="Voornaam", required=True)
     xx_street = fields.Char(string="Straat")
     xx_houseNumber = fields.Integer(string="Huisnummer")
-    xx_city = fields.Char(string="Gemeente")
-    xx_areaCode = fields.Char(string="Postcode")
+    xx_city = fields.Many2one('xx.city', 'Gemeente')
+    xx_zip = fields.Char('Postcode')
     xx_telephone = fields.Char(string="Telefoonnummer")
     xx_cellphone = fields.Char(string="GSM-nummer")
     # wachtwoord
-    xx_email = fields.Char(string="E-mailadres",widget='email', required=True)
+    xx_email = fields.Char(string="E-mailadres", required=True)
     xx_supplier = fields.Boolean(string="Is verkoper")
 
     xx_buyTransaction_ids = fields.One2many('xx.transaction', 'xx_buyer_id', string='Houses bought')
 
     xx_housesOnSale_ids = fields.One2many('product.template','xx_seller_id', string='Houses on sale')
+
+    @api.onchange('xx_city')
+    def _onchange_city(self):
+        if self.xx_city:
+            self.xx_zip = self.xx_city.xx_zip
 
     @api.depends('xx_firstName', 'xx_lastName')
     def _createName(self):

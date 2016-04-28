@@ -9,8 +9,9 @@
                         <separator string="Attribute details"/>
                         <group>
                             <field name="name"/>
-                            <field name="xx_amount"/>
-                            <field name="xx_surface"/>
+                            <field name="xx_exists"/>
+                            <field name="xx_value"/>
+                            <field name="xx_unit_type"/>
                         </group>
                         <group>
                             <field name="xx_note"/>
