@@ -48,7 +48,11 @@ class House(models.Model):
 class HouseType(models.Model):
     _name = 'xx.house.type'
 
-    name = fields.Char('Huis type', required=True)
+    name = fields.Char('Huistype', required=True)
+
+    _sql_constraints = [
+        ('house_type_unique', 'unique(name)', 'Huistype bestaat al!')
+    ]
 
 
 class QrCode(models.Model):

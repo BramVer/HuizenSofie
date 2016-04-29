@@ -1,4 +1,5 @@
 from openerp import models, fields, api, exceptions
+import re
 
 
 class User(models.Model):
@@ -29,11 +30,16 @@ class User(models.Model):
 
     @api.depends('xx_firstName', 'xx_lastName')
     def _createName(self):
-        if self.xx_firstName and self.xx_lastName:
-            self.name = self.xx_lastName + ' ' + self.xx_firstName
-
-    @api.constrains('telephone', 'cellphone')
-    def _check_telephone_or_cellphone_empty(self):
         for r in self:
-            if not r.telephone and not r.cellphone:
-                raise exceptions.ValidationError("Telefoon of gsm nummer moet ingevuld zijn")
+            if r.xx_firstName and r.xx_lastName:
+                r.name = r.xx_lastName + ' ' + r.xx_firstName
+
+    @api.constrains('xx_telephone', 'xx_cellphone')
+    def _check_telephone_or_cellphone_empty(self):
+        if not self.xx_telephone and not self.xx_cellphone:
+            raise exceptions.ValidationError("Telefoon of gsm nummer moet ingevuld zijn")
+
+    @api.constrains('xx_email')
+    def _check_email_valid(self):
+        if not re.match("[^@]+@[^@]+\.[^@]+", self.xx_email):
+            raise exceptions.ValidationError("Email is niet geldig")
