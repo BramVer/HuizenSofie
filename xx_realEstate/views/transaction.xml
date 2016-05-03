@@ -1,7 +1,7 @@
 <openerp>
     <data>
         <record model="ir.ui.view" id="xx_transaction_form_view">
-            <field name="name">transaction</field>
+            <field name="name">transaction.form</field>
             <field name="model">xx.transaction</field>
             <field name="arch" type="xml">
                 <form string="Transaction Form">
@@ -35,7 +35,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="transaction_list_action">
-            <field name="name">Transactions</field>
+            <field name="name">Transacties</field>
             <field name="res_model">xx.transaction</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -46,15 +46,15 @@
         </record>
 
         <!-- top level menu: no parent -->
-        <menuitem id="main_transactions_menu" name="Transactions"/>
+        <menuitem id="main_transactions_menu" name="Transacties"/>
         <!-- A first level in the left side menu is needed
              before using action= attribute -->
-        <menuitem id="transactions_menu" name="Transactions"
+        <menuitem id="transactions_menu" name="Transacties"
                   parent="main_transactions_menu"/>
         <!-- the following menuitem should appear *after*
              its parent openacademy_menu and *after* its
              action course_list_action -->
-        <menuitem id="transactionList_menu" name="TransactionList" parent="transactions_menu"
+        <menuitem id="transactionList_menu" name="Transactie lijst" parent="transactions_menu"
                   action="transaction_list_action"/>
         <!-- Full id location:
              action="openacademy.course_list_action"

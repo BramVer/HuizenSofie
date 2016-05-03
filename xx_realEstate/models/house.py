@@ -33,7 +33,6 @@ class House(models.Model):
     xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
 
-
     @api.depends('xx_street', 'xx_street_number')
     def _get_name(self):
         if self.xx_street and self.xx_street_number:
@@ -43,6 +42,27 @@ class House(models.Model):
     def _onchange_city(self):
         if self.xx_city:
             self.xx_zip = self.xx_city.xx_zip
+
+    @api.model
+    def default_get(self, vals):
+        res = super(House, self).default_get(vals)
+        xha = self.env['xx.house.attribute']
+        xhat = self.env['xx.house.attribute.type']
+        attributes = []
+
+        tuin_attr = xha.create({
+            'name' : 'Tuin',
+            'xx_exists' : True,
+            'xx_value' : '100'
+        })
+        attributes.append(tuin_attr)
+
+        res['xx_attribute'] = attributes
+        return res
+
+
+
+
 
 
 class HouseType(models.Model):

@@ -6,9 +6,7 @@ class User(models.Model):
     _name = 'res.partner'
     _inherit = 'res.partner'
 
-    name = fields.Char(compute="_createName", store=True, default="")
-    xx_lastName = fields.Char(string="Achternaam", required=True)
-    xx_firstName = fields.Char(string="Voornaam", required=True)
+    name = fields.Char(string ="Naam", required=True, default='')
     xx_street = fields.Char(string="Straat")
     xx_houseNumber = fields.Integer(string="Huisnummer")
     xx_city = fields.Many2one('xx.city', 'Gemeente')
@@ -28,11 +26,6 @@ class User(models.Model):
         if self.xx_city:
             self.xx_zip = self.xx_city.xx_zip
 
-    @api.depends('xx_firstName', 'xx_lastName')
-    def _createName(self):
-        for r in self:
-            if r.xx_firstName and r.xx_lastName:
-                r.name = r.xx_lastName + ' ' + r.xx_firstName
 
     @api.constrains('xx_telephone', 'xx_cellphone')
     def _check_telephone_or_cellphone_empty(self):

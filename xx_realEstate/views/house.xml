@@ -1,7 +1,7 @@
 <openerp>
     <data>
         <record model="ir.actions.act_window" id="residence_list_action">
-            <field name="name">Residences</field>
+            <field name="name">Woningen</field>
             <field name="res_model">product.template</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -23,7 +23,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="house_type_list_action">
-            <field name="name">House types</field>
+            <field name="name">Huis types</field>
             <field name="res_model">xx.house.type</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -44,7 +44,7 @@
             </field>
         </record>
 
-        <menuitem id="main_residences_menu" name="Residences"/>
+        <menuitem id="main_residences_menu" name="Woningen"/>
 
         <menuitem id="residences_menu" name="Woningen"
                   parent="main_residences_menu"/>
@@ -55,17 +55,17 @@
         <menuitem id="location_menu" name="Locatie"
                   parent="main_residences_menu"/>
 
-        <menuitem id="residenceList_menu" name="Woningen" parent="residences_menu"
+        <menuitem id="residenceList_menu" name="Woning lijst" parent="residences_menu"
                   action="residence_list_action"/>
 
-        <menuitem id="houseTypeList_menu" name="Huistypes" parent="residences_menu"
+        <menuitem id="houseTypeList_menu" name="Huistype lijst" parent="residences_menu"
                   action="house_type_list_action"/>
 
 
         <menuitem id="house_attribute_type" name="Huis attribuut types" parent="attributes_menu"
                   action="house_attribute_type_action"/>
 
-        <menuitem id="house_city" name="Gemeentes" parent="location_menu"
+        <menuitem id="house_city" name="Gemeente lijst" parent="location_menu"
                   action="house_city_action"/>
 
         <record id="xx_house_form" model="ir.ui.view">
@@ -101,7 +101,7 @@
                             </group>
                         </group>
                         <notebook colspan="4">
-                            <page string="Location">
+                            <page string="Locatie">
                                 <group>
                                     <group>
                                         <field name="xx_street"/>
@@ -116,7 +116,7 @@
 
                             </page>
 
-                            <page string="Attributes">
+                            <page string="Attributen">
                                 <field name="xx_attribute">
                                     <tree string="House attributes">
                                         <field name="name"/>
@@ -127,7 +127,7 @@
                                     </tree>
                                 </field>
                             </page>
-                            <page string="Documents">
+                            <page string="Documenten">
                                 <field name="xx_documents">
                                     <tree string="House documents">
                                         <field name="name"/>
@@ -135,7 +135,7 @@
                                     </tree>
                                 </field>
                             </page>
-                            <page string="Photo's">
+                            <page string="Foto's">
                                 <group>
                                     <group>
                                         <field name="xx_image1" widget="image" height="400" width="400" nolabel="1"/>
@@ -183,7 +183,7 @@
                             </page>
 
 
-                            <page string="Energy">
+                            <page string="Energie">
                             </page>
 
 
