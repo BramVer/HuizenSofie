@@ -10,6 +10,7 @@
                         <separator string="Huistype"/>
                         <group>
                             <field name="name"/>
+                            <field name="xx_attribute_types"/>
                         </group>
                     </sheet>
                 </form>

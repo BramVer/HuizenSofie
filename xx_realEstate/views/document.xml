@@ -1,0 +1,44 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="xx_document_form">
+            <field name="name">xx.document.form</field>
+            <field name="model">xx.house.document</field>
+            <field name="arch" type="xml">
+                <form string="Document Form">
+                    <sheet>
+                        <separator string="Document details"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="xx_exists"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xx_document_type_form">
+            <field name="name">xx.document.type.form</field>
+            <field name="model">xx.house.document.type</field>
+            <field name="arch" type="xml">
+                <form string="Document type Form">
+                    <sheet>
+                        <separator string="Document type details"/>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xx_document_tree_view">
+            <field name="name">xx.document.tree</field>
+            <field name="model">xx.house.document.type</field>
+            <field name="arch" type="xml">
+                <tree string="Documenten lijst">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

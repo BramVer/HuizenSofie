@@ -27,7 +27,7 @@ class House(models.Model):
     xx_sold = fields.Boolean('Verkocht')
 
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
-    xx_documents = fields.One2many('xx.house.document', 'name', 'Documenten')
+    xx_documents = fields.One2many('xx.house.document', 'xx_house', 'Documenten')
 
 
     xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
@@ -43,23 +43,43 @@ class House(models.Model):
         if self.xx_city:
             self.xx_zip = self.xx_city.xx_zip
 
+    @api.onchange('xx_house_type')
+    def _onchange_house_type(self):
+        if self.xx_house_type:
+            xha = self.env['xx.house.attribute']
+            house_type = self.xx_house_type
+            attribute_types = house_type.xx_attribute_types
+            attributes = []
+
+            for type in attribute_types:
+
+                vals = {
+                    'name': type.id,
+                    'xx_house' : self.id,
+                    'xx_unit_type' : type.xx_unit
+                }
+                attr = xha.create(vals)
+                attributes.append(attr.id)
+            self.xx_attribute = attributes
+
     @api.model
     def default_get(self, vals):
         res = super(House, self).default_get(vals)
-        xha = self.env['xx.house.attribute']
-        xhat = self.env['xx.house.attribute.type']
-        attributes = []
-
-        tuin_attr = xha.create({
-            'name' : 'Tuin',
-            'xx_exists' : True,
-            'xx_value' : '100'
+        xhd = self.env['xx.house.document']
+        docu_types = self.env['xx.house.document.type'].search([('name','!=', False)])
+        documents = []
+        for type in docu_types:
+            vals = {
+                'name' : type.id,
+                'xx_house' : self.id,
+                'xx_exists' : False
+            }
+            docu = xhd.create(vals)
+            documents.append(docu.id)
+        res.update({
+            'xx_documents' : documents
         })
-        attributes.append(tuin_attr)
-
-        res['xx_attribute'] = attributes
         return res
-
 
 
 
@@ -69,6 +89,7 @@ class HouseType(models.Model):
     _name = 'xx.house.type'
 
     name = fields.Char('Huistype', required=True)
+    xx_attribute_types = fields.Many2many('xx.house.attribute.type', string='Attribuut types' )
 
     _sql_constraints = [
         ('house_type_unique', 'unique(name)', 'Huistype bestaat al!')
@@ -101,7 +122,6 @@ class HouseAttribute(models.Model):
 
     name = fields.Many2one('xx.house.attribute.type', 'Attribuut', required=True)
     xx_house = fields.Many2one('product.template', 'Huis')
-    xx_exists = fields.Boolean('Zichtbaar')
     xx_value = fields.Char('Waarde')
     xx_unit_type = fields.Char('Eenheid')
     xx_note = fields.Text('Extra info')
@@ -117,6 +137,7 @@ class HouseAttributeType(models.Model):
 
     name = fields.Char('Attribuut type', required=True)
     xx_unit = fields.Char('Eenheid')
+    xx_house_type = fields.Many2many('xx.house.type', string='Huistypes')
 
 
 
@@ -146,6 +167,7 @@ class HouseDocument(models.Model):
     _name = 'xx.house.document'
 
     name = fields.Many2one('xx.house.document.type', 'Document', required=True)
+    xx_house = fields.Many2one('product.template', 'Huis')
     xx_exists = fields.Boolean('Aanwezig')
 
 
