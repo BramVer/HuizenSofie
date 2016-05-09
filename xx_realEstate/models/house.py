@@ -25,6 +25,8 @@ class House(models.Model):
     xx_energy = fields.Float('Energie', required=True)
     xx_unique_epc = fields.Float('EPC code', required=True)
     xx_sold = fields.Boolean('Verkocht')
+    xx_buy_hire = fields.Selection([('huren', 'Huren'), ('kopen', 'Kopen'), ('beide', 'Beide')], string='Kopen/Huren', required=True)
+    xx_build_year = fields.Integer('Bouwjaar')
 
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
     xx_documents = fields.One2many('xx.house.document', 'xx_house', 'Documenten')
@@ -67,18 +69,20 @@ class House(models.Model):
         res = super(House, self).default_get(vals)
         xhd = self.env['xx.house.document']
         docu_types = self.env['xx.house.document.type'].search([('name','!=', False)])
-        documents = []
-        for type in docu_types:
-            vals = {
-                'name' : type.id,
-                'xx_house' : self.id,
-                'xx_exists' : False
-            }
-            docu = xhd.create(vals)
-            documents.append(docu.id)
-        res.update({
-            'xx_documents' : documents
-        })
+        if len(docu_types) > 0:
+
+            documents = []
+            for type in docu_types:
+                vals = {
+                    'name' : type.id,
+                    'xx_house' : self.id,
+                    'xx_exists' : False
+                }
+                docu = xhd.create(vals)
+                documents.append(docu.id)
+            res.update({
+                'xx_documents' : documents
+            })
         return res
 
 
