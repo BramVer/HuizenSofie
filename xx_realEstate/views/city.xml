@@ -5,9 +5,9 @@
             <field name="name">xx.city.form</field>
             <field name="model">xx.city</field>
             <field name="arch" type="xml">
-                <form string="City Form">
+                <form string="Stad formulier">
                     <sheet>
-                        <separator string="City details"/>
+                        <separator string="Stad details"/>
                         <group>
                             <field name="name"/>
                             <field name="xx_zip"/>
@@ -21,7 +21,7 @@
             <field name="name">xx.city.tree</field>
             <field name="model">xx.city</field>
             <field name="arch" type="xml">
-                <tree string="City Tree">
+                <tree string="Stad lijst">
                     <field name="name"/>
                     <field name="xx_zip"/>
                 </tree>

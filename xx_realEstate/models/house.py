@@ -10,7 +10,7 @@ class House(models.Model):
     _name = 'product.template'
     _inherit = 'product.template'
 
-    xx_display_name = fields.Char('Display naam')
+    xx_display_name = fields.Char('Weergave naam')
     xx_house_type = fields.Many2one('xx.house.type', 'Huis type')
     name = fields.Char(compute='_get_name', store=True, default='', string='Adres')
     xx_street = fields.Char('Straatnaam', required=True)

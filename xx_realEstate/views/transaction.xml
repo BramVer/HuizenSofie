@@ -4,7 +4,7 @@
             <field name="name">transaction.form</field>
             <field name="model">xx.transaction</field>
             <field name="arch" type="xml">
-                <form string="Transaction Form">
+                <form string="Transactie formulier">
                     <sheet>
                         <group>
                             <field name="name"/>
@@ -40,7 +40,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Create the first transaction
+                <p class="oe_view_nocontent_create">Maak uw eerste transactie aan
                 </p>
             </field>
         </record>

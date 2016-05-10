@@ -4,7 +4,7 @@
             <field name="name">xx.document.form</field>
             <field name="model">xx.house.document</field>
             <field name="arch" type="xml">
-                <form string="Document Form">
+                <form string="Document formulier">
                     <sheet>
                         <separator string="Document details"/>
                         <group>
@@ -20,7 +20,7 @@
             <field name="name">xx.document.type.form</field>
             <field name="model">xx.house.document.type</field>
             <field name="arch" type="xml">
-                <form string="Document type Form">
+                <form string="Document type formulier">
                     <sheet>
                         <separator string="Document type details"/>
                         <group>

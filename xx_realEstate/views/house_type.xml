@@ -5,7 +5,7 @@
             <field name="name">xx.house.type.form</field>
             <field name="model">xx.house.type</field>
             <field name="arch" type="xml">
-                <form string="House type Form">
+                <form string="Huis type formulier">
                     <sheet>
                         <separator string="Huistype"/>
                         <group>
@@ -21,7 +21,7 @@
             <field name="name">xx.house.type.tree</field>
             <field name="model">xx.house.type</field>
             <field name="arch" type="xml">
-                <tree string="House Type Tree">
+                <tree string="Huis type lijst">
                     <field name="name"/>
                 </tree>
             </field>

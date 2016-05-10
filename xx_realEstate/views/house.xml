@@ -6,7 +6,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Maak de eerste woning
+                <p class="oe_view_nocontent_create">Maak de eerste woning aan
                 </p>
             </field>
         </record>
@@ -17,7 +17,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Maak het eerste attribuut type
+                <p class="oe_view_nocontent_create">Maak het eerste attribuut type aan
                 </p>
             </field>
         </record>
@@ -28,7 +28,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Maak het eerste document type
+                <p class="oe_view_nocontent_create">Maak het eerste document type aan
                 </p>
             </field>
         </record>
@@ -39,7 +39,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Create the first house type
+                <p class="oe_view_nocontent_create">Maak uw eerste huis type aan
                 </p>
             </field>
         </record>
@@ -50,7 +50,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Maak de eerste gemeente
+                <p class="oe_view_nocontent_create">Maak de eerste gemeente aan
                 </p>
             </field>
         </record>
@@ -97,8 +97,8 @@
                 </xpath>
                 <xpath expr="//sheet" position="before">
                     <sheet>
-                        <separator string="House details"/>
-                        <label for="xx_display_name" string="Display name"/>
+                        <separator string="Huis details"/>
+                        <label for="xx_display_name" string="Weergave naam"/>
                         <field name="xx_display_name"/>
                         <separator/>
                         <group>

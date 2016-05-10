@@ -4,7 +4,7 @@
             <field name="name">xx.house.attribute.form</field>
             <field name="model">xx.house.attribute</field>
             <field name="arch" type="xml">
-                <form string="Attribuut Form">
+                <form string="Attribuut formulier">
                     <sheet>
                         <separator string="Attribuut details"/>
                         <group>
@@ -24,7 +24,7 @@
             <field name="name">xx.house.attribute.form</field>
             <field name="model">xx.house.attribute.type</field>
             <field name="arch" type="xml">
-                <form string="Attribuut Form">
+                <form string="Attribuut formulier">
                     <sheet>
                         <separator string="Attribuut details"/>
                         <group>
@@ -40,7 +40,7 @@
             <field name="name">xx.attribute.type.tree</field>
             <field name="model">xx.house.attribute.type</field>
             <field name="arch" type="xml">
-                <tree string="Huis Attribuut Tree">
+                <tree string="Huis attributen lijst">
                     <field name="name"/>
                     <field name="xx_unit"/>
                 </tree>
