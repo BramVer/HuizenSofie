@@ -105,12 +105,12 @@
                             <group>
                                 <field name="xx_seller_id"/>
                                 <field name="xx_house_type"/>
-                                <field name="xx_buy_hire"/>
+                                <!--field name="xx_buy_hire"/-->
                                 <field name="xx_starting_price"/>
                                 <field name="xx_current_price"/>
                             </group>
                             <group>
-                                <field name="xx_build_year"/>
+                                <!--field name="xx_build_year"/-->
                                 <field name="xx_total_area"/>
                                 <field name="xx_energy"/>
                                 <field name="xx_unique_epc"/>
