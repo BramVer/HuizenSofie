@@ -1,6 +1,9 @@
 from openerp import models, fields, api, exceptions
 from reportlab.graphics.barcode import createBarcodeDrawing
 import base64
+import webbrowser
+
+WEBSITE_URL = 'http://0.0.0.0:8069/shop/product/'
 
 
 class House(models.Model):
@@ -25,12 +28,12 @@ class House(models.Model):
     xx_energy = fields.Float('Energie', required=True)
     xx_unique_epc = fields.Float('EPC code', required=True)
     xx_sold = fields.Boolean('Verkocht')
-    xx_buy_hire = fields.Selection([('huren', 'Huren'), ('kopen', 'Kopen'), ('beide', 'Beide')], string='Kopen/Huren', required=True)
+    xx_buy_hire = fields.Selection([('huren', 'Huren'), ('kopen', 'Kopen'), ('beide', 'Beide')], string='Kopen/Huren',
+                                   required=True)
     xx_build_year = fields.Integer('Bouwjaar')
 
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
     xx_documents = fields.One2many('xx.house.document', 'xx_house', 'Documenten')
-
 
     xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
@@ -45,6 +48,19 @@ class House(models.Model):
         if self.xx_city:
             self.xx_zip = self.xx_city.xx_zip
 
+    @api.multi
+    def set_current_price(self):
+        if self.xx_starting_price:
+            self.xx_current_price = self.xx_starting_price
+        else:
+            raise exceptions.Warning("Er is geen startprijs ingesteld")
+
+    @api.multi
+    def show_current_house(self):
+        current_url = WEBSITE_URL + (
+            self.xx_street + "-" + self.xx_street_number + "-" + str(self.id)).lower()
+        return webbrowser.open_new_tab(current_url)
+
     @api.onchange('xx_house_type')
     def _onchange_house_type(self):
         if self.xx_house_type:
@@ -54,11 +70,10 @@ class House(models.Model):
             attributes = []
 
             for type in attribute_types:
-
                 vals = {
                     'name': type.id,
-                    'xx_house' : self.id,
-                    'xx_unit_type' : type.xx_unit
+                    'xx_house': self.id,
+                    'xx_unit_type': type.xx_unit
                 }
                 attr = xha.create(vals)
                 attributes.append(attr.id)
@@ -68,32 +83,29 @@ class House(models.Model):
     def default_get(self, vals):
         res = super(House, self).default_get(vals)
         xhd = self.env['xx.house.document']
-        docu_types = self.env['xx.house.document.type'].search([('name','!=', False)])
+        docu_types = self.env['xx.house.document.type'].search([('name', '!=', False)])
         if len(docu_types) > 0:
 
             documents = []
             for type in docu_types:
                 vals = {
-                    'name' : type.id,
-                    'xx_house' : self.id,
-                    'xx_exists' : False
+                    'name': type.id,
+                    'xx_house': self.id,
+                    'xx_exists': False
                 }
                 docu = xhd.create(vals)
                 documents.append(docu.id)
             res.update({
-                'xx_documents' : documents
+                'xx_documents': documents
             })
         return res
-
-
-
 
 
 class HouseType(models.Model):
     _name = 'xx.house.type'
 
     name = fields.Char('Huistype', required=True)
-    xx_attribute_types = fields.Many2many('xx.house.attribute.type', string='Attribuut types' )
+    xx_attribute_types = fields.Many2many('xx.house.attribute.type', string='Attribuut types')
 
     _sql_constraints = [
         ('house_type_unique', 'unique(name)', 'Huistype bestaat al!')
@@ -108,13 +120,11 @@ class QrCode(models.Model):
     xx_height = fields.Integer('Height')
 
     def generate_image(self, cr, uid, ids, context=None):
-        #TODO form correct URL, waiting for server
         for self_obj in self.browse(cr, uid, ids, context=context):
-            if self_obj.xx_width and self_obj.xx_height:
-                options = {'width': self_obj.xx_width, 'height': self_obj.xx_height}
-            else:
-                options = {'width': 0, 'hight': 0}
-            ret_val = createBarcodeDrawing('QR', value=str('Groep 2 is de beste groep!'), **options)
+            options = {'width': 500, 'height': 500}
+            current_url = WEBSITE_URL + (
+                self_obj.xx_street + "-" + self_obj.xx_street_number + "-" + str(self_obj.id)).lower()
+            ret_val = createBarcodeDrawing('QR', value=str(current_url), **options)
             image = base64.encodestring(ret_val.asString('png'))
             self.write(cr, uid, self_obj.id,
                        {'image': image}, context=context)
@@ -144,8 +154,6 @@ class HouseAttributeType(models.Model):
     xx_house_type = fields.Many2many('xx.house.type', string='Huistypes')
 
 
-
-
 class Image(models.Model):
     _inherit = 'product.template'
 
@@ -167,6 +175,7 @@ class City(models.Model):
     name = fields.Char('Gemeente', required=True)
     xx_zip = fields.Char('Postcode', required=True)
 
+
 class HouseDocument(models.Model):
     _name = 'xx.house.document'
 
@@ -179,5 +188,3 @@ class HouseDocumentType(models.Model):
     _name = 'xx.house.document.type'
 
     name = fields.Char('Document type', required=True)
-
-

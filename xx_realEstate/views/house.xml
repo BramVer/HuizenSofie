@@ -79,7 +79,6 @@
                   action="house_attribute_type_action"/>
 
 
-
         <menuitem id="house_city" name="Gemeente lijst" parent="location_menu"
                   action="house_city_action"/>
 
@@ -88,6 +87,11 @@
             <field name="model">product.template</field>
             <field name="inherit_id" ref="product.product_template_form_view"/>
             <field name="arch" type="xml">
+                <header>
+                    <button type="object" name="set_current_price" class="oe_stat_button" string="Verander prijs"/>
+                    <button type="object" name="show_current_house" class="oe_stat_button" string="Toon op webpagina"/>
+
+                </header>
                 <xpath expr="//sheet" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
@@ -205,12 +209,6 @@
                                         <field name="image" widget="image" readonly="1" nolabel="1" height="500"
                                                width="500"/>
                                     </group>
-                                    <group>
-                                        <p>Leave blank for default size</p>
-                                        <newline/>
-                                        <field name="xx_width"/>
-                                        <field name="xx_height"/>
-                                    </group>
                                 </group>
                             </page>
                         </notebook>
@@ -241,8 +239,6 @@
             </field>
 
         </record>
-
-
 
 
     </data>
