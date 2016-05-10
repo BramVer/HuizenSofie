@@ -3,7 +3,7 @@ from reportlab.graphics.barcode import createBarcodeDrawing
 import base64
 import webbrowser
 
-WEBSITE_URL = 'http://0.0.0.0:8069/shop/product/'
+WEBSITE_URL = 'http://192.168.84.91:8091/shop/product/'
 
 
 class House(models.Model):
