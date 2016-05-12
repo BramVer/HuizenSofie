@@ -2,6 +2,8 @@ from openerp import models, fields, api, exceptions
 from reportlab.graphics.barcode import createBarcodeDrawing
 import base64
 import webbrowser
+from openerp.tools.translate import _
+import datetime
 
 WEBSITE_URL = 'http://192.168.84.91:8091/shop/product/'
 
@@ -10,33 +12,51 @@ class House(models.Model):
     _name = 'product.template'
     _inherit = 'product.template'
 
-    xx_display_name = fields.Char('Weergave naam')
-    xx_house_type = fields.Many2one('xx.house.type', 'Huis type')
+    xx_display_name = fields.Char('Weergave naam', required=True)
+    xx_house_type = fields.Many2one('xx.house.type', 'Huis type', required=True)
     name = fields.Char(compute='_get_name', store=True, default='', string='Adres')
     xx_street = fields.Char('Straatnaam', required=True)
     xx_street_number = fields.Char('Huisnummer', required=True)
-    xx_city = fields.Many2one('xx.city', 'City')
+    xx_city = fields.Many2one('xx.city', 'Stad')
     xx_zip = fields.Char('Postcode', required=True)
     xx_provence = fields.Selection(
         [('antwerpen', 'Antwerpen'), ('limburg', 'Limburg'), ('oostvlaanderen', 'Oost-Vlaanderen'),
          ('westvlaanderen', 'West-Vlaanderen'), ('brussel', 'Brussel'), ('henegouwen', 'Henegouwen'), ('luik', 'Luik'),
          ('namen', 'Namen'), ('luxemburg', 'Luxemburg')], string='Provincie', required=True)
     xx_starting_price = fields.Float('Start prijs', required=True)
-    xx_current_price = fields.Float('Huidige prijs')
+    xx_current_price = fields.Float('Huidige prijs', required=True)
     xx_total_area = fields.Integer('Totale oppervlakte', required=True)
     xx_living_area = fields.Integer('Bewoonbare oppervlakte', required=True)
-    xx_energy = fields.Float('Energie', required=True)
     xx_unique_epc = fields.Float('EPC code', required=True)
     xx_sold = fields.Boolean('Verkocht')
     xx_buy_hire = fields.Selection([('huren', 'Huren'), ('kopen', 'Kopen'), ('beide', 'Beide')], string='Kopen/Huren',
                                    required=True)
     xx_build_year = fields.Integer('Bouwjaar')
+    xx_reference = fields.Char('Referentie')
 
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
     xx_documents = fields.One2many('xx.house.document', 'xx_house', 'Documenten')
 
     xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
+
+    @api.model
+    def create(self, vals):
+        reference_dict = {
+            'xx_reference': str(len(self.search_read([], ['id']))) + str(datetime.datetime.now().microsecond)}
+        vals.update(reference_dict)
+        return super(House, self).create(vals)
+
+    @api.onchange('xx_starting_price')
+    def _onchange_starting_price(self):
+        self.xx_current_price = self.xx_starting_price
+        if self.xx_current_price:
+            warning = {
+                'title': _('Opgelet'),
+                'message': _(
+                    'Het veranderen van de startprijs past automatisch de huidige prijs aan')
+            }
+            return {'warning': warning}
 
     @api.depends('xx_street', 'xx_street_number')
     def _get_name(self):

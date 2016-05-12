@@ -112,8 +112,9 @@
                             <group>
                                 <field name="xx_build_year"/>
                                 <field name="xx_total_area"/>
-                                <field name="xx_energy"/>
+                                <field name="xx_living_area"/>
                                 <field name="xx_unique_epc"/>
+                                <field name="xx_reference" readonly="1"/>
                             </group>
                             <group>
                                 <field name="xx_sold"/>
@@ -230,11 +231,16 @@
                 <field name="state" position="replace"/>
                 <field name="uom_id" position="replace"/>
 
+                <field name="name" position="before">
+                    <field name="xx_reference"/>
+                </field>
+
                 <field name="name" position="after">
                     <field name="xx_house_type"/>
                     <field name="xx_city"/>
                     <field name="xx_provence"/>
                     <field name="xx_starting_price"/>
+                    <field name="xx_current_price"/>
                 </field>
             </field>
 
