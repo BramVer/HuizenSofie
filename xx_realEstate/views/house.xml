@@ -55,16 +55,34 @@
             </field>
         </record>
 
+        <record model="ir.actions.act_window" id="transaction_list_action">
+            <field name="name">Transacties</field>
+            <field name="res_model">xx.transaction</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Maak uw eerste transactie aan
+                </p>
+            </field>
+        </record>
+
         <menuitem id="main_residences_menu" name="Woningen"/>
 
         <menuitem id="residences_menu" name="Woningen"
-                  parent="main_residences_menu"/>
+                  parent="main_residences_menu" sequence="1"/>
+
+        <menuitem id="visitors_menu" name="Bezoekers"
+                  parent="main_residences_menu" sequence="2"/>
 
         <menuitem id="attributes_menu" name="Attributen en documenten"
-                  parent="main_residences_menu"/>
+                  parent="main_residences_menu" sequence="3"/>
 
         <menuitem id="location_menu" name="Locatie"
-                  parent="main_residences_menu"/>
+                  parent="main_residences_menu" sequence="5"/>
+
+        <menuitem id="transactions_menu" name="Transacties"
+                  parent="main_residences_menu" sequence="4"/>
+
 
         <menuitem id="residenceList_menu" name="Woning lijst" parent="residences_menu"
                   action="residence_list_action"/>
@@ -75,12 +93,19 @@
         <menuitem id="house_document" name="Documenten lijst" parent="attributes_menu"
                   action="house_document_action"/>
 
+        <menuitem id="house_visitor" name="Bezoeker lijst" parent="visitors_menu"
+                  action="xx_visitor_list_action"/>
+
         <menuitem id="house_attribute_type" name="Huis attribuut types" parent="attributes_menu"
                   action="house_attribute_type_action"/>
 
 
         <menuitem id="house_city" name="Gemeente lijst" parent="location_menu"
                   action="house_city_action"/>
+
+
+        <menuitem id="transactionList_menu" name="Transactie lijst" parent="transactions_menu"
+                  action="transaction_list_action"/>
 
         <record id="xx_house_form" model="ir.ui.view">
             <field name="name">product.template.test</field>
@@ -103,6 +128,11 @@
                                     string="Toon op website"/>
                             <button type="object" name="show_qr_image" class="oe_stat_button" icon="fa-qrcode"
                                     string="Toon QR code"/>
+                            <button name="create_transaction" string="Maak transactie" type="object"
+                                    class="oe_stat_button" icon="fa-file-o "/>
+                            <button name="delete_transaction" string="Verwijder transactie" type="object"
+                                    class="oe_stat_button" confirm="Ben je zeker dat je de transactie wilt verwijderen?"
+                                    icon="fa-times"/>
 
                         </div>
                         <h1>
@@ -126,8 +156,8 @@
                                 <field name="xx_reference" readonly="1"/>
                             </group>
                             <group>
-                                <field name="xx_sold"/>
-                                <field name="xx_transaction_id"/>
+                                <field name="xx_sold" readonly="1"/>
+                                <field name="xx_transaction_id" readonly="1"/>
                             </group>
                         </group>
                         <notebook colspan="4">
@@ -242,6 +272,31 @@
                 </field>
             </field>
 
+        </record>
+
+        <!-- Search view for house -->
+        <record id="house_search_view" model="ir.ui.view">
+            <field name="name">xx.house.search.view</field>
+            <field name="model">product.template</field>
+            <field name="arch" type="xml">
+                <search string="Huis Informatie">
+                    <field name="name"/>
+                    <field name="xx_street"/>
+                    <field name="xx_reference"/>
+                    <field name="xx_seller_id"/>
+                    <field name="xx_city"/>
+                    <field name="xx_provence"/>
+                    <group expand="0" string="Groepeer">
+                        <filter name="groupby_house_type" string="Huis type" domain="[]"
+                                context="{'group_by':'xx_house_type'}"
+                                help="Groepeer woningen per huis type"/>
+                        <filter name="groupby_city" context="{'group_by': 'xx_city'}" string="Stad"
+                                help="Groepeer woningen per gemeente"/>
+                        <filter name="groupby_provence" context="{'group_by': 'xx_provence'}" string="Provincie"
+                                help="Groepeer woningen per provincie"/>
+                    </group>
+                </search>
+            </field>
         </record>
 
 

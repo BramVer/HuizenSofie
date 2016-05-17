@@ -101,6 +101,10 @@ class House(models.Model):
             }
             return {'warning': warning}
 
+    @api.onchange('xx_current_price')
+    def _onchange_current_price(self):
+        self.xx_starting_price = self.xx_starting_price
+
     @api.depends('xx_street', 'xx_street_number')
     def _get_name(self):
         if self.xx_street and self.xx_street_number:
@@ -139,6 +143,42 @@ class House(models.Model):
             'target': 'current',
             'url': QR_URL + str(self.id) + QR_ATTRIBUTE
         }
+
+    def create_transaction(self):
+        if self.id:
+            if not self.xx_transaction_id:
+                self.xx_sold = True
+                view_ref = self.env['ir.model.data'].get_object_reference('xx_realEstate', 'xx_transaction_form_view')
+                view_id = view_ref[1] if view_ref else False
+                t_name = "t"+str(self.id)
+                res = {
+                    'type': 'ir.actions.act_window',
+                    'name': ('Transaction'),
+                    'res_model': 'xx.transaction',
+                    'view_type': 'form',
+                    'view_mode': 'form',
+                    'view_id': view_id,
+                    'target': 'current',
+                    'context': {'default_xx_house_id': self.id,
+                                'default_name': t_name,
+                                'default_xx_price': self.xx_current_price,
+                                'default_xx_date': datetime.datetime.today().strftime('%Y-%m-%d')
+                                }
+                }
+                return res
+            else:
+                raise exceptions.Warning("Er bestaat al een transactie voor deze woning, voor elke woning kan er maar 1 transactie bestaan")
+        else:
+            raise exceptions.Warning("De woning moet opgeslagen worden voor er een transactie kan aangemaakt worden")
+
+    @api.multi
+    def delete_transaction(self):
+        if self.xx_transaction_id:
+            self.xx_sold = False
+            self.xx_transaction_id.unlink()
+
+        else:
+            raise exceptions.Warning("Er is nog geen transactie opgeslagen voor deze woning")
 
     @api.onchange('xx_house_type')
     def _onchange_house_type(self):
@@ -227,6 +267,7 @@ class HouseAttributeType(models.Model):
     name = fields.Char('Attribuut type', required=True)
     xx_unit = fields.Char('Eenheid')
     xx_house_type = fields.Many2many('xx.house.type', string='Huistypes')
+    xx_attribute_id = fields.One2many('xx.house.attribute', 'name', string='Verkoper', required=True)
 
 
 class Image(models.Model):
