@@ -6,6 +6,7 @@ import webbrowser
 from openerp.tools.translate import _
 import datetime
 import os
+import urllib
 
 WEBSITE_URL = 'http://192.168.84.91:8091/shop/product/'
 
@@ -122,7 +123,13 @@ class House(models.Model):
     def show_current_house(self):
         current_url = WEBSITE_URL + (
             self.xx_street + "-" + self.xx_street_number + "-" + str(self.id)).lower()
-        return subprocess.Popen(['xdg-open', current_url])
+        return {
+            'name': 'Go to website',
+            'res_model': 'ir.actions.act_url',
+            'type': 'ir.actions.act_url',
+            'target': 'current',
+            'url': current_url
+        }
 
     @api.onchange('xx_house_type')
     def _onchange_house_type(self):
