@@ -99,6 +99,10 @@ class House(models.Model):
             }
             return {'warning': warning}
 
+    @api.onchange('xx_current_price')
+    def _onchange_current_price(self):
+        self.xx_starting_price = self.xx_starting_price
+
     @api.depends('xx_street', 'xx_street_number')
     def _get_name(self):
         if self.xx_street and self.xx_street_number:
@@ -126,6 +130,7 @@ class House(models.Model):
     def create_transaction(self):
         if self.id:
             if not self.xx_transaction_id:
+                self.xx_sold = True
                 view_ref = self.env['ir.model.data'].get_object_reference('xx_realEstate', 'xx_transaction_form_view')
                 view_id = view_ref[1] if view_ref else False
                 t_name = "t"+str(self.id)
@@ -152,6 +157,7 @@ class House(models.Model):
     @api.multi
     def delete_transaction(self):
         if self.xx_transaction_id:
+            self.xx_sold = False
             self.xx_transaction_id.unlink()
 
         else:
