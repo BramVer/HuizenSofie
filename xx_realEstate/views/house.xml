@@ -87,22 +87,30 @@
             <field name="model">product.template</field>
             <field name="inherit_id" ref="product.product_template_form_view"/>
             <field name="arch" type="xml">
-                <header>
-                    <button type="object" name="set_current_price" class="oe_stat_button" string="Verander prijs"/>
-                    <button type="object" name="show_current_house" class="oe_stat_button" string="Toon op webpagina"/>
-                    <button name="create_transaction" string="Maak transactie" type="object" class="oe_stat_button"/>
-                    <button name="delete_transaction" string="Verwijder transactie" type="object" class="oe_stat_button" confirm="Ben je zeker dat je de transactie wilt verwijderen?"/>
-
-                </header>
                 <xpath expr="//sheet" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
                 <xpath expr="//sheet" position="before">
                     <sheet>
-                        <separator string="Huis details"/>
-                        <label for="xx_display_name" string="Weergave naam"/>
-                        <field name="xx_display_name"/>
-                        <separator/>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_visitor"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-users">
+                                <field name="xx_visitor_count" widget="statinfo" string="Bezoeker(s)"/>
+                            </button>
+                            <button type="object" name="show_current_house" class="oe_stat_button" icon="fa-globe"
+                                    string="Toon op website"/>
+                            <button type="object" name="set_current_price" class="oe_stat_button" string="Verander prijs"/>
+                            <button name="create_transaction" string="Maak transactie" type="object" class="oe_stat_button"/>
+                            <button name="delete_transaction" string="Verwijder transactie" type="object" class="oe_stat_button" confirm="Ben je zeker dat je de transactie wilt verwijderen?"/>
+
+                        </div>
+                        <h1>
+                            <label for="xx_display_name" string="Weergave naam"/>
+                            <field name="xx_display_name"/>
+                        </h1>
+                        <br/>
                         <group>
                             <group>
                                 <field name="xx_seller_id"/>

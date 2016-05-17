@@ -1,0 +1,49 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="xx_visitor_list_action">
+            <field name="name">Bezoekers</field>
+            <field name="res_model">xx.house.visitors</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Maak je eerste bezoeker aan
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xx_visitor_form_view">
+            <field name="name">xx.house.visitors.form</field>
+            <field name="model">xx.house.visitors</field>
+            <field name="arch" type="xml">
+
+                <form string="Bezoekers" version="7.0">
+                    <sheet>
+                        <separator string="Bezoeker aanmaken"/>
+                        <group>
+                            <field name="name" placeholder='John Doe'/>
+                            <field name="xx_date"/>
+                            <field name="xx_phone" placeholder='+32 11 32 43 54'/>
+                            <field name="xx_email" placeholder='john.doe@email.com'/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="xx_visitor_tree_view">
+            <field name="name">xx.house.visitors.tree</field>
+            <field name="model">xx.house.visitors</field>
+            <field name="arch" type="xml">
+                <tree string="Bezoekers">
+                    <field name="name"/>
+                    <field name="xx_date"/>
+                    <field name="xx_phone"/>
+                    <field name="xx_email"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

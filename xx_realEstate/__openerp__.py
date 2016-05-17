@@ -6,7 +6,8 @@
 Dit is de module voor viaSofie
 """,
     'version': '1.0',
-    'depends': ['base','product'],
-    'data': ['views/partner.xml','views/transaction.xml','views/attribute.xml','views/house.xml','views/city.xml','views/house_type.xml', 'views/document.xml'],
+    'depends': ['base', 'product'],
+    'data': ['views/partner.xml', 'views/transaction.xml', 'views/attribute.xml', 'views/house.xml', 'views/city.xml',
+             'views/house_type.xml', 'views/document.xml', 'views/house_sequence.xml', 'views/visitor.xml'],
     'installable': True,
 }

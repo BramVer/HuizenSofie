@@ -37,13 +37,54 @@ class House(models.Model):
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
     xx_documents = fields.One2many('xx.house.document', 'xx_house', 'Documenten')
 
+    xx_visitor_count = fields.Integer('Bezoekers', compute='_get_visitors')
+    xx_visitors = fields.One2many('xx.house.visitors', 'xx_house', 'Bezoekers')
+    xx_visitor_ids = fields.Many2many("xx.house.visitors", string='Bezoekers', compute="_get_visitors", readonly=True,
+                                      copy=False)
+
     xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
 
+    @api.multi
+    def action_view_visitor(self):
+        invoice_ids = self.mapped('xx_visitor_ids')
+        imd = self.env['ir.model.data']
+        action = imd.xmlid_to_object('xx_realEstate.xx_visitor_list_action')
+        list_view_id = imd.xmlid_to_res_id('xx_realEstate.xx_visitor_tree_view')
+        form_view_id = imd.xmlid_to_res_id('xx_realEstate.xx_visitor_form_view')
+
+        result = {
+            'name': action.name,
+            'help': action.help,
+            'type': action.type,
+            'views': [[list_view_id, 'tree'], [form_view_id, 'form'], [False, 'graph'], [False, 'kanban'],
+                      [False, 'calendar'], [False, 'pivot']],
+            'target': action.target,
+            'context': action.context,
+            'res_model': action.res_model,
+        }
+        if len(invoice_ids) >= 0:
+            result['domain'] = "[('id','in',%s)]" % invoice_ids.ids
+        elif len(invoice_ids) == 1:
+            result['views'] = [(form_view_id, 'form')]
+            result['res_id'] = invoice_ids.ids[0]
+        return result
+
+    @api.multi
+    def _get_visitors(self):
+        for record in self:
+            xx_visitor_ids = record.xx_visitors.mapped('id')
+            record.update({
+                'xx_visitor_count': len(record.xx_visitors),
+                'xx_visitor_ids': xx_visitor_ids
+            })
+
     @api.model
     def create(self, vals):
+        # TODO Use sequence to fetch the reference
         reference_dict = {
-            'xx_reference': str(len(self.search_read([], ['id']))) + str(datetime.datetime.now().microsecond)}
+            'xx_reference': str(len(self.search_read([], ['id']))) + str(datetime.datetime.now().microsecond)
+        }
         vals.update(reference_dict)
         return super(House, self).create(vals)
 
@@ -244,3 +285,20 @@ class HouseDocumentType(models.Model):
     _name = 'xx.house.document.type'
 
     name = fields.Char('Document type', required=True)
+
+
+class HouseVisitors(models.Model):
+    _name = 'xx.house.visitors'
+
+    @api.model
+    def create(self, vals):
+        vals.update({
+            'xx_house': self._context.get('active_id')
+        })
+        return super(HouseVisitors, self).create(vals)
+
+    name = fields.Char('Naam', required=True)
+    xx_date = fields.Datetime('Datum', required=True)
+    xx_phone = fields.Char('Telefoon')
+    xx_email = fields.Char('Email')
+    xx_house = fields.Many2one('product.template', 'Huis')
