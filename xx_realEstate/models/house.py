@@ -1,9 +1,11 @@
+import subprocess
 from openerp import models, fields, api, exceptions
 from reportlab.graphics.barcode import createBarcodeDrawing
 import base64
 import webbrowser
 from openerp.tools.translate import _
 import datetime
+import os
 
 WEBSITE_URL = 'http://192.168.84.91:8091/shop/product/'
 
@@ -120,7 +122,7 @@ class House(models.Model):
     def show_current_house(self):
         current_url = WEBSITE_URL + (
             self.xx_street + "-" + self.xx_street_number + "-" + str(self.id)).lower()
-        return webbrowser.open_new_tab(current_url)
+        return subprocess.Popen(['xdg-open', current_url])
 
     @api.onchange('xx_house_type')
     def _onchange_house_type(self):
