@@ -101,6 +101,8 @@
                             </button>
                             <button type="object" name="show_current_house" class="oe_stat_button" icon="fa-globe"
                                     string="Toon op website"/>
+                            <button type="object" name="show_qr_image" class="oe_stat_button" icon="fa-qrcode"
+                                    string="Toon QR code"/>
 
                         </div>
                         <h1>
@@ -205,17 +207,6 @@
                                     </group>
                                     <group>
                                         <field name="xx_image10" widget="image" height="400" width="400" nolabel="1"/>
-                                    </group>
-                                </group>
-                            </page>
-
-                            <page string="QR code">
-                                <group>
-                                    <group>
-                                        <button name="generate_image" string="Generate Barcode Image" type="object"/>
-                                        <newline/>
-                                        <field name="image" widget="image" readonly="1" nolabel="1" height="500"
-                                               width="500"/>
                                     </group>
                                 </group>
                             </page>
