@@ -15,11 +15,16 @@ class User(models.Model):
     xx_cellphone = fields.Char(string="GSM-nummer")
     # wachtwoord
     xx_email = fields.Char(string="E-mailadres", required=True)
-    xx_supplier = fields.Boolean(string="Is verkoper")
+    xx_type = fields.Selection([('verkoper', 'Verkoper'), ('koper', 'Koper'), ('verkoper_koper', 'Verkoper/Koper'), ('bezoeker', 'Bezoeker')], string='Type', required=True)
 
     xx_buyTransaction_ids = fields.One2many('xx.transaction', 'xx_buyer_id', string='Houses bought')
 
     xx_housesOnSale_ids = fields.One2many('product.template', 'xx_seller_id', string='Houses on sale')
+
+
+
+
+
 
     # Replace attributes to avoid error
     property_account_payable_id = fields.Many2one('account.account', company_dependent=True,

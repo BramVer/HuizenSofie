@@ -142,7 +142,7 @@ class House(models.Model):
                 self.xx_sold = True
                 view_ref = self.env['ir.model.data'].get_object_reference('xx_realEstate', 'xx_transaction_form_view')
                 view_id = view_ref[1] if view_ref else False
-                t_name = "t"+str(self.id)
+                t_name = "t"+str(self.id).zfill(6)
                 res = {
                     'type': 'ir.actions.act_window',
                     'name': ('Transaction'),
