@@ -1,5 +1,6 @@
 from openerp import models, fields, api, exceptions
 import re
+from random import randint
 
 
 class User(models.Model):
@@ -13,6 +14,7 @@ class User(models.Model):
     xx_zip = fields.Char('Postcode')
     xx_telephone = fields.Char(string="Telefoonnummer")
     xx_cellphone = fields.Char(string="GSM-nummer")
+    xx_has_login = fields.Boolean('Heeft login')
     # wachtwoord
     xx_email = fields.Char(string="E-mailadres", required=True)
     xx_supplier = fields.Boolean(string="Is verkoper")
@@ -47,3 +49,33 @@ class User(models.Model):
     def _check_email_valid(self):
         if not re.match("[^@]+@[^@]+\.[^@]+", self.xx_email):
             raise exceptions.ValidationError("Email is niet geldig")
+
+    @api.onchange('xx_email')
+    def _check_unique_email(self):
+        user = self.search([('xx_email', '=', self.xx_email)])
+        if len(user) != 0:
+            raise exceptions.ValidationError('Email reeds in gebruik bij %s' % user[0].name)
+
+    @api.multi
+    def create_user(self):
+        from openerp.pydev import pydevd
+        pydevd.settrace('localhost', port=22000, stdoutToServer=True, stderrToServer=True)
+
+        username = self._get_username(str(self.name).replace(" ", "").lower())
+
+        vals = {
+            'name': username,
+            'login': self.xx_email
+        }
+        self.env['res.users'].create(vals)
+
+    @api.model
+    def _get_username(self, username):
+        from openerp.pydev import pydevd
+        pydevd.settrace('localhost', port=22000, stdoutToServer=True, stderrToServer=True)
+
+        returning_username = username
+        if len(self.env['res.users'].search([('name', '=', username)])) != 0:
+            returning_username += str(randint(1, 9))
+            self._username_taken(returning_username)
+        return returning_username
