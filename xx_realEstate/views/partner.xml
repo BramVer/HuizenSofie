@@ -25,7 +25,6 @@
                                 <field name="xx_email" widget='email'/>
                                 <field name="xx_telephone"/>
                                 <field name="xx_cellphone"/>
-                                <field name="xx_supplier"/>
                             </group>
                             <group col="2">
                                 <field name="xx_street"/>
@@ -35,18 +34,26 @@
                             </group>
                         </group>
                         <notebook>
-                            <page string="Huizen gekocht">
+                            <page string="Extra informatie">
+                                <group col="2">
+                                    <field name="xx_type"/>
+                                </group>
+                            </page>
+                            <page string="Huizen te koop" attrs="{'invisible':['|',('xx_type', '=', 'bezoeker'), ('xx_type', '=', 'koper')]}">
+                                <field name="xx_housesOnSale_ids">
+                                    <tree string="Houses on sale">
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Huizen bezichtigd">
+
+                            </page>
+                            <page string="Huizen gekocht" attrs="{'invisible':['|',('xx_type', '!=', 'koper'), ('xx_type', '!=', 'verkoper_koper')]}">
                                 <field name="xx_buyTransaction_ids">
                                     <tree string="Registered transactions">
                                         <field name="name"/>
                                         <field name="xx_date"/>
-                                    </tree>
-                                </field>
-                            </page>
-                            <page string="Huizen te koop">
-                                <field name="xx_housesOnSale_ids">
-                                    <tree string="Houses on sale">
-                                        <field name="name"/>
                                     </tree>
                                 </field>
                             </page>
@@ -65,6 +72,7 @@
             <field name="arch" type="xml">
                 <tree string="Course Tree">
                     <field name="name"/>
+                    <field name="xx_type"/>
                     <field name="xx_email"/>
                 </tree>
             </field>
