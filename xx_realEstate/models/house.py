@@ -32,6 +32,7 @@ class House(models.Model):
     xx_sold = fields.Boolean('Verkocht')
     xx_buy_hire = fields.Selection([('huren', 'Huren'), ('kopen', 'Kopen'), ('beide', 'Beide')], string='Kopen/Huren',
                                    required=True)
+    xx_description = fields.Text('Omschrijving', required=True)
     xx_build_year = fields.Integer('Bouwjaar')
     xx_reference = fields.Char('Referentie')
 
@@ -150,7 +151,7 @@ class House(models.Model):
                 self.xx_sold = True
                 view_ref = self.env['ir.model.data'].get_object_reference('xx_realEstate', 'xx_transaction_form_view')
                 view_id = view_ref[1] if view_ref else False
-                t_name = "t"+str(self.id)
+                t_name = "t" + str(self.id)
                 res = {
                     'type': 'ir.actions.act_window',
                     'name': ('Transaction'),
@@ -167,7 +168,8 @@ class House(models.Model):
                 }
                 return res
             else:
-                raise exceptions.Warning("Er bestaat al een transactie voor deze woning, voor elke woning kan er maar 1 transactie bestaan")
+                raise exceptions.Warning(
+                    "Er bestaat al een transactie voor deze woning, voor elke woning kan er maar 1 transactie bestaan")
         else:
             raise exceptions.Warning("De woning moet opgeslagen worden voor er een transactie kan aangemaakt worden")
 

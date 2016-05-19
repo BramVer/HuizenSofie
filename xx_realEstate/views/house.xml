@@ -127,13 +127,12 @@
                             <button type="object" name="show_current_house" class="oe_stat_button" icon="fa-globe"
                                     string="Toon op website"/>
                             <button type="object" name="show_qr_image" class="oe_stat_button" icon="fa-qrcode"
-                                    string="Toon QR code"/>
+                                    string="QR code"/>
                             <button name="create_transaction" string="Maak transactie" type="object"
                                     class="oe_stat_button" icon="fa-file-o "/>
                             <button name="delete_transaction" string="Verwijder transactie" type="object"
                                     class="oe_stat_button" confirm="Ben je zeker dat je de transactie wilt verwijderen?"
                                     icon="fa-times"/>
-
                         </div>
                         <h1>
                             <label for="xx_display_name" string="Weergave naam"/>
@@ -173,9 +172,10 @@
                                         <field name="xx_zip"/>
                                     </group>
                                 </group>
-
                             </page>
-
+                            <page string="Omschrijving">
+                                <field name="xx_description" placeholder="Algemene omschrijving"/>
+                            </page>
                             <page string="Attributen">
                                 <field name="xx_attribute">
                                     <tree string="House attributes">
