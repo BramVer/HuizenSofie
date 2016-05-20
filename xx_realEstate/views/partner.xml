@@ -42,18 +42,23 @@
                             <page string="Huizen te koop"
                                   attrs="{'invisible':['|',('xx_type', '=', 'bezoeker'), ('xx_type', '=', 'koper')]}">
                                 <field name="xx_housesOnSale_ids">
-                                    <tree string="Houses on sale">
+                                    <tree string="Huizen te koop">
                                         <field name="name"/>
                                     </tree>
                                 </field>
                             </page>
                             <page string="Huizen bezichtigd">
-
+                                <field name="xx_visitor_ids">
+                                    <tree string="Huizen bezichtigd">
+                                        <field name="xx_house"/>
+                                        <field name="xx_date"/>
+                                    </tree>
+                                </field>
                             </page>
                             <page string="Huizen gekocht"
                                   attrs="{'invisible':['|',('xx_type', '!=', 'koper'), ('xx_type', '!=', 'verkoper_koper')]}">
                                 <field name="xx_buyTransaction_ids">
-                                    <tree string="Registered transactions">
+                                    <tree string="Geregistreerde transacties">
                                         <field name="name"/>
                                         <field name="xx_date"/>
                                     </tree>
@@ -110,6 +115,24 @@
         <!-- Full id location:
              action="openacademy.course_list_action"
              It is not required when it is the same module -->
-
+        <record id="house_search_view" model="ir.ui.view">
+			<field name="name">xx.user.search.view</field>
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<search string="Persoon Informatie">
+					<field name="name"/>
+                    <field name="xx_email"/>
+                    <field name="xx_city"/>
+                    <field name="xx_zip"/>
+                    <field name="xx_type"/>
+					<group expand="0" string="Groepeer">
+						<filter name="groupby_person_type" string="Partner type" domain="[]" context="{'group_by':'xx_type'}"
+							help="Groepeer personen per type"/>
+						<filter name="groupby_city" context="{'group_by': 'xx_city'}" string="Gemeente"
+							help="Groepeer personen per gemeente"/>
+					</group>
+				</search>
+			</field>
+		</record>
     </data>
 </openerp>

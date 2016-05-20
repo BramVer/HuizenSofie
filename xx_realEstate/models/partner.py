@@ -21,9 +21,10 @@ class User(models.Model):
         [('verkoper', 'Verkoper'), ('koper', 'Koper'), ('verkoper_koper', 'Verkoper/Koper'), ('bezoeker', 'Bezoeker')],
         string='Type', required=True)
 
-    xx_buyTransaction_ids = fields.One2many('xx.transaction', 'xx_buyer_id', string='Houses bought')
+    xx_buyTransaction_ids = fields.One2many('xx.transaction', 'xx_buyer_id', string='Huizen gekocht')
 
-    xx_housesOnSale_ids = fields.One2many('product.template', 'xx_seller_id', string='Houses on sale')
+    xx_housesOnSale_ids = fields.One2many('product.template', 'xx_seller_id', string='Huizen te koop')
+    xx_visitor_ids = fields.One2many('xx.house.visitors', 'name', string="Huizen bezichtigd")
 
     # Replace attributes to avoid error
     property_account_payable_id = fields.Many2one('account.account', company_dependent=True,

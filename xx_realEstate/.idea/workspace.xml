@@ -26,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/models/partner.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="855">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -38,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/views/partner.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="110" selection-start-line="14" selection-start-column="110" selection-end-line="14" selection-end-column="110" />
+              <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -54,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="house.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="house.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/house.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="92" selection-start-line="25" selection-start-column="92" selection-end-line="25" selection-end-column="92" />
+            <state relative-caret-position="2220">
+              <caret line="148" column="0" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -66,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="house.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="house.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/house.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="190" column="84" selection-start-line="190" selection-start-column="84" selection-end-line="190" selection-end-column="84" />
+            <state relative-caret-position="220">
+              <caret line="222" column="18" selection-start-line="222" selection-start-column="18" selection-end-line="222" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -91,9 +91,9 @@
         <option value="$PROJECT_DIR$/views/visitor.xml" />
         <option value="$PROJECT_DIR$/../../odoo-9.0/addons/auth_signup/res_users.py" />
         <option value="$PROJECT_DIR$/models/partner.py" />
-        <option value="$PROJECT_DIR$/models/house.py" />
         <option value="$PROJECT_DIR$/views/partner.xml" />
         <option value="$PROJECT_DIR$/views/house.xml" />
+        <option value="$PROJECT_DIR$/models/house.py" />
       </list>
     </option>
   </component>
@@ -832,7 +832,7 @@
     <entry file="file://$PROJECT_DIR$/views/partner.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="110" selection-start-line="14" selection-start-column="110" selection-end-line="14" selection-end-column="110" />
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -840,17 +840,7 @@
     <entry file="file://$PROJECT_DIR$/models/partner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/house.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="92" selection-start-line="25" selection-start-column="92" selection-end-line="25" selection-end-column="92" />
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
@@ -859,9 +849,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/house.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="190" column="84" selection-start-line="190" selection-start-column="84" selection-end-line="190" selection-end-column="84" />
+        <state relative-caret-position="220">
+          <caret line="222" column="18" selection-start-line="222" selection-start-column="18" selection-end-line="222" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/house.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2220">
+          <caret line="148" column="0" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

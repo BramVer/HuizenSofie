@@ -35,6 +35,7 @@ class House(models.Model):
     xx_description = fields.Text('Omschrijving', required=True)
     xx_build_year = fields.Integer('Bouwjaar')
     xx_reference = fields.Char('Referentie')
+    xx_description = fields.Text('Beschrijving')
 
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
     xx_documents = fields.One2many('xx.house.document', 'xx_house', 'Documenten')
@@ -46,6 +47,7 @@ class House(models.Model):
 
     xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
+    xx_status_id = fields.Many2one('xx.house.status', string='Status', required=True)
 
     @api.multi
     def action_view_visitor(self):
@@ -183,6 +185,35 @@ class House(models.Model):
         else:
             raise exceptions.Warning("Er is nog geen transactie opgeslagen voor deze woning")
 
+    @api.multi
+    def next_status(self):
+        if self.xx_status_id:
+            xhs = self.env['xx.house.status']
+            position = self.xx_status_id.xx_position
+            status = xhs.search([('xx_position', '=', position + 1)])
+            if (status):
+                self.xx_status_id = status.id
+                status2 = xhs.search([('xx_position', '=', position + 2)])
+                if not (status2):
+                    return self.create_transaction()
+            else:
+                raise exceptions.Warning("De woning bevindt zich in de laatste status")
+
+    @api.multi
+    def previous_status(self):
+        if self.xx_status_id:
+
+            xhs = self.env['xx.house.status']
+            position = self.xx_status_id.xx_position
+            status = xhs.search([('xx_position', '=', position - 1)])
+            if (status):
+                self.xx_status_id = status.id
+                status2 = xhs.search([('xx_position', '=', position + 1)])
+                if not (status2):
+                    self.delete_transaction()
+            else:
+                raise exceptions.Warning("De woning bevindt zich in de eerste status")
+
     @api.onchange('xx_house_type')
     def _onchange_house_type(self):
         if self.xx_house_type:
@@ -219,6 +250,13 @@ class House(models.Model):
                 documents.append(docu.id)
             res.update({
                 'xx_documents': documents
+            })
+
+        xhs = self.env['xx.house.status']
+        status = xhs.search([('xx_position', '=', 0)])
+        if status:
+            res.update({
+                'xx_status_id': status.id
             })
         return res
 
@@ -319,8 +357,18 @@ class HouseVisitors(models.Model):
         })
         return super(HouseVisitors, self).create(vals)
 
-    name = fields.Char('Naam', required=True)
+    name = fields.Many2one('res.partner', 'Naam', required=True)
     xx_date = fields.Datetime('Datum', required=True)
-    xx_phone = fields.Char('Telefoon')
-    xx_email = fields.Char('Email')
     xx_house = fields.Many2one('product.template', 'Huis')
+
+
+class HouseStatus(models.Model):
+    _name = 'xx.house.status'
+
+    name = fields.Char('Status', required=True)
+    xx_position = fields.Integer('Positie', required=True)
+
+    @api.constrains('xx_position')
+    def _check_position_valid(self):
+        if (self.xx_position < 0):
+            raise exceptions.ValidationError("Positie is niet geldig, moet positief zijn")
