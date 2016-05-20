@@ -151,19 +151,12 @@
                             </button>
                             <button type="object" name="show_current_house" class="oe_stat_button" icon="fa-globe"
                                     string="Toon op website"/>
-<<<<<<< HEAD
                             <button name="next_status" string="Volgende status" type="object" class="oe_stat_button" icon="fa-arrow-right"/>
                             <button name="previous_status" string="Vorige status" type="object" class="oe_stat_button" icon="fa-arrow-left"/>
 
-=======
+
                             <button type="object" name="show_qr_image" class="oe_stat_button" icon="fa-qrcode"
                                     string="QR code"/>
-                            <button name="create_transaction" string="Maak transactie" type="object"
-                                    class="oe_stat_button" icon="fa-file-o "/>
-                            <button name="delete_transaction" string="Verwijder transactie" type="object"
-                                    class="oe_stat_button" confirm="Ben je zeker dat je de transactie wilt verwijderen?"
-                                    icon="fa-times"/>
->>>>>>> 7541e032c0cd9cdd8c9790633bd48f661daac490
                         </div>
                         <h1>
                             <label for="xx_display_name" string="Weergave naam"/>
@@ -321,7 +314,7 @@
                     <field name="xx_seller_id"/>
                     <field name="xx_city"/>
                     <field name="xx_provence"/>
-<<<<<<< HEAD
+
 					<group expand="0" string="Groepeer">
 						<filter name="groupby_house_type" string="Huis type" domain="[]" context="{'group_by':'xx_house_type'}"
 							help="Groepeer woningen per huis type"/>
@@ -333,20 +326,7 @@
 				</search>
 			</field>
 		</record>
-=======
-                    <group expand="0" string="Groepeer">
-                        <filter name="groupby_house_type" string="Huis type" domain="[]"
-                                context="{'group_by':'xx_house_type'}"
-                                help="Groepeer woningen per huis type"/>
-                        <filter name="groupby_city" context="{'group_by': 'xx_city'}" string="Stad"
-                                help="Groepeer woningen per gemeente"/>
-                        <filter name="groupby_provence" context="{'group_by': 'xx_provence'}" string="Provincie"
-                                help="Groepeer woningen per provincie"/>
-                    </group>
-                </search>
-            </field>
-        </record>
->>>>>>> 7541e032c0cd9cdd8c9790633bd48f661daac490
+
 
 
     </data>
