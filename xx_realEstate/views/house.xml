@@ -178,7 +178,7 @@
                             </page>
                             <page string="Attributen">
                                 <field name="xx_attribute">
-                                    <tree string="House attributes">
+                                    <tree string="House attributes" editable="bottom">
                                         <field name="name"/>
                                         <field name="xx_value"/>
                                         <field name="xx_unit_type"/>
@@ -188,7 +188,7 @@
                             </page>
                             <page string="Documenten">
                                 <field name="xx_documents">
-                                    <tree string="House documents">
+                                    <tree string="House documents" editable="bottom">
                                         <field name="name"/>
                                         <field name="xx_exists"/>
                                     </tree>

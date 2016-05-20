@@ -4,8 +4,8 @@ import base64
 from openerp.tools.translate import _
 import datetime
 
-WEBSITE_URL = 'http://192.168.84.91:8091/shop/product/'
-QR_URL = 'http://192.168.84.91:8091/web/image?model=product.template&id='
+WEBSITE_URL = 'http://0.0.0.0:8069/shop/product/'
+QR_URL = 'http://0.0.0.0:8069/web/image?model=product.template&id='
 QR_ATTRIBUTE = '&field=image'
 
 
@@ -145,17 +145,17 @@ class House(models.Model):
             'url': QR_URL + str(self.id) + QR_ATTRIBUTE
         }
 
+    @api.multi
     def create_transaction(self):
         if self.id:
             if not self.xx_transaction_id:
                 self.xx_sold = True
                 view_ref = self.env['ir.model.data'].get_object_reference('xx_realEstate', 'xx_transaction_form_view')
                 view_id = view_ref[1] if view_ref else False
-                t_name = "t" + str(self.id)
-                t_name = "t"+str(self.id).zfill(6)
+                t_name = "T" + str(self.id).zfill(6)
                 res = {
                     'type': 'ir.actions.act_window',
-                    'name': ('Transaction'),
+                    'name': 'Transaction',
                     'res_model': 'xx.transaction',
                     'view_type': 'form',
                     'view_mode': 'form',

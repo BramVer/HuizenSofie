@@ -17,16 +17,13 @@ class User(models.Model):
     xx_has_login = fields.Boolean('Heeft login')
     # wachtwoord
     xx_email = fields.Char(string="E-mailadres", required=True)
-    xx_type = fields.Selection([('verkoper', 'Verkoper'), ('koper', 'Koper'), ('verkoper_koper', 'Verkoper/Koper'), ('bezoeker', 'Bezoeker')], string='Type', required=True)
+    xx_type = fields.Selection(
+        [('verkoper', 'Verkoper'), ('koper', 'Koper'), ('verkoper_koper', 'Verkoper/Koper'), ('bezoeker', 'Bezoeker')],
+        string='Type', required=True)
 
     xx_buyTransaction_ids = fields.One2many('xx.transaction', 'xx_buyer_id', string='Houses bought')
 
     xx_housesOnSale_ids = fields.One2many('product.template', 'xx_seller_id', string='Houses on sale')
-
-
-
-
-
 
     # Replace attributes to avoid error
     property_account_payable_id = fields.Many2one('account.account', company_dependent=True,
@@ -63,9 +60,6 @@ class User(models.Model):
 
     @api.multi
     def create_user(self):
-        from openerp.pydev import pydevd
-        pydevd.settrace('localhost', port=22000, stdoutToServer=True, stderrToServer=True)
-
         username = self._get_username(str(self.name).replace(" ", "").lower())
 
         vals = {
@@ -76,9 +70,6 @@ class User(models.Model):
 
     @api.model
     def _get_username(self, username):
-        from openerp.pydev import pydevd
-        pydevd.settrace('localhost', port=22000, stdoutToServer=True, stderrToServer=True)
-
         returning_username = username
         if len(self.env['res.users'].search([('name', '=', username)])) != 0:
             returning_username += str(randint(1, 9))
