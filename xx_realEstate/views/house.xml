@@ -129,7 +129,6 @@
                   action="house_status_action"/>
 
 
-
         <menuitem id="transactionList_menu" name="Transactie lijst" parent="transactions_menu"
                   action="transaction_list_action"/>
 
@@ -152,9 +151,19 @@
                             </button>
                             <button type="object" name="show_current_house" class="oe_stat_button" icon="fa-globe"
                                     string="Toon op website"/>
+<<<<<<< HEAD
                             <button name="next_status" string="Volgende status" type="object" class="oe_stat_button" icon="fa-arrow-right"/>
                             <button name="previous_status" string="Vorige status" type="object" class="oe_stat_button" icon="fa-arrow-left"/>
 
+=======
+                            <button type="object" name="show_qr_image" class="oe_stat_button" icon="fa-qrcode"
+                                    string="QR code"/>
+                            <button name="create_transaction" string="Maak transactie" type="object"
+                                    class="oe_stat_button" icon="fa-file-o "/>
+                            <button name="delete_transaction" string="Verwijder transactie" type="object"
+                                    class="oe_stat_button" confirm="Ben je zeker dat je de transactie wilt verwijderen?"
+                                    icon="fa-times"/>
+>>>>>>> 7541e032c0cd9cdd8c9790633bd48f661daac490
                         </div>
                         <h1>
                             <label for="xx_display_name" string="Weergave naam"/>
@@ -195,9 +204,10 @@
                                         <field name="xx_zip"/>
                                     </group>
                                 </group>
-
                             </page>
-
+                            <page string="Omschrijving">
+                                <field name="xx_description" placeholder="Algemene omschrijving"/>
+                            </page>
                             <page string="Attributen">
                                 <field name="xx_attribute">
                                     <tree string="House attributes">
@@ -265,17 +275,6 @@
                                     </group>
                                 </group>
                             </page>
-
-                            <page string="QR code">
-                                <group>
-                                    <group>
-                                        <button name="generate_image" string="Generate Barcode Image" type="object"/>
-                                        <newline/>
-                                        <field name="image" widget="image" readonly="1" nolabel="1" height="500"
-                                               width="500"/>
-                                    </group>
-                                </group>
-                            </page>
                         </notebook>
                     </sheet>
                 </xpath>
@@ -312,16 +311,17 @@
 
         <!-- Search view for house -->
         <record id="house_search_view" model="ir.ui.view">
-			<field name="name">xx.house.search.view</field>
-			<field name="model">product.template</field>
-			<field name="arch" type="xml">
-				<search string="Huis Informatie">
-					<field name="name"/>
+            <field name="name">xx.house.search.view</field>
+            <field name="model">product.template</field>
+            <field name="arch" type="xml">
+                <search string="Huis Informatie">
+                    <field name="name"/>
                     <field name="xx_street"/>
-					<field name="xx_reference"/>
-					<field name="xx_seller_id"/>
+                    <field name="xx_reference"/>
+                    <field name="xx_seller_id"/>
                     <field name="xx_city"/>
                     <field name="xx_provence"/>
+<<<<<<< HEAD
 					<group expand="0" string="Groepeer">
 						<filter name="groupby_house_type" string="Huis type" domain="[]" context="{'group_by':'xx_house_type'}"
 							help="Groepeer woningen per huis type"/>
@@ -333,6 +333,20 @@
 				</search>
 			</field>
 		</record>
+=======
+                    <group expand="0" string="Groepeer">
+                        <filter name="groupby_house_type" string="Huis type" domain="[]"
+                                context="{'group_by':'xx_house_type'}"
+                                help="Groepeer woningen per huis type"/>
+                        <filter name="groupby_city" context="{'group_by': 'xx_city'}" string="Stad"
+                                help="Groepeer woningen per gemeente"/>
+                        <filter name="groupby_provence" context="{'group_by': 'xx_provence'}" string="Provincie"
+                                help="Groepeer woningen per provincie"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+>>>>>>> 7541e032c0cd9cdd8c9790633bd48f661daac490
 
 
     </data>

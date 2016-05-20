@@ -11,9 +11,17 @@
                 </xpath>
                 <xpath expr="//sheet" position="before">
                     <sheet>
-                        <group col="2">
-                            <group col="2">
+                        <div class="oe_button_box" name="button_box">
+                            <button type="object" name="create_user" class="oe_stat_button" icon="fa-globe"
+                                    string="Maak login"/>
+                        </div>
+                        <group>
+                            <h1>
                                 <field name="name"/>
+                            </h1>
+                        </group>
+                        <group>
+                            <group col="2">
                                 <field name="xx_email" widget='email'/>
                                 <field name="xx_telephone"/>
                                 <field name="xx_cellphone"/>
@@ -25,7 +33,6 @@
                                 <field name="xx_zip"/>
                             </group>
                         </group>
-
                         <notebook>
                             <page string="Extra informatie">
                                 <group col="2">

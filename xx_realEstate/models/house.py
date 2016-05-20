@@ -1,14 +1,12 @@
-import subprocess
 from openerp import models, fields, api, exceptions
 from reportlab.graphics.barcode import createBarcodeDrawing
 import base64
-import webbrowser
 from openerp.tools.translate import _
 import datetime
-import os
-import urllib
 
 WEBSITE_URL = 'http://192.168.84.91:8091/shop/product/'
+QR_URL = 'http://192.168.84.91:8091/web/image?model=product.template&id='
+QR_ATTRIBUTE = '&field=image'
 
 
 class House(models.Model):
@@ -34,6 +32,7 @@ class House(models.Model):
     xx_sold = fields.Boolean('Verkocht')
     xx_buy_hire = fields.Selection([('huren', 'Huren'), ('kopen', 'Kopen'), ('beide', 'Beide')], string='Kopen/Huren',
                                    required=True)
+    xx_description = fields.Text('Omschrijving', required=True)
     xx_build_year = fields.Integer('Bouwjaar')
     xx_reference = fields.Char('Referentie')
     xx_description = fields.Text('Beschrijving')
@@ -89,10 +88,11 @@ class House(models.Model):
     def create(self, vals):
         # TODO Use sequence to fetch the reference
         reference_dict = {
-            'xx_reference': str(len(self.search_read([], ['id']))) + str(datetime.datetime.now().microsecond)
-        }
+            'xx_reference': str(len(self.search_read([], ['id']))) + str(datetime.datetime.now().microsecond)}
         vals.update(reference_dict)
-        return super(House, self).create(vals)
+        new_obj = super(House, self).create(vals)
+        new_obj.generate_image(new_obj.xx_street, new_obj.xx_street_number, new_obj.id)
+        return new_obj
 
     @api.onchange('xx_starting_price')
     def _onchange_starting_price(self):
@@ -139,12 +139,22 @@ class House(models.Model):
         }
 
     @api.multi
+    def show_qr_image(self):
+        return {
+            'name': 'Go to website',
+            'res_model': 'ir.actions.act_url',
+            'type': 'ir.actions.act_url',
+            'target': 'current',
+            'url': QR_URL + str(self.id) + QR_ATTRIBUTE
+        }
+    @api.multi
     def create_transaction(self):
         if self.id:
             if not self.xx_transaction_id:
                 self.xx_sold = True
                 view_ref = self.env['ir.model.data'].get_object_reference('xx_realEstate', 'xx_transaction_form_view')
                 view_id = view_ref[1] if view_ref else False
+                t_name = "t" + str(self.id)
                 t_name = "t"+str(self.id).zfill(6)
                 res = {
                     'type': 'ir.actions.act_window',
@@ -162,7 +172,8 @@ class House(models.Model):
                 }
                 return res
             else:
-                raise exceptions.Warning("Er bestaat al een transactie voor deze woning, voor elke woning kan er maar 1 transactie bestaan")
+                raise exceptions.Warning(
+                    "Er bestaat al een transactie voor deze woning, voor elke woning kan er maar 1 transactie bestaan")
         else:
             raise exceptions.Warning("De woning moet opgeslagen worden voor er een transactie kan aangemaakt worden")
 
@@ -268,19 +279,15 @@ class QrCode(models.Model):
     _inherit = 'product.template'
 
     image = fields.Binary('QR code')
-    xx_width = fields.Integer('Width')
-    xx_height = fields.Integer('Height')
 
-    def generate_image(self, cr, uid, ids, context=None):
-        for self_obj in self.browse(cr, uid, ids, context=context):
-            options = {'width': 500, 'height': 500}
-            current_url = WEBSITE_URL + (
-                self_obj.xx_street + "-" + self_obj.xx_street_number + "-" + str(self_obj.id)).lower()
-            ret_val = createBarcodeDrawing('QR', value=str(current_url), **options)
-            image = base64.encodestring(ret_val.asString('png'))
-            self.write(cr, uid, self_obj.id,
-                       {'image': image}, context=context)
-        return True
+    @api.multi
+    def generate_image(self, street, number, house_id):
+        options = {'width': 500, 'height': 500}
+        current_url = WEBSITE_URL + (
+            street + "-" + number + "-" + str(house_id)).lower()
+        ret_val = createBarcodeDrawing('QR', value=str(current_url), **options)
+        image = base64.encodestring(ret_val.asString('png'))
+        self.write({'image': image})
 
 
 class HouseAttribute(models.Model):
