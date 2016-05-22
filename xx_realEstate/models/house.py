@@ -18,7 +18,7 @@ class House(models.Model):
     name = fields.Char(compute='_get_name', store=True, default='', string='Adres')
     xx_street = fields.Char('Straatnaam', required=True)
     xx_street_number = fields.Char('Huisnummer', required=True)
-    xx_city = fields.Many2one('xx.city', 'Stad')
+    xx_city = fields.Many2one('xx.city', 'Gemeente', required=True)
     xx_zip = fields.Char('Postcode', required=True)
     xx_provence = fields.Selection(
         [('antwerpen', 'Antwerpen'), ('limburg', 'Limburg'), ('oostvlaanderen', 'Oost-Vlaanderen'),
@@ -28,12 +28,12 @@ class House(models.Model):
     xx_current_price = fields.Float('Huidige prijs', required=True)
     xx_total_area = fields.Integer('Totale oppervlakte', required=True)
     xx_living_area = fields.Integer('Bewoonbare oppervlakte', required=True)
-    xx_unique_epc = fields.Float('EPC code', required=True)
+    xx_unique_epc = fields.Char('EPC code')
     xx_sold = fields.Boolean('Verkocht')
     xx_buy_hire = fields.Selection([('huren', 'Huren'), ('kopen', 'Kopen'), ('beide', 'Beide')], string='Kopen/Huren',
                                    required=True)
     xx_description = fields.Text('Omschrijving', required=True)
-    xx_build_year = fields.Integer('Bouwjaar')
+    xx_build_year = fields.Char('Bouwjaar')
     xx_reference = fields.Char('Referentie')
 
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
@@ -47,6 +47,13 @@ class House(models.Model):
     xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
     xx_status_id = fields.Many2one('xx.house.status', string='Status', required=True)
+
+    @api.constrains('xx_build_year')
+    def _check_build_year_valid(self):
+        if self.xx_build_year:
+            bouwjaar = self.xx_build_year
+            if not bouwjaar.isdigit():
+                raise exceptions.ValidationError("Bouwjaar is niet geldig")
 
     @api.multi
     def action_view_visitor(self):
@@ -189,12 +196,13 @@ class House(models.Model):
         if self.xx_status_id:
             xhs = self.env['xx.house.status']
             position = self.xx_status_id.xx_position
+
             status = xhs.search([('xx_position', '=', position + 1)])
-            if (status):
-                self.xx_status_id = status.id
+            if status:
                 status2 = xhs.search([('xx_position', '=', position + 2)])
-                if not (status2):
+                if not status2:
                     return self.create_transaction()
+                self.xx_status_id = status.id
             else:
                 raise exceptions.Warning("De woning bevindt zich in de laatste status")
 
@@ -205,10 +213,10 @@ class House(models.Model):
             xhs = self.env['xx.house.status']
             position = self.xx_status_id.xx_position
             status = xhs.search([('xx_position', '=', position - 1)])
-            if (status):
+            if status:
                 self.xx_status_id = status.id
                 status2 = xhs.search([('xx_position', '=', position + 1)])
-                if not (status2):
+                if not status2:
                     self.delete_transaction()
             else:
                 raise exceptions.Warning("De woning bevindt zich in de eerste status")
@@ -349,16 +357,17 @@ class HouseDocumentType(models.Model):
 class HouseVisitors(models.Model):
     _name = 'xx.house.visitors'
 
-    @api.model
-    def create(self, vals):
-        vals.update({
-            'xx_house': self._context.get('active_id')
-        })
-        return super(HouseVisitors, self).create(vals)
-
     name = fields.Many2one('res.partner', 'Naam', required=True)
     xx_date = fields.Datetime('Datum', required=True)
     xx_house = fields.Many2one('product.template', 'Huis')
+
+    @api.model
+    def default_get(self, vals):
+        res = super(HouseVisitors, self).default_get(vals)
+        res.update({
+            'xx_house': self._context.get('active_id')
+        })
+        return res
 
 
 class HouseStatus(models.Model):
@@ -371,3 +380,13 @@ class HouseStatus(models.Model):
     def _check_position_valid(self):
         if (self.xx_position < 0):
             raise exceptions.ValidationError("Positie is niet geldig, moet positief zijn")
+        else:
+            pos = self.env["xx.house.status"].search([('xx_position', '=', self.xx_position)])
+            if len(pos) > 1:
+                raise exceptions.ValidationError("Positie bestaat al")
+            else:
+                small_pos = self.search([('xx_position', '=', self.xx_position - 1)])
+                if len(small_pos) == 0 and self.xx_position != 0:
+                    raise exceptions.ValidationError(
+                        "Vooraleer deze positie gebruikt mag worden moet eerst positie %s gebruikt worden" % str(
+                            self.xx_position - 1))

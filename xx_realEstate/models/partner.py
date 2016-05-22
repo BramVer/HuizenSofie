@@ -1,9 +1,6 @@
-from openerp import models, fields, api, exceptions
 import re
-from random import randint
-from openerp.tools import email_split
-from openerp import SUPERUSER_ID
-from openerp.exceptions import UserError
+
+from openerp import models, fields, api, exceptions
 
 
 class User(models.Model):
@@ -19,6 +16,8 @@ class User(models.Model):
     xx_cellphone = fields.Char(string="GSM-nummer")
     xx_has_login = fields.Boolean('Heeft login')
     # wachtwoord
+
+    email = fields.Char(string="E-mailadres", required=True)
     xx_type = fields.Selection(
         [('verkoper', 'Verkoper'), ('koper', 'Koper'), ('verkoper_koper', 'Verkoper/Koper'), ('bezoeker', 'Bezoeker')],
         string='Type', required=True)
@@ -77,8 +76,9 @@ class User(models.Model):
             'email': self.email,
             'login': self.email,
             'partner_id': self.id,
-            'groups_id': [(6, 0, [])],
+            'groups_id': [(6, 0, [])]
         }
+
         user = self.env['res.users'].create(values)
         return user.id
 
