@@ -93,9 +93,8 @@ class User(models.Model):
         self.signup_prepare([user.partner_id.id], context=context)
 
         context.update({'dbname': self._cr.dbname, 'portal_url': portal_url})
-        template_id = self.pool['ir.model.data'].xmlid_to_res_id(self._cr, self._uid,
-                                                                 'portal.mail_template_data_portal_welcome')
-        if template_id:
-            self.pool['mail.template'].send_mail(self._cr, self._uid, template_id, self.id, force_send=True,
-                                                 context=context)
+        template_id = self.env['ir.model.data'].xmlid_to_res_id('portal.mail_template_data_portal_welcome')
+        for partner in self:
+            if template_id:
+                self.env['mail.template'].browse(template_id).send_mail(partner.id, force_send=True)
         return True
