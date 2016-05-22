@@ -39,7 +39,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Maak uw eerste huis type aan
+                <p class="oe_view_nocontent_create">Maak het eerste huis type aan
                 </p>
             </field>
         </record>
@@ -72,7 +72,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Maak uw eerste transactie aan
+                <p class="oe_view_nocontent_create">Maak de eerste transactie aan
                 </p>
             </field>
         </record>
@@ -83,7 +83,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Maak je eerste bezichtiging aan
+                <p class="oe_view_nocontent_create">Maak de eerste bezichtiging aan
                 </p>
             </field>
         </record>
@@ -93,7 +93,7 @@
         <menuitem id="residences_menu" name="Woningen"
                   parent="main_residences_menu" sequence="1"/>
 
-        <menuitem id="visitors_menu" name="Bezoekers"
+        <menuitem id="visitors_menu" name="Bezichtigingen"
                   parent="main_residences_menu" sequence="2"/>
 
         <menuitem id="attributes_menu" name="Attributen en documenten"
@@ -115,7 +115,7 @@
         <menuitem id="house_document" name="Documenten lijst" parent="attributes_menu"
                   action="house_document_action"/>
 
-        <menuitem id="house_visitor" name="Bezoeker lijst" parent="visitors_menu"
+        <menuitem id="house_visitor" name="Bezichtigingen lijst" parent="visitors_menu"
                   action="xx_visitor_list_action"/>
 
         <menuitem id="house_attribute_type" name="Huis attribuut types" parent="attributes_menu"
@@ -303,24 +303,27 @@
         <record id="house_search_view" model="ir.ui.view">
             <field name="name">xx.house.search.view</field>
             <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
             <field name="arch" type="xml">
-                <search string="Huis Informatie">
-                    <field name="name"/>
-                    <field name="xx_street"/>
-                    <field name="xx_reference"/>
-                    <field name="xx_seller_id"/>
-                    <field name="xx_city"/>
-                    <field name="xx_provence"/>
+                <xpath expr="//search" position="replace">
+                    <search string="Huis Informatie">
+                        <field name="name"/>
+                        <field name="xx_street"/>
+                        <field name="xx_reference"/>
+                        <field name="xx_seller_id"/>
+                        <field name="xx_city"/>
+                        <field name="xx_provence"/>
 
-					<group expand="0" string="Groepeer">
-						<filter name="groupby_house_type" string="Huis type" domain="[]" context="{'group_by':'xx_house_type'}"
-							help="Groepeer woningen per huis type"/>
-						<filter name="groupby_city" context="{'group_by': 'xx_city'}" string="Gemeente"
-							help="Groepeer woningen per gemeente" />
-						<filter name="groupby_provence" context="{'group_by': 'xx_provence'}" string="Provincie"
-                            help="Groepeer woningen per provincie"/>
-					</group>
-				</search>
+                        <group expand="0" string="Groepeer">
+                            <filter name="groupby_house_type" string="Huis type" domain="[]" context="{'group_by':'xx_house_type'}"
+                                help="Groepeer woningen per huis type"/>
+                            <filter name="groupby_city" context="{'group_by': 'xx_city'}" string="Gemeente"
+                                help="Groepeer woningen per gemeente" />
+                            <filter name="groupby_provence" context="{'group_by': 'xx_provence'}" string="Provincie"
+                                help="Groepeer woningen per provincie"/>
+                        </group>
+                    </search>
+                </xpath>
 			</field>
 		</record>
 

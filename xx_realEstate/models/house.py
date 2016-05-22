@@ -201,10 +201,10 @@ class House(models.Model):
             position = self.xx_status_id.xx_position
             status = xhs.search([('xx_position', '=', position+1)])
             if(status):
-                self.xx_status_id = status.id
                 status2 = xhs.search([('xx_position', '=', position+2)])
                 if not (status2):
                     return self.create_transaction()
+                self.xx_status_id = status.id
             else:
                 raise exceptions.Warning("De woning bevindt zich in de laatste status")
 
@@ -388,4 +388,8 @@ class HouseStatus(models.Model):
             pos = self.env["xx.house.status"].search([('xx_position', '=', self.xx_position)])
             if len(pos) > 1:
                 raise exceptions.ValidationError("Positie bestaat al")
+            else:
+                small_pos = self.search([('xx_position', '=', self.xx_position-1)])
+                if len(small_pos) == 0 and self.xx_position!=0:
+                      raise exceptions.ValidationError("Vooraleer deze positie gebruikt mag worden moet eerst positie %s gebruikt worden" % str(self.xx_position-1))
 
