@@ -16,7 +16,7 @@ class User(models.Model):
     xx_cellphone = fields.Char(string="GSM-nummer")
     xx_has_login = fields.Boolean('Heeft login')
     # wachtwoord
-    xx_email = fields.Char(string="E-mailadres", required=True)
+    email = fields.Char(string="E-mailadres", required=True)
     xx_type = fields.Selection([('verkoper', 'Verkoper'), ('koper', 'Koper'), ('verkoper_koper', 'Verkoper/Koper'), ('bezoeker', 'Bezoeker')], string='Type', required=True)
 
     xx_buyTransaction_ids = fields.One2many('xx.transaction', 'xx_buyer_id', string='Huizen gekocht')
@@ -51,14 +51,14 @@ class User(models.Model):
         if not self.xx_telephone and not self.xx_cellphone:
             raise exceptions.ValidationError("Telefoon of gsm nummer moet ingevuld zijn")
 
-    @api.constrains('xx_email')
+    @api.constrains('email')
     def _check_email_valid(self):
-        if not re.match("[^@]+@[^@]+\.[^@]+", self.xx_email):
+        if not re.match("[^@]+@[^@]+\.[^@]+", self.email):
             raise exceptions.ValidationError("Email is niet geldig")
 
-    @api.onchange('xx_email')
+    @api.onchange('email')
     def _check_unique_email(self):
-        user = self.search([('xx_email', '=', self.xx_email)])
+        user = self.search([('email', '=', self.email)])
         if len(user) != 0:
             raise exceptions.ValidationError('Email reeds in gebruik bij %s' % user[0].name)
 
@@ -71,7 +71,7 @@ class User(models.Model):
 
         vals = {
             'name': username,
-            'login': self.xx_email
+            'login': self.email
         }
         self.env['res.users'].create(vals)
 

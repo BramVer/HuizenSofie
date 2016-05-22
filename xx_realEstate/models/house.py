@@ -18,7 +18,7 @@ class House(models.Model):
     name = fields.Char(compute='_get_name', store=True, default='', string='Adres')
     xx_street = fields.Char('Straatnaam', required=True)
     xx_street_number = fields.Char('Huisnummer', required=True)
-    xx_city = fields.Many2one('xx.city', 'Stad')
+    xx_city = fields.Many2one('xx.city', 'Gemeente', required=True)
     xx_zip = fields.Char('Postcode', required=True)
     xx_provence = fields.Selection(
         [('antwerpen', 'Antwerpen'), ('limburg', 'Limburg'), ('oostvlaanderen', 'Oost-Vlaanderen'),
@@ -28,14 +28,13 @@ class House(models.Model):
     xx_current_price = fields.Float('Huidige prijs', required=True)
     xx_total_area = fields.Integer('Totale oppervlakte', required=True)
     xx_living_area = fields.Integer('Bewoonbare oppervlakte', required=True)
-    xx_unique_epc = fields.Float('EPC code', required=True)
+    xx_unique_epc = fields.Char('EPC code')
     xx_sold = fields.Boolean('Verkocht')
     xx_buy_hire = fields.Selection([('huren', 'Huren'), ('kopen', 'Kopen'), ('beide', 'Beide')], string='Kopen/Huren',
                                    required=True)
     xx_description = fields.Text('Omschrijving', required=True)
-    xx_build_year = fields.Integer('Bouwjaar')
+    xx_build_year = fields.Char('Bouwjaar')
     xx_reference = fields.Char('Referentie')
-    xx_description = fields.Text('Beschrijving')
 
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
     xx_documents = fields.One2many('xx.house.document', 'xx_house', 'Documenten')
@@ -49,6 +48,14 @@ class House(models.Model):
     xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
     xx_status_id = fields.Many2one('xx.house.status', string='Status', required=True)
+
+
+    @api.constrains('xx_build_year')
+    def _check_build_year_valid(self):
+        if self.xx_build_year:
+            bouwjaar = self.xx_build_year
+            if not bouwjaar.isdigit():
+                raise exceptions.ValidationError("Bouwjaar is niet geldig")
 
     @api.multi
     def action_view_visitor(self):
@@ -235,6 +242,8 @@ class House(models.Model):
                 attributes.append(attr.id)
             self.xx_attribute = attributes
 
+
+
     @api.model
     def default_get(self, vals):
         res = super(House, self).default_get(vals)
@@ -353,16 +362,17 @@ class HouseDocumentType(models.Model):
 class HouseVisitors(models.Model):
     _name = 'xx.house.visitors'
 
-    @api.model
-    def create(self, vals):
-        vals.update({
-            'xx_house': self._context.get('active_id')
-        })
-        return super(HouseVisitors, self).create(vals)
-
     name = fields.Many2one('res.partner', 'Naam', required=True)
     xx_date = fields.Datetime('Datum', required=True)
     xx_house = fields.Many2one('product.template', 'Huis')
+
+    @api.model
+    def default_get(self, vals):
+        res = super(HouseVisitors, self).default_get(vals)
+        res.update({
+            'xx_house': self._context.get('active_id')
+        })
+        return res
 
 class HouseStatus(models.Model):
     _name = 'xx.house.status'
@@ -374,3 +384,8 @@ class HouseStatus(models.Model):
     def _check_position_valid(self):
         if (self.xx_position < 0):
             raise exceptions.ValidationError("Positie is niet geldig, moet positief zijn")
+        else:
+            pos = self.env["xx.house.status"].search([('xx_position', '=', self.xx_position)])
+            if len(pos) > 1:
+                raise exceptions.ValidationError("Positie bestaat al")
+

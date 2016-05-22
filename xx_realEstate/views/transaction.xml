@@ -9,7 +9,7 @@
                         <group>
                             <field name="name"/>
                             <field name="xx_buyer_id"/>
-                            <field name="xx_transactionSeller_id"/>
+                            <field name="xx_transactionSeller_id" readonly="1"/>
                             <field name="xx_house_id"/>
                         </group>
                         <group>

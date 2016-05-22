@@ -147,16 +147,15 @@
                                     type="object"
                                     class="oe_stat_button"
                                     icon="fa-users">
-                                <field name="xx_visitor_count" widget="statinfo" string="Bezoeker(s)"/>
+                                <field name="xx_visitor_count" widget="statinfo" string="Bezichtigingen"/>
                             </button>
                             <button type="object" name="show_current_house" class="oe_stat_button" icon="fa-globe"
                                     string="Toon op website"/>
-                            <button name="next_status" string="Volgende status" type="object" class="oe_stat_button" icon="fa-arrow-right"/>
+                            <button type="object" name="show_qr_image" class="oe_stat_button" icon="fa-qrcode" string="QR code"/>
                             <button name="previous_status" string="Vorige status" type="object" class="oe_stat_button" icon="fa-arrow-left"/>
+                            <button name="next_status" string="Volgende status" type="object" class="oe_stat_button" icon="fa-arrow-right"/>
 
 
-                            <button type="object" name="show_qr_image" class="oe_stat_button" icon="fa-qrcode"
-                                    string="QR code"/>
                         </div>
                         <h1>
                             <label for="xx_display_name" string="Weergave naam"/>
@@ -178,11 +177,12 @@
                                 <field name="xx_unique_epc"/>
                                 <field name="xx_reference" readonly="1"/>
                             </group>
-                            <group>
-                                <field name="xx_status_id" readonly="1"/>
-                                <field name="xx_sold" readonly="1"/>
-                                <field name="xx_transaction_id" readonly="1"/>
-                            </group>
+                        </group>
+                        <separator/>
+                        <group>
+                            <field name="xx_status_id" readonly="1"/>
+                            <field name="xx_sold" readonly="1"/>
+                            <field name="xx_transaction_id" readonly="1"/>
                         </group>
                         <notebook colspan="4">
                             <page string="Locatie">
@@ -218,9 +218,6 @@
                                         <field name="xx_exists"/>
                                     </tree>
                                 </field>
-                            </page>
-                            <page string="Beschrijving">
-                                <field name="xx_description"/>
                             </page>
                             <page string="Foto's">
                                 <group>

@@ -6,6 +6,7 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <field name="name" position="replace"/>
+                <field name="email" position="replace"/>
                 <xpath expr="//sheet" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
@@ -22,7 +23,7 @@
                         </group>
                         <group>
                             <group col="2">
-                                <field name="xx_email" widget='email'/>
+                                <field name="email" widget='email'/>
                                 <field name="xx_telephone"/>
                                 <field name="xx_cellphone"/>
                             </group>
@@ -54,7 +55,7 @@
                                     </tree>
                                 </field>
                             </page>
-                            <page string="Huizen gekocht" attrs="{'invisible':['|',('xx_type', '!=', 'koper'), ('xx_type', '!=', 'verkoper_koper')]}">
+                            <page string="Huizen gekocht" attrs="{'invisible':['|',('xx_type', '=', 'bezoeker'), ('xx_type', '=', 'verkoper')]}">
                                 <field name="xx_buyTransaction_ids">
                                     <tree string="Geregistreerde transacties">
                                         <field name="name"/>
@@ -78,7 +79,7 @@
                 <tree string="Course Tree">
                     <field name="name"/>
                     <field name="xx_type"/>
-                    <field name="xx_email"/>
+                    <field name="email"/>
                 </tree>
             </field>
         </record>
@@ -119,7 +120,7 @@
 			<field name="arch" type="xml">
 				<search string="Persoon Informatie">
 					<field name="name"/>
-                    <field name="xx_email"/>
+                    <field name="email"/>
                     <field name="xx_city"/>
                     <field name="xx_zip"/>
                     <field name="xx_type"/>
