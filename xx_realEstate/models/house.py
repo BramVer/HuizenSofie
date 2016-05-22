@@ -378,7 +378,7 @@ class HouseStatus(models.Model):
 
     @api.constrains('xx_position')
     def _check_position_valid(self):
-        if (self.xx_position < 0):
+        if self.xx_position < 0:
             raise exceptions.ValidationError("Positie is niet geldig, moet positief zijn")
         else:
             pos = self.env["xx.house.status"].search([('xx_position', '=', self.xx_position)])
