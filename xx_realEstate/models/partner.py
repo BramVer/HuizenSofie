@@ -1,6 +1,9 @@
 from openerp import models, fields, api, exceptions
 import re
 from random import randint
+from openerp.tools import email_split
+from openerp import SUPERUSER_ID
+from openerp.exceptions import UserError
 
 
 class User(models.Model):
@@ -16,7 +19,6 @@ class User(models.Model):
     xx_cellphone = fields.Char(string="GSM-nummer")
     xx_has_login = fields.Boolean('Heeft login')
     # wachtwoord
-    xx_email = fields.Char(string="E-mailadres", required=True)
     xx_type = fields.Selection(
         [('verkoper', 'Verkoper'), ('koper', 'Koper'), ('verkoper_koper', 'Verkoper/Koper'), ('bezoeker', 'Bezoeker')],
         string='Type', required=True)
@@ -48,31 +50,52 @@ class User(models.Model):
         if not self.xx_telephone and not self.xx_cellphone:
             raise exceptions.ValidationError("Telefoon of gsm nummer moet ingevuld zijn")
 
-    @api.constrains('xx_email')
+    @api.constrains('email')
     def _check_email_valid(self):
-        if not re.match("[^@]+@[^@]+\.[^@]+", self.xx_email):
+        if not re.match("[^@]+@[^@]+\.[^@]+", self.email):
             raise exceptions.ValidationError("Email is niet geldig")
 
-    @api.onchange('xx_email')
+    @api.onchange('email')
     def _check_unique_email(self):
-        user = self.search([('xx_email', '=', self.xx_email)])
+        user = self.search([('email', '=', self.email)])
         if len(user) != 0:
             raise exceptions.ValidationError('Email reeds in gebruik bij %s' % user[0].name)
 
     @api.multi
-    def create_user(self):
-        username = self._get_username(str(self.name).replace(" ", "").lower())
+    def setup_user(self):
+        self.create_user()
+        self.send_email()
 
-        vals = {
-            'name': username,
-            'login': self.xx_email
+    @api.multi
+    def action_apply(self):
+        self.write({'user_id': self._create_user()})
+        self._send_email()
+
+    @api.multi
+    def _create_user(self):
+        values = {
+            'email': self.email,
+            'login': self.email,
+            'partner_id': self.id,
+            'groups_id': [(6, 0, [])],
         }
-        self.env['res.users'].create(vals)
+        user = self.env['res.users'].create(values)
+        return user.id
 
-    @api.model
-    def _get_username(self, username):
-        returning_username = username
-        if len(self.env['res.users'].search([('name', '=', username)])) != 0:
-            returning_username += str(randint(1, 9))
-            self._username_taken(returning_username)
-        return returning_username
+    @api.multi
+    def _send_email(self):
+        # TODO check email signup
+        user = self.user_id
+        context = dict({}, lang=user.lang)
+        ctx_portal_url = dict(context, signup_force_type_in_url='')
+        portal_url = self._get_signup_url_for_action([user.partner_id.id], context=ctx_portal_url)[
+            user.partner_id.id]
+        self.signup_prepare([user.partner_id.id], context=context)
+
+        context.update({'dbname': self._cr.dbname, 'portal_url': portal_url})
+        template_id = self.pool['ir.model.data'].xmlid_to_res_id(self._cr, self._uid,
+                                                                 'portal.mail_template_data_portal_welcome')
+        if template_id:
+            self.pool['mail.template'].send_mail(self._cr, self._uid, template_id, self.id, force_send=True,
+                                                 context=context)
+        return True

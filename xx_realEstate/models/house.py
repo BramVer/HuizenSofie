@@ -35,7 +35,6 @@ class House(models.Model):
     xx_description = fields.Text('Omschrijving', required=True)
     xx_build_year = fields.Integer('Bouwjaar')
     xx_reference = fields.Char('Referentie')
-    xx_description = fields.Text('Beschrijving')
 
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
     xx_documents = fields.One2many('xx.house.document', 'xx_house', 'Documenten')
