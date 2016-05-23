@@ -1,0 +1,37 @@
+<openerp>
+    <data>
+
+
+        <record model="ir.ui.view" id="xx_visitor_form_view">
+            <field name="name">xx.house.visitors.form</field>
+            <field name="model">xx.house.visitors</field>
+            <field name="arch" type="xml">
+
+                <form string="Bezichtiging" version="7.0">
+                    <sheet>
+                        <separator string="Bezichtiging"/>
+                        <group>
+                            <field name="name" placeholder='John Doe'/>
+                            <field name="xx_date"/>
+                            <field name="xx_house" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="xx_visitor_tree_view">
+            <field name="name">xx.house.visitors.tree</field>
+            <field name="model">xx.house.visitors</field>
+            <field name="arch" type="xml">
+                <tree string="Bezoekers">
+                    <field name="name"/>
+                    <field name="xx_date"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

@@ -6,6 +6,7 @@
     'description': 'Mooi',
     'category': 'Theme',
     'version': '1.1',
+
     'depends': ['website','sale','xx_realEstate'],
     'data': ['views/bootswatch-native.xml',
              'views/welkom.xml',
@@ -21,6 +22,7 @@
 
              
              
+
 
             ],
     'application': False,

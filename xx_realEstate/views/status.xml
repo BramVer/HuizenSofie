@@ -1,0 +1,32 @@
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="xx_house_status_form">
+            <field name="name">xx.house.status.form</field>
+            <field name="model">xx.house.status</field>
+            <field name="arch" type="xml">
+                <form string="Status formulier">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="xx_position"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xx_house_status_tree_view">
+            <field name="name">xx.house.status.tree</field>
+            <field name="model">xx.house.status</field>
+            <field name="arch" type="xml">
+                <tree string="Status lijst">
+                    <field name="name"/>
+                    <field name="xx_position"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

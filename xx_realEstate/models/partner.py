@@ -1,5 +1,6 @@
-from openerp import models, fields, api, exceptions
 import re
+
+from openerp import models, fields, api, exceptions
 
 
 class User(models.Model):
@@ -13,13 +14,18 @@ class User(models.Model):
     xx_zip = fields.Char('Postcode')
     xx_telephone = fields.Char(string="Telefoonnummer")
     xx_cellphone = fields.Char(string="GSM-nummer")
+    xx_has_login = fields.Boolean('Heeft login')
     # wachtwoord
-    xx_email = fields.Char(string="E-mailadres", required=True)
-    xx_supplier = fields.Boolean(string="Is verkoper")
 
-    xx_buyTransaction_ids = fields.One2many('xx.transaction', 'xx_buyer_id', string='Houses bought')
+    email = fields.Char(string="E-mailadres", required=True)
+    xx_type = fields.Selection(
+        [('verkoper', 'Verkoper'), ('koper', 'Koper'), ('verkoper_koper', 'Verkoper/Koper'), ('bezoeker', 'Bezoeker')],
+        string='Type', required=True)
 
-    xx_housesOnSale_ids = fields.One2many('product.template', 'xx_seller_id', string='Houses on sale')
+    xx_buyTransaction_ids = fields.One2many('xx.transaction', 'xx_buyer_id', string='Huizen gekocht')
+
+    xx_housesOnSale_ids = fields.One2many('product.template', 'xx_seller_id', string='Huizen te koop')
+    xx_visitor_ids = fields.One2many('xx.house.visitors', 'name', string="Huizen bezichtigd")
 
     # Replace attributes to avoid error
     property_account_payable_id = fields.Many2one('account.account', company_dependent=True,
@@ -43,7 +49,52 @@ class User(models.Model):
         if not self.xx_telephone and not self.xx_cellphone:
             raise exceptions.ValidationError("Telefoon of gsm nummer moet ingevuld zijn")
 
-    @api.constrains('xx_email')
+    @api.constrains('email')
     def _check_email_valid(self):
-        if not re.match("[^@]+@[^@]+\.[^@]+", self.xx_email):
+        if not re.match("[^@]+@[^@]+\.[^@]+", self.email):
             raise exceptions.ValidationError("Email is niet geldig")
+
+    @api.onchange('email')
+    def _check_unique_email(self):
+        user = self.search([('email', '=', self.email)])
+        if len(user) != 0:
+            raise exceptions.ValidationError('Email reeds in gebruik bij %s' % user[0].name)
+
+    @api.multi
+    def setup_user(self):
+        self.create_user()
+        self.send_email()
+
+    @api.multi
+    def action_apply(self):
+        self.write({'user_id': self._create_user()})
+        self._send_email()
+
+    @api.multi
+    def _create_user(self):
+        values = {
+            'email': self.email,
+            'login': self.email,
+            'partner_id': self.id,
+            'groups_id': [(6, 0, [])]
+        }
+
+        user = self.env['res.users'].create(values)
+        return user.id
+
+    @api.multi
+    def _send_email(self):
+        # TODO check email signup
+        user = self.user_id
+        context = dict({}, lang=user.lang)
+        ctx_portal_url = dict(context, signup_force_type_in_url='')
+        portal_url = self._get_signup_url_for_action([user.partner_id.id], context=ctx_portal_url)[
+            user.partner_id.id]
+        self.signup_prepare([user.partner_id.id], context=context)
+
+        context.update({'dbname': self._cr.dbname, 'portal_url': portal_url})
+        template_id = self.env['ir.model.data'].xmlid_to_res_id('portal.mail_template_data_portal_welcome')
+        for partner in self:
+            if template_id:
+                self.env['mail.template'].browse(template_id).send_mail(partner.id, force_send=True)
+        return True
