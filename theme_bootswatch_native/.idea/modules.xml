@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../addons/.idea/addons.iml" filepath="$PROJECT_DIR$/../../addons/.idea/addons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/theme_bootswatch_native.iml" filepath="$PROJECT_DIR$/.idea/theme_bootswatch_native.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../xx_realEstate/.idea/xx_realEstate.iml" filepath="$PROJECT_DIR$/../xx_realEstate/.idea/xx_realEstate.iml" />
+    </modules>
+  </component>
+</project>

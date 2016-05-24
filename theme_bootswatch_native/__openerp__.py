@@ -6,15 +6,23 @@
     'description': 'Mooi',
     'category': 'Theme',
     'version': '1.1',
-    'depends': ['website','sale'],
+
+    'depends': ['website','sale','xx_realEstate'],
     'data': ['views/bootswatch-native.xml',
-             'views/footer.xml',
              'views/welkom.xml',
+             'views/footer.xml',
              'views/referenties.xml',
              'views/advies.xml',
              'views/woningen.xml',
              'views/contact.xml',
-             'views/woningview.xml'
+             'views/woningview.xml',
+             'views/mainlayout.xml',
+             'views/submenu.xml',
+             'views/showlogo.xml'
+
+             
+             
+
 
             ],
     'application': False,
