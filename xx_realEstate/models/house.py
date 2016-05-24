@@ -170,6 +170,7 @@ class House(models.Model):
                     'view_id': view_id,
                     'target': 'current',
                     'context': {'default_xx_house_id': self.id,
+                                'default_xx_transactionSeller': self.xx_seller_id.id,
                                 'default_name': t_name,
                                 'default_xx_price': self.xx_current_price,
                                 'default_xx_date': datetime.datetime.today().strftime('%Y-%m-%d')
