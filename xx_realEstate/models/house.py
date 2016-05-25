@@ -101,15 +101,17 @@ class House(models.Model):
 
     @api.onchange('xx_starting_price')
     def _onchange_starting_price(self):
-        self.xx_current_price = self.xx_starting_price
         if self.xx_current_price:
+            self.xx_current_price = self.xx_starting_price
             warning = {
                 'title': _('Opgelet'),
                 'message': _(
                     'Het veranderen van de startprijs past automatisch de huidige prijs aan')
             }
             return {'warning': warning}
+        self.xx_current_price = self.xx_starting_price
 
+    # TODO does the format change? Else delete
     @api.onchange('xx_current_price')
     def _onchange_current_price(self):
         self.xx_starting_price = self.xx_starting_price
@@ -123,13 +125,6 @@ class House(models.Model):
     def _onchange_city(self):
         if self.xx_city:
             self.xx_zip = self.xx_city.xx_zip
-
-    @api.multi
-    def set_current_price(self):
-        if self.xx_starting_price:
-            self.xx_current_price = self.xx_starting_price
-        else:
-            raise exceptions.Warning("Er is geen startprijs ingesteld")
 
     @api.multi
     def show_current_house(self):
