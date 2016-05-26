@@ -65,8 +65,8 @@
             <div class="container">
               <div class="row">
 
-                <div class="col-md-12 text-center mb32 mt64">
-                  <h2 style="color:#0d3532; font-size:60px">OMSCHRIJVING&amp;nbsp;</h2>
+                <div class="col-md-12 text-left mb32 mt64">
+                  <h2 style="color:#0d3532; font-size:60px">Omschrijving&amp;nbsp;</h2>
                   <h3 class="text-muted">&amp;nbsp;</h3>
                 </div>
                 <div class="col-md-12 mt16 mb48" style="color:#0d3532; font-size:20px;">
@@ -118,17 +118,14 @@
             </tr>
           </t>
         </table>
-        <div class="col-md-12 text-center mb32 mt32" style="width: 50%; overflow: hidden; height: 360px;">
-
-        <div style="width: 50%; overflow: hidden; height: 360px;">
-
-          <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgmpckf0b-E7mKPzI0Irfp4ammqSUs240&amp;q=Antwerpen,Meistraat" width="100%" height="370px" style="border:0">
-        </iframe>
-        </div>
+        <!-- GMAPS -->
+        <div class="col-md-12 text-center mb32 mt32" style="width: 100%; overflow: hidden; height: 360px;">
+          <div style="width: 100%; overflow: hidden; height: 360px;">
+            <iframe t-att-src="product.google_maps_link()" width="100%" height="375px" style="border:0"></iframe>
+          </div>
         </div>
       </section>
       <div itemprop="description" t-field="product.website_description" class="oe_structure mt16" id="product_full_description"/>
-      <!-- LINK A LOCATION WITH VARIABLES DEFINED AT TOP OF DOCUMENT -->
     </div>
   </t>
 

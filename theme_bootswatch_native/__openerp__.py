@@ -18,7 +18,8 @@
              'views/woningview.xml',
              'views/mainlayout.xml',
              'views/submenu.xml',
-             'views/showlogo.xml'
+             'views/showlogo.xml',
+             'views/compdesc.xml'
 
              
              
