@@ -57,9 +57,8 @@
                                     </tree>
                                 </field>
                             </page>
-                            <!--
-                                                        <page string="Huizen gekocht" attrs="{'invisible':['|',('xx_type', '!=', 'koper'), ('xx_type', '!=', 'verkoper_koper')]}">
-                            -->
+
+
                             <page string="Huizen gekocht"
                                   attrs="{'invisible':['|',('xx_type', '=', 'bezoeker'), ('xx_type', '=', 'verkoper')]}">
                                 <field name="xx_buyTransaction_ids">
