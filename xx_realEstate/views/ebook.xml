@@ -1,0 +1,68 @@
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="xx_house_ebook_form">
+            <field name="name">xx.house.ebook.form</field>
+            <field name="model">xx.ebook</field>
+            <field name="arch" type="xml">
+                <form string="Ebook formulier">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button type="object" name="send_single_ebook" class="oe_stat_button" icon="fa-envelope"
+                                    string="Verstuur ebook"/>
+                        </div>
+                        <group>
+                            <field name="name"/>
+                            <field name="xx_previous_date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xx_house_ebook_tree_view">
+            <field name="name">xx.house.ebook.tree</field>
+            <field name="model">xx.ebook</field>
+            <field name="arch" type="xml">
+                <tree string="Ebook lijst">
+                    <field name="name"/>
+                    <field name="xx_previous_date"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--act_window name="New Sub menu"
+        res_model="xx.ebook"
+        src_model="xx.ebook"
+        key2="client_action_multi"
+        view_mode="form" target="new"
+        view_type="form"
+        id="act_new_sub_menu" /-->
+
+        <record id="send_ebook_action" model="ir.actions.server">
+
+            <field name="name">Send Ebook</field>
+            <field name="model_id" ref="model_xx_ebook"/>
+            <field name="state">code</field>
+            <field name="code">self.send_single_ebook(cr, uid, context.get('active_ids', []), context=context)</field>
+        </record>
+
+        <record model="ir.values" id="the_id">
+            <field name="name">Test</field>
+            <field name="model">xx.ebook</field>
+            <field name="key" >action</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.server,%d'%send_ebook_action"/>
+            <field name="object" eval="True"/>
+        </record>
+
+
+
+
+
+
+
+
+    </data>
+</openerp>
