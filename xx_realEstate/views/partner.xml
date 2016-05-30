@@ -38,6 +38,7 @@
                             <page string="Extra informatie">
                                 <group col="2">
                                     <field name="xx_type"/>
+                                    <field name="xx_want_ebook"/>
                                 </group>
                             </page>
                             <page string="Huizen te koop"
@@ -56,9 +57,8 @@
                                     </tree>
                                 </field>
                             </page>
-                            <!--
-                                                        <page string="Huizen gekocht" attrs="{'invisible':['|',('xx_type', '!=', 'koper'), ('xx_type', '!=', 'verkoper_koper')]}">
-                            -->
+
+
                             <page string="Huizen gekocht"
                                   attrs="{'invisible':['|',('xx_type', '=', 'bezoeker'), ('xx_type', '=', 'verkoper')]}">
                                 <field name="xx_buyTransaction_ids">

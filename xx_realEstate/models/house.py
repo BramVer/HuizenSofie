@@ -101,15 +101,17 @@ class House(models.Model):
 
     @api.onchange('xx_starting_price')
     def _onchange_starting_price(self):
-        self.xx_current_price = self.xx_starting_price
         if self.xx_current_price:
+            self.xx_current_price = self.xx_starting_price
             warning = {
                 'title': _('Opgelet'),
                 'message': _(
                     'Het veranderen van de startprijs past automatisch de huidige prijs aan')
             }
             return {'warning': warning}
+        self.xx_current_price = self.xx_starting_price
 
+    # TODO does the format change? Else delete
     @api.onchange('xx_current_price')
     def _onchange_current_price(self):
         self.xx_starting_price = self.xx_starting_price
@@ -123,13 +125,6 @@ class House(models.Model):
     def _onchange_city(self):
         if self.xx_city:
             self.xx_zip = self.xx_city.xx_zip
-
-    @api.multi
-    def set_current_price(self):
-        if self.xx_starting_price:
-            self.xx_current_price = self.xx_starting_price
-        else:
-            raise exceptions.Warning("Er is geen startprijs ingesteld")
 
     @api.multi
     def show_current_house(self):
@@ -170,6 +165,7 @@ class House(models.Model):
                     'view_id': view_id,
                     'target': 'current',
                     'context': {'default_xx_house_id': self.id,
+                                'default_xx_transactionSeller': self.xx_seller_id.id,
                                 'default_name': t_name,
                                 'default_xx_price': self.xx_current_price,
                                 'default_xx_date': datetime.datetime.today().strftime('%Y-%m-%d')
@@ -220,6 +216,13 @@ class House(models.Model):
                     self.delete_transaction()
             else:
                 raise exceptions.Warning("De woning bevindt zich in de eerste status")
+
+    @api.multi
+    def google_maps_link(self):
+        map_string = "http://www.google.com/maps/embed/v1/place?q=Belgium";
+        if self.xx_street:
+            map_string="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgmpckf0b-E7mKPzI0Irfp4ammqSUs240&q=" + str(self.xx_city.name) + "+" + str(self.xx_zip) +"," + str(self.xx_street) +"+" + str(self.xx_street_number)
+        return map_string
 
     @api.onchange('xx_house_type')
     def _onchange_house_type(self):
@@ -309,6 +312,9 @@ class HouseAttribute(models.Model):
         self.xx_unit_type = current_attributetype_obj.xx_unit
 
 
+
+
+
 class HouseAttributeType(models.Model):
     _name = 'xx.house.attribute.type'
 
@@ -390,3 +396,5 @@ class HouseStatus(models.Model):
                     raise exceptions.ValidationError(
                         "Vooraleer deze positie gebruikt mag worden moet eerst positie %s gebruikt worden" % str(
                             self.xx_position - 1))
+
+

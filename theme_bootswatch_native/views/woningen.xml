@@ -10,8 +10,7 @@
         <div class="container oe_website_sale">
           <div class="products_pager">
             <div class="row" style="width: 100%;">
-              <div class="searchWrap">
-                <div class="search">
+              <div class="search">
                   <div class="search-side">
                     <div id="search-hover">
                       <form id="form_search-hover">
@@ -75,7 +74,6 @@
                     </div>
                   </div>
                 </div>
-              </div>
               <t t-call="website_sale.pricelist_list"/>
               <t t-call="website.pager"/>
             </div>
@@ -132,11 +130,11 @@
   <field name="sequence" type="int">20</field>
 </record>
 
-
 <template>
   <link rel="stylesheet" href="../static/css/style.css" style="text/css"/>
   <script rel="stylesheet" href="../static/js/search.js"></script>
 </template>
+
 
   </data>
 </openerp>
