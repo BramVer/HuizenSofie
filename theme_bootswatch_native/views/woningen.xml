@@ -132,11 +132,6 @@
   <field name="sequence" type="int">20</field>
 </record>
 
-<template>
-  <link rel="stylesheet" href="../static/css/style.css" style="text/css"/>
-  <script rel="stylesheet" href="../static/js/search.js"></script>
-</template>
-
 
   </data>
 </openerp>
