@@ -1,9 +1,10 @@
-.oe_product section .text-info {
-    color: #2A9CBE;
-}
-
 /*SEARCHBAR*/
 
+.search {
+	padding: 90px 150px;
+	background-image: url(../img/parquet-flooring.jpg);
+	background-attachment: fixed;
+}
 
 .search-side {
 	display: block;
