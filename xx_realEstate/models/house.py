@@ -312,6 +312,9 @@ class HouseAttribute(models.Model):
         self.xx_unit_type = current_attributetype_obj.xx_unit
 
 
+
+
+
 class HouseAttributeType(models.Model):
     _name = 'xx.house.attribute.type'
 
@@ -393,3 +396,5 @@ class HouseStatus(models.Model):
                     raise exceptions.ValidationError(
                         "Vooraleer deze positie gebruikt mag worden moet eerst positie %s gebruikt worden" % str(
                             self.xx_position - 1))
+
+

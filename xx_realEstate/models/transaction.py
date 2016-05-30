@@ -16,6 +16,7 @@ class Transaction(models.Model):
     @api.model
     def create(self, vals):
         new_transaction = super(Transaction, self).create(vals)
+        new_transaction.write({'xx_transactionSeller': new_transaction.xx_house_id.xx_seller_id.id})
         env = self.env["product.template"]
         house = env.browse(vals.get('xx_house_id'))
 
@@ -31,8 +32,3 @@ class Transaction(models.Model):
     def _onchange_house(self):
         self.xx_transactionSeller = self.xx_house_id.xx_seller_id.id
 
-    @api.model
-    def create(self, vals):
-        trans_id = super(Transaction, self).create(vals)
-        trans_id.write({'xx_transactionSeller': trans_id.xx_house_id.xx_seller_id.id})
-        return trans_id

@@ -66,6 +66,17 @@
             </field>
         </record>
 
+        <record model="ir.actions.act_window" id="house_ebook_action">
+            <field name="name">Ebook</field>
+            <field name="res_model">xx.ebook</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Maak de eerste ebook email aan
+                </p>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="transaction_list_action">
             <field name="name">Transacties</field>
             <field name="res_model">xx.transaction</field>
@@ -128,6 +139,8 @@
         <menuitem id="house_status" name="Status lijst" parent="settings_menu"
                   action="house_status_action"/>
 
+        <menuitem id="house_ebook" name="Ebook lijst" parent="settings_menu"
+                  action="house_ebook_action"/>
 
         <menuitem id="transactionList_menu" name="Transactie lijst" parent="transactions_menu"
                   action="transaction_list_action"/>
