@@ -38,6 +38,7 @@
                             <page string="Extra informatie">
                                 <group col="2">
                                     <field name="xx_type"/>
+                                    <field name="xx_want_ebook"/>
                                 </group>
                             </page>
                             <page string="Huizen te koop"
@@ -56,9 +57,8 @@
                                     </tree>
                                 </field>
                             </page>
-                            <!--
-                                                        <page string="Huizen gekocht" attrs="{'invisible':['|',('xx_type', '!=', 'koper'), ('xx_type', '!=', 'verkoper_koper')]}">
-                            -->
+
+
                             <page string="Huizen gekocht"
                                   attrs="{'invisible':['|',('xx_type', '=', 'bezoeker'), ('xx_type', '=', 'verkoper')]}">
                                 <field name="xx_buyTransaction_ids">
@@ -119,7 +119,10 @@
         <!-- Full id location:
              action="openacademy.course_list_action"
              It is not required when it is the same module -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> ac455a42c0e33672c068b52bcb2f4963548e7cd8
         <record id="partner_search_view" model="ir.ui.view">
             <field name="name">xx.user.search.view</field>
             <field name="model">res.partner</field>
