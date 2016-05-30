@@ -119,26 +119,6 @@
         <!-- Full id location:
              action="openacademy.course_list_action"
              It is not required when it is the same module -->
-        <record id="house_search_view" model="ir.ui.view">
-            <field name="name">xx.user.search.view</field>
-            <field name="model">res.partner</field>
-            <field name="arch" type="xml">
-                <search string="Persoon Informatie">
-                    <field name="name"/>
-                    <field name="email"/>
-                    <field name="xx_city"/>
-                    <field name="xx_zip"/>
-                    <field name="xx_type"/>
-                    <group expand="0" string="Groepeer">
-                        <filter name="groupby_person_type" string="Partner type" domain="[]"
-                                context="{'group_by':'xx_type'}"
-                                help="Groepeer personen per type"/>
-                        <filter name="groupby_city" context="{'group_by': 'xx_city'}" string="Gemeente"
-                                help="Groepeer personen per gemeente"/>
-                    </group>
-                </search>
-            </field>
-        </record>
 
         <record id="partner_search_view" model="ir.ui.view">
             <field name="name">xx.user.search.view</field>
