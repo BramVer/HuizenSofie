@@ -2,7 +2,9 @@
 <openerp>
   <data>
 <template name="Woningview" id="website_sale.product" page="True">
-   <t t-call="website.layout">
+
+    <t t-call="website.layout">
+
     <t t-set="additional_title" t-value="product.xx_display_name"/>
     <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" class="js_sale">
       <section t-attf-class="container mt8 oe_website_sale #{(compute_currency(product.lst_price) - product.price) &gt; 0.1 and 'discount'}" id="product_detail">
@@ -56,39 +58,20 @@
         </div>
         <!-- SPECS -->
         <br/>
-        <h2 style="color:#0d3535">Specificaties</h2>
-        <br/>
-        <t t-set="i" t-value="0"/>
-        <!-- SPEC TABLE W FOREACH LOOP -->
-        <table class="table table-striped" style="width: 100%; font-family:Ropa Sans; color:#0d3532" cellspacing="1">
-          <t t-foreach="product.xx_attribute" t-as="p">
-            <tr>
-              <t t-if="p.xx_value">
-                <th class="col-sm-8" style="font-size: 22px; font-weight: bold;">
-                  <t t-esc="p.name.name"/>
-                </th>
-                <th class="col-sm-1">
-                  <t t-esc="p.xx_value"/>
-                  <t t-set="i" t-value="i + 1"/>
-                </th>
-                <th class="col-sm-1">
-                  <t t-if="p.name.xx_unit">
-                    <t t-esc="p.name.xx_unit"/>
-                  </t>
-                </th>
-              </t>
-            </tr>
-          </t>
-        </table>
-        <t name="Text Block" t-name="website.s_text_block">
+
+
+          <t name="Text Block" t-name="website.s_text_block">
           <section class="s_text_block">
             <div class="container">
               <div class="row">
-                <div class="col-md-12 text-center mb32 mt32">
-                  <h2>GROTE OMSCHRIJVING&amp;nbsp;</h2>
+
+                <div class="col-md-12 text-left mb32 mt64">
+                  <h2 style="color:#0d3532; font-size:60px">Omschrijving&amp;nbsp;</h2>
                   <h3 class="text-muted">&amp;nbsp;</h3>
                 </div>
-                <div class="col-md-12 mt16 mb128">
+                <div class="col-md-12 mt16 mb48" style="color:#0d3532; font-size:20px;">
+
+
                   <p>
                         A great way to catch your reader's attention is to tell a story.
                         Everything you consider writing can be told as a story.
@@ -110,15 +93,66 @@
             </div>
           </section>
         </t>
-        <div style="width: 50%; overflow: hidden; height: 360px;">
-          <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgmpckf0b-E7mKPzI0Irfp4ammqSUs240&amp;q=Antwerpen,Meistraat" width="100%" height="370px" style="border:0">
-        </iframe>
+
+        <h2 style="color:#0d3535; font-size:60px">Specificaties</h2>
+        <br/>
+        <t t-set="i" t-value="0"/>
+        <!-- SPEC TABLE W FOREACH LOOP -->
+        <table class="table table-striped" style="width: 100%; font-family:Ropa Sans; color:#0d3532; font-size:20px;">
+          <t t-foreach="product.xx_attribute" t-as="p">
+            <tr>
+              <t t-if="p.xx_value">
+                <th class="col-sm-8" style="font-size: 22px; font-weight: bold;">
+                  <t t-esc="p.name.name"/>
+                </th>
+                <th class="col-sm-1">
+                  <t t-esc="p.xx_value"/>
+                  <t t-set="i" t-value="i + 1"/>
+                </th>
+                <th class="col-sm-1">
+                  <t t-if="p.xx_unit_type">
+                    <t t-esc="p.xx_unit_type"/>
+                  </t>
+                </th>
+              </t>
+            </tr>
+          </t>
+        </table>
+        <!-- GMAPS -->
+        <div class="col-md-12 text-center mb32 mt32" style="width: 100%; overflow: hidden; height: 360px;">
+          <div style="width: 100%; overflow: hidden; height: 360px;">
+            <iframe t-att-src="product.google_maps_link()" width="100%" height="375px" style="border:0"></iframe>
+          </div>
         </div>
+
       </section>
       <div itemprop="description" t-field="product.website_description" class="oe_structure mt16" id="product_full_description"/>
-      <!-- LINK A LOCATION WITH VARIABLES DEFINED AT TOP OF DOCUMENT -->
     </div>
+
   </t>
+
+
+
+
+</template>
+
+    <template name="Publish" id="website.publish_management">
+
+    <div groups="base.group_website_publisher" t-ignore="true" class="pull-right css_editable_mode_hidden" t-att-style="style or ''">
+        <div t-attf-class="btn-group js_publish_management #{object.website_published and 'css_published' or 'css_unpublished'}" t-att-data-id="object.id" t-att-data-object="object._name" t-att-data-controller="publish_controller">
+            <button style="font-family:Ropa Sans" class="btn btn-danger js_publish_btn">Not Published</button>
+            <button style="font-family:Ropa Sans" class="btn btn-success js_publish_btn">Published</button>
+            <button type="button" t-attf-class="btn btn-default dropdown-toggle" t-att-id="'dopprod-%s' % object.id" data-toggle="dropdown">
+                <span class="caret"/>
+            </button>
+            <ul class="dropdown-menu" role="menu" t-att-aria-labelledby="'dopprod-%s' % object.id">
+                <t t-raw="0"/>
+                <li t-if="publish_edit">
+                    <a t-attf-href="/web#return_label=Website&amp;view_type=form&amp;model=#{object._name}&amp;id=#{object.id}&amp;action=#{action}" title="Edit in backend">Edit</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 
 </template>

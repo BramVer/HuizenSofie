@@ -23,7 +23,8 @@
              'views/footercopy.xml',
              'views/compdesc.xml',
              'views/account.xml',
-             'views/search.xml'
+             'views/signin.xml'
+
 
 
 
