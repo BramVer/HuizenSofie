@@ -21,10 +21,11 @@
              'views/showlogo.xml',
              'views/kopen.xml',
              'views/footercopy.xml',
-             'views/signin.xml',
              'views/compdesc.xml',
              'views/account.xml',
              'views/search.xml'
+
+
 
              
 
