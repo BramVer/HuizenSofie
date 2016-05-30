@@ -19,10 +19,13 @@
              'views/mainlayout.xml',
              'views/submenu.xml',
              'views/showlogo.xml',
-             'views/compdesc.xml'
+             'views/compdesc.xml',
+             'views/account.xml'
+
+
 
              
-             
+
 
 
             ],
