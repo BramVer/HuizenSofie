@@ -30,7 +30,7 @@
                         <div class="col-md-2">
                           <input type="button" class="btnApart" value="Zoeken"/>
                         </div>
-                          <input type="button" id="btnOptions" value="More Options" style="margin-left: 0px"/>
+                          <input type="button" id="btnOptions" value="Meer Opties" style="margin-left: 0px"/>
                         <div id="specs">
                           <div class="row">
                             <div class="wrapper">
