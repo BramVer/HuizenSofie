@@ -10,22 +10,3 @@ $(document).ready(function(){
 	});
 });
 
-$('#btnSoort').click(function(e){
-	e.preventDefault();
-});
-
-$('#btnLoc').click(function(e){
-	e.preventDefault();
-});
-
-$('#btnKamer').click(function(e){
-	e.preventDefault();
-});
-
-$('#btnExtra').click(function(e){
-	e.preventDefault();
-});
-
-$('#btnPrijs').click(function(e){
-	e.preventDefault();
-});
