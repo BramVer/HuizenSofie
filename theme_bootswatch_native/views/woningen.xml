@@ -20,7 +20,7 @@
                         </div>
                         <div class="col-md-2">
                           <select>
-                            <option value="0">Please choose...</option>
+                            <option value="0">Maak u keuze...</option>
                             <option value="1">Minder dan 2 euro</option>
                             <option value="2">€2 - €40000</option>
                             <option value="3">€40000 - €200000</option>
@@ -28,7 +28,7 @@
                           </select>
                         </div>
                         <div class="col-md-2">
-                          <input type="button" class="btnApart" value="submit"/>
+                          <input type="button" class="btnApart" value="Zoeken"/>
                         </div>
                           <input type="button" id="btnOptions" value="More Options" style="margin-left: 0px"/>
                         <div id="specs">
