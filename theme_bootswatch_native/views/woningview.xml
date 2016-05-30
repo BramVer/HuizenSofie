@@ -135,7 +135,7 @@
 <template id="assets_backend" name="theme_bootswatch_native" inherit_id="web.assets_backend">
   <xpath expr="." position="inside">
 <!--These links will be called when loading your Odoo -->
-      <script type="text/javascript" src="/theme_bootswatch_native/static/js/search.js"></script>
+      <script type="text/javascript" src="/theme_bootswatch_native/static/src/js/search.js"></script>
   </xpath>
 </template>
 

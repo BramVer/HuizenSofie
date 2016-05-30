@@ -32,6 +32,26 @@
             </field>
         </record>
 
+        <record id="visitor_search_view" model="ir.ui.view">
+            <field name="name">xx.visitor.search.view</field>
+            <field name="model">xx.house.visitors</field>
+            <field name="arch" type="xml">
+                    <search string="Bezichtiging Informatie">
+                        <field name="name"/>
+                        <field name="xx_date"/>
+                        <field name="xx_house"/>
+
+                        <group expand="0" string="Groepeer">
+                            <filter name="groupby_house" string="Huis" domain="[]" context="{'group_by':'xx_house'}"
+                                help="Groepeer bezichtigingen per huis type"/>
+                            <filter name="groupby_date" context="{'group_by': 'xx_date'}" string="Datum"
+                                help="Groepeer bezichtigingen per datum" />
+                        </group>
+                    </search>
+			</field>
+		</record>
+
+
 
     </data>
 </openerp>
