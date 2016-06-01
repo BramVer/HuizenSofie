@@ -238,6 +238,13 @@ class House(models.Model):
             else:
                 raise exceptions.Warning("De woning bevindt zich in de eerste status")
 
+    @api.multi
+    def google_maps_link(self):
+        map_string = "http://www.google.com/maps/embed/v1/place?q=Belgium";
+        if self.xx_street:
+            map_string="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgmpckf0b-E7mKPzI0Irfp4ammqSUs240&q=" + str(self.xx_city.name) + "+" + str(self.xx_zip) +"," + str(self.xx_street) +"+" + str(self.xx_street_number)
+        return map_string
+
     @api.onchange('xx_house_type')
     def _onchange_house_type(self):
         if self.xx_house_type:
@@ -326,6 +333,9 @@ class HouseAttribute(models.Model):
         self.xx_unit_type = current_attributetype_obj.xx_unit
 
 
+
+
+
 class HouseAttributeType(models.Model):
     _name = 'xx.house.attribute.type'
 
@@ -407,3 +417,5 @@ class HouseStatus(models.Model):
                     raise exceptions.ValidationError(
                         "Vooraleer deze positie gebruikt mag worden moet eerst positie %s gebruikt worden" % str(
                             self.xx_position - 1))
+
+

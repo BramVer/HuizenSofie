@@ -29,9 +29,47 @@
         <entry file="file://$PROJECT_DIR$/models/house.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="870">
-              <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+              <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
+                <marker date="1464765355000" expanded="true" signature="357:10007" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="941:1207" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="2749:2971" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="3026:3383" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="3460:3648" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="3491:3648" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="3699:4712" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="4050:4446" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="4172:4316" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="4585:4690" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="4757:4999" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="4785:4999" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="4874:4997" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="5043:5429" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="5121:5231" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="5509:5898" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="5543:5843" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="5626:5802" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="6023:6079" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="6155:6277" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="6337:6408" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="6458:6800" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="6845:7087" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="6862:7086" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="7137:8573" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="7157:8441" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="7200:8261" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="7493:8233" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="7836:8215" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="8279:8441" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="8623:8844" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="8658:8735" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="8887:9422" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="8917:9422" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="9110:9316" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="9469:9996" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="9499:9996" placeholder="..." />
+                <marker date="1464765355000" expanded="true" signature="9692:9891" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -40,26 +78,45 @@
       <file leaf-file-name="partner.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/partner.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state relative-caret-position="1065">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="partner.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="partner.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/partner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="135" column="43" selection-start-line="135" selection-start-column="43" selection-end-line="135" selection-end-column="43" />
+            <state relative-caret-position="-13">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#2399#2461#0" expanded="false" />
-                <element signature="e#2574#2715#0" expanded="false" />
-                <element signature="e#2788#2907#0" expanded="false" />
-                <element signature="e#2979#3147#0" expanded="false" />
-                <element signature="e#3198#3242#0" expanded="false" />
+                <element signature="e#3176#3317#0" expanded="false" />
+                <element signature="e#3390#3509#0" expanded="false" />
+                <element signature="e#3581#3749#0" expanded="false" />
+                <element signature="e#3800#3844#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="house.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/house.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="164" column="42" selection-start-line="164" selection-start-column="42" selection-end-line="164" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="woningview.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../theme_bootswatch_native/views/woningview.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="189" column="10" selection-start-line="189" selection-start-column="10" selection-end-line="189" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,8 +157,6 @@
         <option value="$PROJECT_DIR$/__openerp__.py" />
         <option value="$PROJECT_DIR$/models/transaction.py" />
         <option value="$PROJECT_DIR$/views/visitor.xml" />
-        <option value="$PROJECT_DIR$/../theme_bootswatch_native/views/woningview.xml" />
-        <option value="$PROJECT_DIR$/views/house.xml" />
         <option value="$PROJECT_DIR$/views/partner.xml" />
         <option value="$PROJECT_DIR$/models/house.py" />
         <option value="$PROJECT_DIR$/../../odoo-9.0/addons/mail/models/mail_template.py" />
@@ -109,6 +164,8 @@
         <option value="$PROJECT_DIR$/../../odoo-9.0/addons/auth_signup/res_users.py" />
         <option value="$PROJECT_DIR$/../../odoo-9.0/addons/calendar/calendar.py" />
         <option value="$PROJECT_DIR$/models/partner.py" />
+        <option value="$PROJECT_DIR$/views/house.xml" />
+        <option value="$PROJECT_DIR$/../theme_bootswatch_native/views/woningview.xml" />
       </list>
     </option>
   </component>
@@ -243,6 +300,30 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="calendar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xx_realEstate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme_bootswatch_native" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xx_realEstate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme_bootswatch_native" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -563,6 +644,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -574,7 +656,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3970803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -598,27 +679,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/account/views/account_invoice_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="589" column="20" selection-start-line="589" selection-start-column="20" selection-end-line="589" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/sale/sale_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="134" column="27" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/sale/sale.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="53" column="79" selection-start-line="53" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/mail/views/mail_template_views.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -852,21 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../theme_bootswatch_native/views/woningview.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/house.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-601">
-          <caret line="144" column="69" selection-start-line="144" selection-start-column="69" selection-end-line="144" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/transaction.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -876,8 +921,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/partner.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state relative-caret-position="1065">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -892,9 +937,47 @@
     <entry file="file://$PROJECT_DIR$/models/house.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
-          <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+          <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+            <marker date="1464765355000" expanded="true" signature="357:10007" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="941:1207" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="2749:2971" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="3026:3383" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="3460:3648" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="3491:3648" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="3699:4712" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="4050:4446" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="4172:4316" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="4585:4690" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="4757:4999" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="4785:4999" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="4874:4997" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="5043:5429" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="5121:5231" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="5509:5898" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="5543:5843" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="5626:5802" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="6023:6079" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="6155:6277" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="6337:6408" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="6458:6800" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="6845:7087" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="6862:7086" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="7137:8573" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="7157:8441" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="7200:8261" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="7493:8233" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="7836:8215" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="8279:8441" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="8623:8844" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="8658:8735" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="8887:9422" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="8917:9422" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="9110:9316" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="9469:9996" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="9499:9996" placeholder="..." />
+            <marker date="1464765355000" expanded="true" signature="9692:9891" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -957,15 +1040,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/partner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="135" column="43" selection-start-line="135" selection-start-column="43" selection-end-line="135" selection-end-column="43" />
+        <state relative-caret-position="-13">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#2399#2461#0" expanded="false" />
-            <element signature="e#2574#2715#0" expanded="false" />
-            <element signature="e#2788#2907#0" expanded="false" />
-            <element signature="e#2979#3147#0" expanded="false" />
-            <element signature="e#3198#3242#0" expanded="false" />
+            <element signature="e#3176#3317#0" expanded="false" />
+            <element signature="e#3390#3509#0" expanded="false" />
+            <element signature="e#3581#3749#0" expanded="false" />
+            <element signature="e#3800#3844#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -985,6 +1067,46 @@
           <folding>
             <element signature="e#99#139#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../theme_bootswatch_native/views/account.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../theme_bootswatch_native/views/advies.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../theme_bootswatch_native/views/bootswatch-native.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/house.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="164" column="42" selection-start-line="164" selection-start-column="42" selection-end-line="164" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../theme_bootswatch_native/views/woningview.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="189" column="10" selection-start-line="189" selection-start-column="10" selection-end-line="189" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>

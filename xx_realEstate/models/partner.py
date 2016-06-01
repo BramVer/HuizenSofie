@@ -16,6 +16,8 @@ class User(models.Model):
     xx_telephone = fields.Char(string="Telefoonnummer")
     xx_cellphone = fields.Char(string="GSM-nummer")
     xx_has_login = fields.Boolean('Heeft login')
+    xx_want_ebook = fields.Boolean('Wilt E-Book')
+    # wachtwoord
 
     email = fields.Char(string="E-mailadres", required=True)
     xx_type = fields.Selection(
@@ -42,6 +44,20 @@ class User(models.Model):
     def _onchange_city(self):
         if self.xx_city:
             self.xx_zip = self.xx_city.xx_zip
+
+    @api.onchange('xx_want_ebook')
+    def _onchange_ebook(self):
+        if self.xx_want_ebook:
+            email = self.env["xx.ebook"].search([('name', '=', self.email)])
+            if len(email)==0:
+                vals = {
+                    'name' : self.email
+                }
+                ebook_mail = self.env["xx.ebook"].create(vals)
+        else:
+            email = self.env["xx.ebook"].search([('name', '=', self.email)])
+            if len(email)==1:
+                self.env["xx.ebook"].browse(email.id).unlink()
 
     @api.constrains('xx_telephone', 'xx_cellphone')
     def _check_telephone_or_cellphone_empty(self):

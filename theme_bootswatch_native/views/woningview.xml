@@ -79,8 +79,8 @@
                                 <div class="container">
                                     <div class="row">
 
-                                        <div class="col-md-12 text-center mb32 mt64">
-                                            <h2 style="color:#0d3532; font-size:60px">OMSCHRIJVING&amp;nbsp;</h2>
+                                        <div class="col-md-12 text-left mb32 mt64">
+                                            <h2 style="color:#0d3532; font-size:60px">Omschrijving&amp;nbsp;</h2>
                                             <h3 class="text-muted">&amp;nbsp;</h3>
                                         </div>
                                         <div class="col-md-12 mt16 mb48" style="color:#0d3532; font-size:20px;">
@@ -131,30 +131,56 @@
                                             <t t-set="i" t-value="i + 1"/>
                                         </th>
                                         <th class="col-sm-1">
-                                            <t t-if="p.name.xx_unit">
-                                                <t t-esc="p.name.xx_unit"/>
+                                            <t t-if="p.xx_unit_type">
+                                                <t t-esc="p.xx_unit_type"/>
                                             </t>
                                         </th>
                                     </t>
                                 </tr>
                             </t>
                         </table>
+                        <!-- GMAPS -->
                         <div class="col-md-12 text-center mb32 mt32"
-                             style="width: 50%; overflow: hidden; height: 360px;">
-
-                            <div style="width: 50%; overflow: hidden; height: 360px;">
-
-                                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgmpckf0b-E7mKPzI0Irfp4ammqSUs240&amp;q=Antwerpen,Meistraat"
-                                        width="100%" height="370px" style="border:0">
-                                </iframe>
+                             style="width: 100%; overflow: hidden; height: 360px;">
+                            <div style="width: 100%; overflow: hidden; height: 360px;">
+                                <iframe t-att-src="product.google_maps_link()" width="100%" height="375px"
+                                        style="border:0"></iframe>
                             </div>
                         </div>
+
                     </section>
                     <div itemprop="description" t-field="product.website_description" class="oe_structure mt16"
                          id="product_full_description"/>
-                    <!-- LINK A LOCATION WITH VARIABLES DEFINED AT TOP OF DOCUMENT -->
                 </div>
+
             </t>
+
+
+        </template>
+
+        <template name="Publish" id="website.publish_management">
+
+            <div groups="base.group_website_publisher" t-ignore="true" class="pull-right css_editable_mode_hidden"
+                 t-att-style="style or ''">
+                <div t-attf-class="btn-group js_publish_management #{object.website_published and 'css_published' or 'css_unpublished'}"
+                     t-att-data-id="object.id" t-att-data-object="object._name"
+                     t-att-data-controller="publish_controller">
+                    <button style="font-family:Ropa Sans" class="btn btn-danger js_publish_btn">Not Published</button>
+                    <button style="font-family:Ropa Sans" class="btn btn-success js_publish_btn">Published</button>
+                    <button type="button" t-attf-class="btn btn-default dropdown-toggle"
+                            t-att-id="'dopprod-%s' % object.id" data-toggle="dropdown">
+                        <span class="caret"/>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" t-att-aria-labelledby="'dopprod-%s' % object.id">
+                        <t t-raw="0"/>
+                        <li t-if="publish_edit">
+                            <a t-attf-href="/web#return_label=Website&amp;view_type=form&amp;model=#{object._name}&amp;id=#{object.id}&amp;action=#{action}"
+                               title="Edit in backend">Edit
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
 
         </template>

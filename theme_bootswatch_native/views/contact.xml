@@ -59,7 +59,7 @@
                   <textarea class="form-control" name="field1" style="margin: 0px -1px 0px 0px; height: 218px; width: 720px;" required="True"/>
                 </div>
                 <input name="form_id" type="hidden" value="1"/>
-                <input class="btn btn-primary btn-lg" type="submit" value="Send"/>
+                <input style="font-family:Ropa Sans" class="btn btn-primary btn-md" type="submit" value="Versturen"/>
               </section>
             </div>
           </div>

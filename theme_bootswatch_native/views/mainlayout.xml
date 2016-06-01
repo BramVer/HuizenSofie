@@ -6,6 +6,8 @@
     <html t-att-lang="lang and lang.replace('_', '-')" t-att-data-website-id="website.id if (editable or translatable) and website else None" t-att-data-editable="'1' if editable else None" t-att-data-translatable="'1' if translatable else None" t-att-data-edit_translations="'1' if edit_translations else None" t-att-data-view-xmlid="xmlid if editable or translatable else None" t-att-data-main-object="repr(main_object) if editable or translatable else None" t-att-data-oe-company-name="res_company.name">
         <head>
             <meta charset="utf-8"/>
+
+            <link rel="icon" href="/favicon.ico"/>
             <t t-if="main_object and 'website_meta_title' in main_object and not title">
                 <t t-set="title" t-value="main_object.website_meta_title"/>
             </t>
@@ -13,7 +15,7 @@
                 <t t-set="additional_title" t-value="main_object.name"/>
             </t>
             <t t-if="not title">
-                <t t-set="title"><t t-if="additional_title"><t t-raw="additional_title"/> | </t><t t-esc="(website or res_company).name"/></t>
+            <t t-set="title"><t t-if="additional_title"><t t-raw="additional_title"/> | </t><t t-esc="(website or res_company).name"/></t>
             </t>
 
             <meta name="viewport" content="initial-scale=1"/>
