@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+
+    <data>
+        <template id="website.footer_custom" inherit_id="website.layout" name="Footer">
+
+           <xpath expr="//div[@id='footer']" position="replace">
+
+    <div class="oe_structure" id="footer">
+      <section>
+        <div class="container">
+          <div class="row">
+
+
+
+            <div class="col-md-3">
+
+              <h4 class="mt16">
+                <a href="/page/Disclaimer" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans; font-size:30px">Disclaimer</a>
+              </h4>
+            </div>
+
+            <div class="col-md-3" style="color:#0d3532">
+              <h4 class="mt16">
+                <a href="/page/Partners" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans;font-size: 30px">Partners</a>
+              </h4>
+              <p>
+                <br/>
+              </p>
+            </div>
+            <div class="col-md-3" style="color:#0d3532">
+              <h4 class="mt16">
+                <a href="/page/Privacybeleid" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans;font-size: 30px">Privacybeleid</a>
+              </h4>
+                <h4>
+              <a href="/page/Goededoelen" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans;font-size: 30px">Goede doelen</a>
+                </h4>
+              <p>
+                <br/>
+              </p>
+            </div>
+
+            <div class="col-md-3">
+              <h4 class="mt16" style="color:#0d3532">
+                <font style="font-size: 30px; font-family:Ropa Sans">Volg ons&amp;nbsp;</font>
+              </h4>
+                <a class="oe_share_facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8069%2F%23scrollTop%3D511" style="color: #0d3532; text-decoration:none;" target="_Blank">
+                  <font style="font-size: 22px;">&amp;nbsp;</font>
+                  <i class="fa fa-facebook-square" style="font-size: 22px; margin-left: -9px;">&amp;nbsp;</i>
+
+
+                </a>
+                <a class="oe_share_linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A8069%2F%23scrollTop%3D511&amp;title=Homepage%20%7C%20Website%20localhost&amp;" style="color: #0d3532; text-decoration:none;" target="_Blank">
+                  <span class="fa fa-1x fa-linkedin-square" style="font-size: 22px;"/>
+                </a>
+                <font style="font-size: 22px;">&amp;nbsp;</font>
+                <a class="oe_share_google" href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A8069%2F%23scrollTop%3D511" style="color: #0d3532; text-decoration:none;" target="_Blank">
+                  <span class="fa fa-1x fa-google-plus-square" style="font-size: 22px;"/>
+                </a>
+                <font style="font-size: 22px;">&amp;nbsp;</font>
+                <a href="mailto:?body=http%3A%2F%2Flocalhost%3A8069%2F%23scrollTop%3D511&amp;subject=Homepage%20%7C%20Website%20localhost">
+                  <span class="fa fa-1x fa-pinterest-square" style="color: rgb(13, 53, 50); font-size: 22px;"/>
+                </a>
+
+              <p>
+                <br/>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </xpath>
+
+        </template>
+
+        </data>
+
+
+</openerp>
