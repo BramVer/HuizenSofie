@@ -32,15 +32,8 @@
         </record>
 
 
-        <!--act_window name="New Sub menu"
-        res_model="xx.ebook"
-        src_model="xx.ebook"
-        key2="client_action_multi"
-        view_mode="form" target="new"
-        view_type="form"
-        id="act_new_sub_menu" /-->
 
-<!--        <record id="send_ebook_action" model="ir.actions.server">
+        <record id="send_ebook_action" model="ir.actions.server">
 
             <field name="name">Send Ebook</field>
             <field name="model_id" ref="model_xx_ebook"/>
@@ -55,7 +48,7 @@
             <field name="key2">client_action_multi</field>
             <field name="value" eval="'ir.actions.server,%d'%send_ebook_action"/>
             <field name="object" eval="True"/>
-        </record>-->
+        </record>
 
 
 
