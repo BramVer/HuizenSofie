@@ -23,7 +23,13 @@
              'views/footercopy.xml',
              'views/compdesc.xml',
              'views/account.xml',
-             'views/signin.xml'
+             'views/signin.xml',
+             'views/goededoelen.xml',
+             'views/partners.xml',
+             'views/disclaimer.xml',
+             'views/privacybeleid.xml'
+
+
 
 
 
