@@ -162,8 +162,8 @@
                                     icon="fa-users">
                                 <field name="xx_visitor_count" widget="statinfo" string="Bezichtigingen"/>
                             </button>
-                            <button type="object" name="show_current_house" class="oe_stat_button" icon="fa-globe"
-                                    string="Toon op website"/>
+                                <button type="object" name="show_current_house" class="oe_stat_button" icon="fa-globe"
+                                        string="Toon op website"/>
                             <button type="object" name="show_qr_image" class="oe_stat_button" icon="fa-qrcode" string="QR code"/>
                             <button name="previous_status" string="Vorige status" type="object" class="oe_stat_button" icon="fa-arrow-left"/>
                             <button name="next_status" string="Volgende status" type="object" class="oe_stat_button" icon="fa-arrow-right"/>

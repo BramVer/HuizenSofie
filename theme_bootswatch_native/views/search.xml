@@ -2,12 +2,6 @@
 <openerp>
     <data>
 	<!-- Adds all assets in Odoo -->
-        <template id="assets_backend" name="theme_bootswatch_native" inherit_id="web.assets_backend">
-            <xpath expr="." position="inside">
-		         <!-- All links to CSS and JS files should be added in here. -->
-		         <link rel="stylesheet" href="/theme_bootswatch_native/static/src/css/style.css"/>
-            </xpath>
-        </template>
 
          <template id="assets_backend" name="theme_bootswatch_native" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
