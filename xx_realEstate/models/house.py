@@ -35,6 +35,7 @@ class House(models.Model):
     xx_description = fields.Text('Omschrijving', required=True)
     xx_build_year = fields.Char('Bouwjaar')
     xx_reference = fields.Char('Referentie')
+    xx_visitor_amount = fields.Integer(string='Aantal bezoekers')
 
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
     xx_documents = fields.One2many('xx.house.document', 'xx_house', 'Documenten')
@@ -47,6 +48,26 @@ class House(models.Model):
     xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
     xx_status_id = fields.Many2one('xx.house.status', string='Status', required=True)
+
+    #     < div
+    #     style = "display:none" >
+    #     < p >
+    #     < t
+    #     t - set = "product.xx_visitor_amount"
+    #     t - value = "product.increase_visitor_amount()" / >
+    #
+    # < / p >
+    # < / div >
+
+    @api.multi
+    def increase_visitor_amount(self):
+        id_admin = self.env['res.users'].search([('name', '=', 'Administrator')]).id
+        id_sofie = self.env['res.users'].search([('name', '=', 'Sofie Andriesen')]).id
+        if not id_admin or id_sofie:
+            self.xx_visitor_amount += 1
+        if self._uid and (not id_admin or id_sofie):
+            pass
+        return self.xx_visitor_amount
 
     @api.constrains('xx_build_year')
     def _check_build_year_valid(self):
@@ -264,10 +285,16 @@ class House(models.Model):
 
         xhs = self.env['xx.house.status']
         status = xhs.search([('xx_position', '=', 0)])
-        if status:
-            res.update({
-                'xx_status_id': status.id
-            })
+        if not status:
+            values = {
+                'name': "In aanmaak",
+                'xx_position': 0
+            }
+            status = self.env['xx.house.status'].create(values)
+
+        res.update({
+            'xx_status_id': status.id
+        })
         return res
 
 

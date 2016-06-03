@@ -32,13 +32,6 @@
         </record>
 
 
-        <!--act_window name="New Sub menu"
-        res_model="xx.ebook"
-        src_model="xx.ebook"
-        key2="client_action_multi"
-        view_mode="form" target="new"
-        view_type="form"
-        id="act_new_sub_menu" /-->
 
         <record id="send_ebook_action" model="ir.actions.server">
 

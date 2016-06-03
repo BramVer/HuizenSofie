@@ -5,6 +5,7 @@
     <orderEntry type="jdk" jdkName="Python 2.7.10 virtualenv at ~/.virtualenvs/odoo9" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="addons" />
+    <orderEntry type="module" module-name="theme_bootswatch_native" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="Nosetests" />
