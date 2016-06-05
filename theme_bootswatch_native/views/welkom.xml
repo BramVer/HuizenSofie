@@ -12,7 +12,24 @@
             <div class="oe_structure"/>
           </div>
         </section>
-        <section class="s_title">
+        <section id="ebookSec">
+          <div class="wrapper">
+            <img src="/theme_bootswatch_native/static/src/img/e-book.png"/>
+          </div>
+          <div id="text">
+            <p>Schrijf je hier in <br/>voor onze folder!</p>
+          </div>
+        </section>
+        <div id="ebookOverlay">
+            <h2>Schrijf je in!</h2>
+            <form>
+              <div id="email">
+                <p>Email<br/><input type="email" id="email"/></p><br/>
+              </div>
+              <p><input type="button" value="submit"/><input type="button" value="exit" id="btnExit"/></p><br/>
+            </form>
+        </div>
+        <section class="s_title" style="z-index: -1">
           <div class="container">
             <div class="row">
               <div class="col-md-12 mt0">
