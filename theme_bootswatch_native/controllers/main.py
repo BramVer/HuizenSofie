@@ -8,7 +8,7 @@ from openerp.http import request
 from openerp.addons.website_sale.controllers.main import table_compute
 
 
-PPG = 2 # Products Per Page
+PPG = 8 # Products Per Page
 PPR = 4  # Products Per Row
 
 class website_houses(openerp.addons.website_sale.controllers.main.website_sale):
