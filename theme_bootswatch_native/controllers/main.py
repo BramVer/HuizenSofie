@@ -8,28 +8,26 @@ from openerp.http import request
 from openerp.addons.website_sale.controllers.main import table_compute
 
 
-PPG = 20 # Products Per Page
+PPG = 2 # Products Per Page
 PPR = 4  # Products Per Row
 
 class website_houses(openerp.addons.website_sale.controllers.main.website_sale):
 
     @http.route()
-    def shop(self, page=0, ppg=False, searched = False, soort = False, gemeente = False, prijs = False):
+    def shop(self, page=0, ppg=False, searched = False, soort = False, gemeente = False, prijs = False, **post):
 
 
-        old_sold = super(website_houses, self).shop(page=page, ppg=PPG)
+        old_sold = super(website_houses, self).shop(page=page, ppg=PPG, post=post)
         old_qcontext = old_sold.qcontext
 
         product_obj = http.request.env["product.template"]
-        status_obj = http.request.env["xx.house.status"]
-        test = status_obj.search([])
 
         if(searched):
+            post["searched"] = searched
             filtered_products_list = product_obj.search([])
             if (soort):
-                soorten = request.httprequest.form.getlist('soort')
-                for sort in soorten:
-                    filtered_products_list = product_obj.search([('id', 'in', filtered_products_list._ids), ('xx_house_type', '=', sort)])
+                filtered_products_list = product_obj.search([('id', 'in', filtered_products_list._ids), ('xx_house_type', '=', soort)])
+                post["soort"] = soort
             if (gemeente):
                 gemeentes = request.httprequest.form.getlist('gemeente')
             if (prijs):
@@ -38,7 +36,7 @@ class website_houses(openerp.addons.website_sale.controllers.main.website_sale):
 
 
             new_product_count = len(filtered_products_list._ids)
-            pager = request.website.pager(url="/shop", total=new_product_count, page=page, step=PPG, scope=7)
+            pager = request.website.pager(url="/shop", total=new_product_count, page=page, step=PPG, scope=7, url_args=post)
             new_product_ids = product_obj.search([('id', 'in', filtered_products_list._ids)],limit=PPG, offset=pager['offset'], order='website_published desc, website_sequence desc')
 
 
@@ -61,7 +59,6 @@ class website_houses(openerp.addons.website_sale.controllers.main.website_sale):
                 'style_in_product': lambda style, product: style.id in [s.id for s in product.website_style_ids],
                 'attrib_encode': lambda attribs: werkzeug.url_encode([('attrib', i) for i in attribs]),
             }
-
             return request.website.render("website_sale.products", values)
 
 
