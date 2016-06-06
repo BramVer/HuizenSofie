@@ -16,13 +16,13 @@
             <div class="col-md-3">
 
               <h4 class="mt16">
-                <a href="/page/disclaimer" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans; font-size:30px">Disclaimer</a>
+                <a href="/page/Disclaimer" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans; font-size:30px">Disclaimer</a>
               </h4>
             </div>
 
             <div class="col-md-3" style="color:#0d3532">
               <h4 class="mt16">
-                <a href="/page/partners" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans;font-size: 30px">Partners</a>
+                <a href="/page/Partners" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans;font-size: 30px">Partners</a>
               </h4>
               <p>
                 <br/>
@@ -30,8 +30,11 @@
             </div>
             <div class="col-md-3" style="color:#0d3532">
               <h4 class="mt16">
-                <a href="/page/privacybeleid" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans;font-size: 30px">Privacybeleid</a>
+                <a href="/page/Privacybeleid" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans;font-size: 30px">Privacybeleid</a>
               </h4>
+                <h4>
+              <a href="/page/Goededoelen" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans;font-size: 30px">Goede doelen</a>
+                </h4>
               <p>
                 <br/>
               </p>

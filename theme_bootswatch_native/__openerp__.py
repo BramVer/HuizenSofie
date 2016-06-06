@@ -21,10 +21,18 @@
              'views/showlogo.xml',
              'views/kopen.xml',
              'views/footercopy.xml',
-             'views/signin.xml',
              'views/compdesc.xml',
              'views/account.xml',
-             'views/search.xml'
+             'views/signin.xml',
+             'views/goededoelen.xml',
+             'views/partners.xml',
+             'views/disclaimer.xml',
+             'views/privacybeleid.xml'
+
+
+
+
+
 
              
 
