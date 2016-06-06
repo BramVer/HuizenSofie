@@ -4,6 +4,7 @@
 
 <!-- === Welkom Page === -->
 <template name="Welkom" id="website.Welkom" page="True">
+<<<<<<< HEAD
     <t name="Welkom" t-name="website.Welkom">
     <t t-call="website.layout">
       <div id="wrap" class="oe_structure oe_empty">
@@ -25,10 +26,39 @@
         </section>
        <br/>
         <section class="s_title">
+=======
+  <t name="Welkom" t-name="website.Welkom">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure oe_empty">
+        <section class="parallax s_parallax oe_img_bg oe_custom_bg" style="background-image: url(/web/image/315); ; ; ; ; ; height: 688px; overflow: hidden; background-attachment: fixed; background-position: 0px 0px;" data-scroll-background-ratio="1" data-scroll-background-offset="-25.5">
+          <div>
+            <div class="oe_structure"/>
+          </div>
+        </section>
+        <section id="ebookSec">
+          <div class="wrapper">
+            <img src="/theme_bootswatch_native/static/src/img/e-book.png"/>
+          </div>
+          <div id="text">
+            <p>Schrijf je hier in <br/>voor onze folder!</p>
+          </div>
+        </section>
+        <div id="ebookOverlay">
+            <h2>Schrijf je in!</h2>
+            <form>
+              <div id="email">
+                <p>Email<br/><input type="email" id="email"/></p><br/>
+              </div>
+              <p><input type="button" value="submit"/><input type="button" value="exit" id="btnExit"/></p><br/>
+            </form>
+        </div>
+        <section class="s_title" style="z-index: -1">
+>>>>>>> 998a2d3eb6254aa1e69b097c5d333b948dba4561
           <div class="container">
             <div class="row">
               <div class="col-md-12 mt0">
                 <h1 class="text-center">
+<<<<<<< HEAD
                 </h1>
                 <h1 class="text-center">
                 </h1>
@@ -95,7 +125,6 @@
                   </div>
                   <br/>
                 </div>
-
                 <h3 class="text-center text-muted">&amp;nbsp;</h3>
               </div>
             </div>
