@@ -7,7 +7,7 @@
   <t t-call="website.layout">
     <div id="wrap">
       <div class="oe_structure">
-        <section class="s_text_block col-md-12" style="height: 136px; overflow: hidden;">
+        <section class="s_text_block col-md-12" style="height: 136px; overflow: hidden; z-index:-1;">
           <div class="container">
             <div class="row">
               <div class="col-md-12 mt16 text-center mb32">
@@ -20,6 +20,24 @@
             </div>
           </div>
         </section>
+        <section id="ebookSec">
+          <div class="wrapper">
+            <img src="/theme_bootswatch_native/static/src/img/e-book.png"/>
+          </div>
+          <div id="text">
+            <p>Schrijf je hier in <br/>voor onze folder!</p>
+          </div>
+        </section>
+        <div id="ebookOverlay">
+            <h2>Schrijf je in!</h2>
+            <form>
+              <div id="email">
+                <p>Email<br/><input type="email" id="email"/></p><br/>
+              </div>
+              <p><input type="button" value="submit"/><input type="button" value="exit" id="btnExit"/></p>
+              <a href="pdf">Voorbeeld folder</a>
+            </form>
+        </div>
       </div>
       <div class="container">
         <h1/>

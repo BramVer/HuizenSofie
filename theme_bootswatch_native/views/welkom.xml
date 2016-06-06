@@ -4,30 +4,57 @@
 
 <!-- === Welkom Page === -->
 <template name="Welkom" id="website.Welkom" page="True">
-  <t name="Welkom" t-name="website.Welkom">
+    <t name="Welkom" t-name="website.Welkom">
     <t t-call="website.layout">
       <div id="wrap" class="oe_structure oe_empty">
-        <section class="parallax s_parallax oe_img_bg oe_custom_bg" style="background-image: url(/web/image/315); ; ; ; ; ; height: 688px; overflow: hidden; background-attachment: fixed; background-position: 0px 0px;" data-scroll-background-ratio="1" data-scroll-background-offset="-25.5">
-          <div>
+        <section class="parallax s_parallax oe_img_bg oe_custom_bg" style="background-image: url(/web/image/367); height: 550px; overflow: hidden; background-attachment: fixed; background-position: 0px 0px;" data-scroll-background-ratio="1" data-scroll-background-offset="-25.5" >
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h2 class="text-center" style="color: #fbfbfb; font-size: 82px; font-weight: normal; text-shadow: 2px 2px #777; transform: scale(1,1.5); letter-spacing: -7px;">Verder gaan in vastgoed.</h2>
             <div class="oe_structure"/>
+        </section>
+       <br/>
+        <section id="ebookSec">
+          <div class="wrapper">
+            <img src="/theme_bootswatch_native/static/src/img/e-book.png"/>
+          </div>
+          <div id="text">
+            <p>Schrijf je hier in <br/>voor onze folder!</p>
           </div>
         </section>
-        <section class="s_title">
+        <div id="ebookOverlay">
+            <h2>Schrijf je in!</h2>
+            <form>
+              <div id="email">
+                <p>Email<br/><input type="email" id="email"/></p><br/>
+              </div>
+              <p><input type="button" value="submit"/><input type="button" value="exit" id="btnExit"/></p><br/>
+            </form>
+        </div>
+        <section class="s_title" style="z-index: -1">
           <div class="container">
             <div class="row">
               <div class="col-md-12 mt0">
                 <h1 class="text-center">
-                  <br/>
                 </h1>
                 <h1 class="text-center">
-                  <br/>
                 </h1>
-                <h1 class="text-center" style="font-size: 72px; font-family: Ropa Sans; color:#0d3532;"> OVER</h1>
+                <h1 class="text-left" style="font-size: 72px; font-family: Ropa Sans; color:#0d3532;">OVER SOFIE</h1>
                 <h1 class="text-center"/>
                 <p>&amp;nbsp;</p>
                 <div class="o_image_floating pull-right s_image_floating o_hide_link o_margin_s">
                   <div class="o_container">
-                    <img class="img img-rounded img-responsive img-circle shadow" src="/web/image/316" alt="Odoo CMS- Sample image floating" style=""/>
+                    <img class="img img-rounded img-responsive img-circle shadow" src="../custom/theme_bootswatch_native/images/sofieAndriesen.png" alt="Foto Sofie Andriesen" style=""/>
                     <mark class="text-center">
                       <a href="#">
                         <strong class="o_default_snippet_text">Click Here</strong>
@@ -39,22 +66,9 @@
                   </div>
                 </div>
                 <p style="line-height: 100%">
-                  <font style="font-size: 24px; font-family: Ropa Sans; color:#0d3532;">Vastgoedkunde aan de KU Leuven. Zowel op juridisch als </font>
-                </p>
-                <p style="line-height: 100%">
-                  <font style="font-size: 24px; font-family: Ropa Sans; color:#0d3532;">bouwtechnisch vlak loodst zij u graag doorheen het </font>
-                </p>
-                <p style="line-height: 100%">
-                  <font style="font-size: 24px; font-family: Ropa Sans; color:#0d3532;">vastgoedlandschap en dit met het oog op een succesvolle verkoop of </font>
-                </p>
-                <p style="line-height: 100%">
-                  <font style="font-size: 24px; font-family: Ropa Sans; color:#0d3532;">verhuur. Ook voor de opmaak van een taxatieverslag of </font>
-                </p>
-                <p style="line-height: 100%">
-                  <font style="font-size: 24px; font-family: Ropa Sans; color:#0d3532;">adviesverlening kan u bij haar terecht. Sofie neemt de zorg voor de </font>
-                </p>
-                <p style="line-height: 100%">
-                  <font style="font-size: 24px; font-family: Ropa Sans; color:#0d3532;">verkoop of verhuur van uw woning uit handen. </font>
+                  <font style="line-height: 100%; font-size: 24px; font-family: Ropa Sans; color:#0d3532;">Sofie is juriste van opleiding (Master in de Rechten). Zij behaalde tevens
+                  een postgraduaat Vastgoedkunde aan de KU Leuven. Zowel op juridisch als bouwtechnisch vlak loodst zij u graag doorheen het vastgoedlandschap en
+                  dit met het oog op een succesvolle verkoop of verhuur. Ook voor de opmaak van een taxatieverslag of adviesverlening kan u bij haar terecht.   Sofie neemt de zorg voor de  verkoop of verhuur van uw woning uit handen.</font>
                 </p>
                 <h1 class="text-center"/>
                 <p style="line-height: 100%">
@@ -63,19 +77,9 @@
                   </font>
                 </p>
                 <p style="line-height: 100%">
-                  <font style="font-size: 24px; font-family: Ropa Sans; color:#0d3532;">Zij regelt bezoeken, zorgt ervoor dat een verkoop- of verhuurdossier </font>
-                </p>
-                <p style="line-height: 100%">
-                  <font style="font-size: 24px; font-family: Ropa Sans; color:#0d3532;">wordt opgesteld conform de wettelijke </font>
-                </p>
-                <p style="line-height: 100%">
-                  <font style="font-size: 24px; font-family: Ropa Sans; color:#0d3532;">bepalingen en helpt bij een correcte prijszetting van uw pand aan de </font>
-                </p>
-                <p style="line-height: 100%">
-                  <font style="font-size: 24px; font-family: Ropa Sans; color:#0d3532;">hand van een taxatieverslag en op basis van </font>
-                </p>
-                <p style="line-height: 100%">
-                  <font style="font-size: 24px; font-family: Ropa Sans; color:#0d3532;">vergelijkingspunten van een eigen opgebouwd databestand. </font>
+                  <font style="font-size: 24px; line-height: 100%; font-family: Ropa Sans; color:#0d3532;">Zij regelt bezoeken, zorgt ervoor dat een verkoop- of verhuurdossier wordt
+                  opgesteld conform de wettelijke bepalingen en helpt bij een correcte prijszetting van uw pand aan de hand van een taxatieverslag en op basis van
+                  vergelijkingspunten van een eigen opgebouwd databestand.</font>
                 </p>
                 <p style="line-height: 100%">
                   <font style="font-size: 18px;">
@@ -87,11 +91,26 @@
                     <br/>
                   </font>
                 </p>
-                <p style="line-height: 100%">
-                  <font style="font-size: 24px; font-family: Ropa Sans; color:#0d3532;">Hebt u vragen of wil u weten wat Sofie voor u kan betekenen, contacteer haar vrijblijvend.</font>
-                </p>
-                <div class="oe_share s_share">
-                  <h3 style=" font-size: 36px; text-align: left; font-family: Ropa Sans; color:#0d3532;">Contact&amp;nbsp;<a href="/page/Contact" style="color: #0d3532; text-decoration: none;">&amp;nbsp;<span class="fa fa-envelope-o fa-1x" style=""/></a></h3>
+
+                <!-- GOEDE DOELENDINK -->
+                <h1 class="text-left" style="font-size: 42px; font-family: Ropa Sans; color:#0d3532;">GOEDE DOELEN</h1>
+                <div style="font-size: 24px; line-height: 100%; font-family: Ropa Sans; color:#0d3532;">
+                <p>Via Sofie wil niet alleen een persoonlijke ervaring aanbieden bij de verkoop van woningen, maar ook als maatschappij groeien. Daarom worden verscheidene initiatieven gesteund, ook per aankoop van  woning.</p>
+                <p><a href="/page/Goededoelen">Lees verder</a></p>
+                </div>
+                <br/><br/><br/><br/>
+                <!-- CONTACT DING -->
+                <div>
+                  <p class="col-sm-10" style="line-height: 100%">
+                    <font style="font-size: 20px; font-family: Ropa Sans; color:#0d3532; margin-left: -10px;">Heeft u nog vragen of wil u weten wat Sofie voor u kan betekenen, contacteer haar dan vrijblijvend.</font>
+                  </p>
+                  <br/>
+                  <div class="oe_share s_share col-sm-2">
+                    <h3 style=" font-size: 32px; font-weight: bold; text-align: right; font-family: Ropa Sans; color:#0d3532; margin-top: -30px;">
+                      <a href="/page/Contact" style="color: #0d3532; text-decoration: none;"><span class="fa fa-envelope-o fa-1x" style=""/>&amp;nbsp;Contact</a>
+                    </h3>
+                  </div>
+                  <br/>
                 </div>
                 <h3 class="text-center text-muted">&amp;nbsp;</h3>
               </div>

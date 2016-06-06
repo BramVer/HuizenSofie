@@ -267,7 +267,7 @@ class House(models.Model):
     def default_get(self, vals):
         res = super(House, self).default_get(vals)
         xhd = self.env['xx.house.document']
-        docu_types = self.env['xx.house.document.type'].search([('name', '!=', False)])
+        docu_types = self.env['xx.house.document.type'].search([])
         if len(docu_types) > 0:
 
             documents = []
