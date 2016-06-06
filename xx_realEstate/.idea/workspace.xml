@@ -25,51 +25,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="calendar.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/calendar.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="house.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/house.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+            <state relative-caret-position="840">
+              <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
-                <marker date="1464765355000" expanded="true" signature="357:10007" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="941:1207" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="2749:2971" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="3026:3383" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="3460:3648" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="3491:3648" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="3699:4712" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="4050:4446" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="4172:4316" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="4585:4690" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="4757:4999" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="4785:4999" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="4874:4997" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="5043:5429" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="5121:5231" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="5509:5898" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="5543:5843" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="5626:5802" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="6023:6079" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="6155:6277" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="6337:6408" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="6458:6800" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="6845:7087" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="6862:7086" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="7137:8573" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="7157:8441" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="7200:8261" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="7493:8233" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="7836:8215" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="8279:8441" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="8623:8844" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="8658:8735" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="8887:9422" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="8917:9422" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="9110:9316" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="9469:9996" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="9499:9996" placeholder="..." />
-                <marker date="1464765355000" expanded="true" signature="9692:9891" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="partner.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/partner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#3257#3398#0" expanded="false" />
+                <element signature="e#3471#3590#0" expanded="false" />
+                <element signature="e#3881#3925#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -78,66 +65,20 @@
       <file leaf-file-name="partner.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/partner.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1065">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state relative-caret-position="301">
+              <caret line="72" column="69" selection-start-line="72" selection-start-column="69" selection-end-line="72" selection-end-column="69" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="partner.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/partner.py">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#3176#3317#0" expanded="false" />
-                <element signature="e#3390#3509#0" expanded="false" />
-                <element signature="e#3581#3749#0" expanded="false" />
-                <element signature="e#3800#3844#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="house.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/house.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="164" column="42" selection-start-line="164" selection-start-column="42" selection-end-line="164" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="woningview.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../theme_bootswatch_native/views/woningview.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="189" column="10" selection-start-line="189" selection-start-column="10" selection-end-line="189" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="portal_wizard.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/portal/wizard/portal_wizard.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2310">
-              <caret line="160" column="53" selection-start-line="160" selection-start-column="53" selection-end-line="160" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="res_users.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/auth_signup/res_users.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="84" selection-end-column="18" />
-              <folding>
-                <element signature="e#99#139#0" expanded="true" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,18 +95,21 @@
         <option value="$PROJECT_DIR$/views/attribute.xml" />
         <option value="$PROJECT_DIR$/views/city.xml" />
         <option value="$PROJECT_DIR$/views/house_sequence.xml" />
-        <option value="$PROJECT_DIR$/__openerp__.py" />
         <option value="$PROJECT_DIR$/models/transaction.py" />
         <option value="$PROJECT_DIR$/views/visitor.xml" />
-        <option value="$PROJECT_DIR$/views/partner.xml" />
-        <option value="$PROJECT_DIR$/models/house.py" />
         <option value="$PROJECT_DIR$/../../odoo-9.0/addons/mail/models/mail_template.py" />
         <option value="$PROJECT_DIR$/../../odoo-9.0/addons/portal/wizard/portal_wizard.py" />
         <option value="$PROJECT_DIR$/../../odoo-9.0/addons/auth_signup/res_users.py" />
         <option value="$PROJECT_DIR$/../../odoo-9.0/addons/calendar/calendar.py" />
-        <option value="$PROJECT_DIR$/models/partner.py" />
         <option value="$PROJECT_DIR$/views/house.xml" />
         <option value="$PROJECT_DIR$/../theme_bootswatch_native/views/woningview.xml" />
+        <option value="$PROJECT_DIR$/models/house.py" />
+        <option value="$PROJECT_DIR$/models/__init__.py" />
+        <option value="$PROJECT_DIR$/__openerp__.py" />
+        <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/views/partner.xml" />
+        <option value="$PROJECT_DIR$/models/partner.py" />
+        <option value="$PROJECT_DIR$/models/calendar.py" />
       </list>
     </option>
   </component>
@@ -176,10 +120,94 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="173" />
-    <option name="y" value="451" />
-    <option name="width" value="1920" />
-    <option name="height" value="906" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="736" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Bitwise operation issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code style issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Data flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Django</id>
+          </State>
+          <State>
+            <id>Error handlingJavaScript</id>
+          </State>
+          <State>
+            <id>File Watchers</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Google App Engine (Python)</id>
+          </State>
+          <State>
+            <id>JSON</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript function metricsJavaScript</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsCSS</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -206,7 +234,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -222,108 +249,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="addons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xx_realEstate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="addons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xx_realEstate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="addons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xx_realEstate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="addons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xx_realEstate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="addons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wizard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xx_realEstate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="addons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="calendar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xx_realEstate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme_bootswatch_native" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xx_realEstate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme_bootswatch_native" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -367,6 +292,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -374,7 +300,7 @@
     <property name="options.lastSelected" value="SQL Dialects" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../theme_bootswatch_native" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -637,28 +563,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="173" y="451" width="1920" height="906" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="736" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17552084" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18046875" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3970803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20644216" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3970803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -674,46 +600,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="53" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/mail/views/mail_template_views.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/base_setup/base_setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-484">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/auth_signup/res_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/auth_oauth/res_users.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/hr/hr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="359" column="18" selection-start-line="359" selection-start-column="18" selection-end-line="359" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/hr/res_users.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-222">
@@ -876,21 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/ebook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/visitor.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/website_sale/controllers/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12735">
@@ -919,66 +795,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partner.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../odoo-9.0/openerp/addons/base/ir/ir_qweb.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="296" column="0" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/house.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-            <marker date="1464765355000" expanded="true" signature="357:10007" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="941:1207" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="2749:2971" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="3026:3383" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="3460:3648" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="3491:3648" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="3699:4712" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="4050:4446" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="4172:4316" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="4585:4690" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="4757:4999" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="4785:4999" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="4874:4997" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="5043:5429" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="5121:5231" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="5509:5898" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="5543:5843" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="5626:5802" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="6023:6079" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="6155:6277" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="6337:6408" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="6458:6800" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="6845:7087" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="6862:7086" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="7137:8573" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="7157:8441" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="7200:8261" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="7493:8233" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="7836:8215" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="8279:8441" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="8623:8844" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="8658:8735" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="8887:9422" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="8917:9422" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="9110:9316" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="9469:9996" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="9499:9996" placeholder="..." />
-            <marker date="1464765355000" expanded="true" signature="9692:9891" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -993,13 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="614">
           <caret line="564" column="43" selection-start-line="564" selection-start-column="43" selection-end-line="564" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/calendar/calendar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1038,43 +851,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/partner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#3176#3317#0" expanded="false" />
-            <element signature="e#3390#3509#0" expanded="false" />
-            <element signature="e#3581#3749#0" expanded="false" />
-            <element signature="e#3800#3844#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/portal/wizard/portal_wizard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2310">
-          <caret line="160" column="53" selection-start-line="160" selection-start-column="53" selection-end-line="160" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/auth_signup/res_users.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="84" selection-end-column="18" />
-          <folding>
-            <element signature="e#99#139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../theme_bootswatch_native/views/account.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,7 +862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1090,7 +869,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../theme_bootswatch_native/views/woningview.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="178" column="32" selection-start-line="178" selection-start-column="32" selection-end-line="178" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1102,11 +887,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../theme_bootswatch_native/views/woningview.xml">
+    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/portal/wizard/portal_wizard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="189" column="10" selection-start-line="189" selection-start-column="10" selection-end-line="189" selection-end-column="10" />
+        <state relative-caret-position="515">
+          <caret line="160" column="53" selection-start-line="160" selection-start-column="53" selection-end-line="160" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/auth_signup/res_users.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="84" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ebook.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/ebook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__openerp__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/visitor.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partner.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="72" column="69" selection-start-line="72" selection-start-column="69" selection-end-line="72" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../odoo-9.0/addons/calendar/calendar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="659" column="13" selection-start-line="659" selection-start-column="13" selection-end-line="659" selection-end-column="27" />
+          <folding>
+            <element signature="e#2028#12185#0" expanded="false" />
+            <element signature="e#12222#13462#0" expanded="false" />
+            <element signature="e#13518#24954#0" expanded="false" />
+            <element signature="e#24994#27464#0" expanded="false" />
+            <element signature="e#27499#28634#0" expanded="false" />
+            <element signature="e#28679#28921#0" expanded="false" />
+            <marker date="1461659956000" expanded="true" signature="13734:15275" placeholder="SELECT cal.i... calendar_event" />
+            <marker date="1461659956000" expanded="true" signature="14697:15186" placeholder="SELECT rel.c... calendar_alarm_calendar_event_rel" />
+            <marker date="1461659956000" expanded="true" signature="15939:16212" placeholder="SELECT * FRO... missing_value" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/calendar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/house.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/partner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#3257#3398#0" expanded="false" />
+            <element signature="e#3471#3590#0" expanded="false" />
+            <element signature="e#3881#3925#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

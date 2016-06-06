@@ -35,7 +35,7 @@ class House(models.Model):
     xx_description = fields.Text('Omschrijving', required=True)
     xx_build_year = fields.Char('Bouwjaar')
     xx_reference = fields.Char('Referentie')
-    xx_visitor_amount = fields.Integer(string='Aantal bezoekers')
+    xx_visitor_amount = fields.Integer(compute='increase_visitor_amount', string='Aantal bezoekers', default=0)
 
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
     xx_documents = fields.One2many('xx.house.document', 'xx_house', 'Documenten')
@@ -49,24 +49,12 @@ class House(models.Model):
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
     xx_status_id = fields.Many2one('xx.house.status', string='Status', required=True)
 
-    #     < div
-    #     style = "display:none" >
-    #     < p >
-    #     < t
-    #     t - set = "product.xx_visitor_amount"
-    #     t - value = "product.increase_visitor_amount()" / >
-    #
-    # < / p >
-    # < / div >
-
     @api.multi
     def increase_visitor_amount(self):
         id_admin = self.env['res.users'].search([('name', '=', 'Administrator')]).id
         id_sofie = self.env['res.users'].search([('name', '=', 'Sofie Andriesen')]).id
         if not id_admin or id_sofie:
             self.xx_visitor_amount += 1
-        if self._uid and (not id_admin or id_sofie):
-            pass
         return self.xx_visitor_amount
 
     @api.constrains('xx_build_year')
@@ -242,7 +230,9 @@ class House(models.Model):
     def google_maps_link(self):
         map_string = "http://www.google.com/maps/embed/v1/place?q=Belgium";
         if self.xx_street:
-            map_string="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgmpckf0b-E7mKPzI0Irfp4ammqSUs240&q=" + str(self.xx_city.name) + "+" + str(self.xx_zip) +"," + str(self.xx_street) +"+" + str(self.xx_street_number)
+            map_string = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCgmpckf0b-E7mKPzI0Irfp4ammqSUs240&q=" + str(
+                self.xx_city.name) + "+" + str(self.xx_zip) + "," + str(self.xx_street) + "+" + str(
+                self.xx_street_number)
         return map_string
 
     @api.onchange('xx_house_type')
@@ -339,9 +329,6 @@ class HouseAttribute(models.Model):
         self.xx_unit_type = current_attributetype_obj.xx_unit
 
 
-
-
-
 class HouseAttributeType(models.Model):
     _name = 'xx.house.attribute.type'
 
@@ -423,5 +410,3 @@ class HouseStatus(models.Model):
                     raise exceptions.ValidationError(
                         "Vooraleer deze positie gebruikt mag worden moet eerst positie %s gebruikt worden" % str(
                             self.xx_position - 1))
-
-
