@@ -287,14 +287,14 @@ class House(models.Model):
         status = xhs.search([('xx_position', '=', 0)])
         if not status:
             values = {
-                'name' : "In aanmaak",
-                'xx_position' : 0
+                'name': "In aanmaak",
+                'xx_position': 0
             }
             status = self.env['xx.house.status'].create(values)
 
         res.update({
-                'xx_status_id': status.id
-            })
+            'xx_status_id': status.id
+        })
         return res
 
 
