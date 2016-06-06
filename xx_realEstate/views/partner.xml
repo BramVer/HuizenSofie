@@ -68,8 +68,10 @@
                                     </tree>
                                 </field>
                             </page>
-                            <page string="Website bezichtigingen">
-
+                            <page string="Afspraken">
+                                <tree string="Afspraken">
+                                    <field name="xx_calendar_event"/>
+                                </tree>
                             </page>
 
                         </notebook>
