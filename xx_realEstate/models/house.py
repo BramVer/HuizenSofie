@@ -257,7 +257,7 @@ class House(models.Model):
     def default_get(self, vals):
         res = super(House, self).default_get(vals)
         xhd = self.env['xx.house.document']
-        docu_types = self.env['xx.house.document.type'].search([('name', '!=', False)])
+        docu_types = self.env['xx.house.document.type'].search([])
         if len(docu_types) > 0:
 
             documents = []
@@ -275,10 +275,16 @@ class House(models.Model):
 
         xhs = self.env['xx.house.status']
         status = xhs.search([('xx_position', '=', 0)])
-        if status:
-            res.update({
-                'xx_status_id': status.id
-            })
+        if not status:
+            values = {
+                'name': "In aanmaak",
+                'xx_position': 0
+            }
+            status = self.env['xx.house.status'].create(values)
+
+        res.update({
+            'xx_status_id': status.id
+        })
         return res
 
 

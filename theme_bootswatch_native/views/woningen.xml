@@ -14,12 +14,14 @@
                 <div class="searchWrap">
                   <div class="search-side">
                     <div id="search-hover">
-                      <form id="form_search-hover">
+                      <form id="form_search-hover" action="/shop" method="post">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <input type="hidden" name="searched" t-att-value="True"/>
                         <div class="col-md-8">
-                          <input type="text" placeholder="Zoeken op adres, postcode, ..."/>
+                          <input name="gemeente" type="text" placeholder="Zoeken op adres, postcode, ..."/>
                         </div>
                         <div class="col-md-2">
-                          <select>
+                          <select name="prijs">
                             <option value="0">Maak u keuze...</option>
                             <option value="1">Minder dan 2 euro</option>
                             <option value="2">€2 - €40000</option>
@@ -28,7 +30,7 @@
                           </select>
                         </div>
                         <div class="col-md-2">
-                          <input type="button" class="btnApart" value="Zoeken"/>
+                          <input class="btnApart" value="Zoeken" type="submit"/>
                         </div>
                           <input type="button" id="btnOptions" value="Meer Opties" style="margin-left: 0px"/>
                         <div id="specs">
@@ -37,8 +39,8 @@
                               <div class="col-sm-3">
                                 <div id="soort">
                                   <h3>Soort</h3>
-                                  <input type="checkbox" name="soort" value="huis"><p>Huis</p></input>
-                                  <input type="checkbox" name="soort" value="appartement"><p>Appartement</p></input>
+                                  <input type="checkbox" name="soort" value="Huis"><p>Huis</p></input>
+                                  <input type="checkbox" name="soort" value="Appartement"><p>Appartement</p></input>
                                   <input type="checkbox" name="soort" value="caravan"><p>Caravan</p></input>
                                   <input type="checkbox" name="soort" value="doos"><p>Kartonnen Doos</p></input>
                                 </div>

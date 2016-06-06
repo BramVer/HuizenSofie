@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+  <data>
+
+      <template name="Kopen" id="website_sale.products" page="True">
+  <t t-call="website.layout">
+      <t t-set="additional_title">Kopen</t>
+      <div id="wrap" class="js_sale">
+        <div class="oe_structure"/>
+        <div class="container oe_website_sale">
+          <div class="products_pager">
+            <div class="row" style="width: 100%;">
+              <div class="search">
+                <div class="searchWrap">
+                  <div class="search-side">
+                    <div id="search-hover">
+                      <form id="form_search-hover">
+                        <div class="col-md-8">
+                          <input type="text" placeholder="Zoeken op adres, postcode, ..."/>
+                        </div>
+                        <div class="col-md-2">
+                          <select>
+                            <option value="0">Maak u keuze...</option>
+                            <option value="1">Minder dan 2 euro</option>
+                            <option value="2">€2 - €40000</option>
+                            <option value="3">€40000 - €200000</option>
+                            <option value="4">€200000+</option>
+                          </select>
+                        </div>
+                        <div class="col-md-2">
+                          <input type="button" class="btnApart" value="Zoeken"/>
+                        </div>
+                          <input type="button" id="btnOptions" value="Meer Opties" style="margin-left: 0px"/>
+                        <div id="specs">
+                          <div class="row">
+                            <div class="wrapper">
+                              <div class="col-sm-3">
+                                <div id="soort">
+                                  <h3>Soort</h3>
+                                  <input type="checkbox" name="soort" value="huis"><p>Huis</p></input>
+                                  <input type="checkbox" name="soort" value="appartement"><p>Appartement</p></input>
+                                  <input type="checkbox" name="soort" value="caravan"><p>Caravan</p></input>
+                                  <input type="checkbox" name="soort" value="doos"><p>Kartonnen Doos</p></input>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">              
+                                <div id="loc">
+                                  <h3>Locatie</h3>
+                                  <input type="checkbox" name="loc" value="stad"><p>Stad</p></input>
+                                  <input type="checkbox" name="loc" value="periferie"><p>Periferie</p></input>
+                                  <input type="checkbox" name="loc" value="banlieu"><p>Banlieu</p></input>
+                                  <input type="checkbox" name="loc" value="riool"><p>Riool</p></input>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div id="kamer">
+                                  <h3>Aantal Kamers</h3>
+                                  <input type="checkbox" name="kamer" value="1to2"><p>minder dan 2 </p></input>
+                                  <input type="checkbox" name="kamer" value="2to4"><p> 2 - 4 </p></input>
+                                  <input type="checkbox" name="kamer" value="4plus"> <p>4 of meer</p></input>
+                                </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div id="extra">
+                                  <h3>Extras</h3>
+                                  <input type="checkbox" name="extra" value="garage"><p>Garage</p></input>
+                                  <input type="checkbox" name="extra" value="oprit"><p>Oprit</p></input>
+                                  <input type="checkbox" name="extra" value="..."><p>...</p></input>
+                                </div>    
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <t t-call="website_sale.pricelist_list"/>
+              <t t-call="website.pager"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="hidden" id="products_grid_before"/>
+            <div class="col-md-12" id="products_grid">
+              <table width="100%">
+                <tbody>
+                  <tr t-ignore="true">
+                    <td t-foreach="range(0,rows)" t-as="row" t-attf-width="#{100/rows}%"/>
+                  </tr>
+                  <tr t-foreach="bins" t-as="tr_product">
+                    <t t-foreach="tr_product" t-as="td_product">
+                      <t t-if="td_product">
+                      <t t-set="product" t-value="td_product['product']"/>
+                      <td t-att-colspan="td_product['x'] != 1 and td_product['x']" t-att-rowspan="td_product['y'] != 1 and td_product['y']" t-attf-class="oe_product oe_grid oe-height-#{td_product['y']*2} #{ td_product['class'] }">
+
+                          <div class="oe_product_cart" t-att-data-publish="product.website_published and 'on' or 'off'">
+                            <t t-set="product_image_big" t-value="td_product['x']+td_product['y'] &gt; 2"/>
+                            <t t-call="website_sale.products_item"/>
+                          </div>
+
+                      </td>
+                      </t>
+                      <td t-if="not td_product" class="oe-height-2"/>
+                    </t>
+                  </tr>
+                </tbody>
+              </table>
+              <t t-if="not bins">
+                <div class="text-center text-muted">
+                  <h3 class="css_editable_display">No product defined.</h3>
+                  <t groups="base.group_website_publisher">
+                    <p groups="base.group_sale_manager">Use the <i>'Content'</i> top menu to create a new product.</p>
+                  </t>
+                </div>
+              </t>
+            </div>
+          </div>
+          <div class="products_pager">
+              <t t-call="website.pager"/>
+          </div>
+        </div>
+        <div class="oe_structure mb32"/>
+      </div>
+  </t>
+</template>
+
+      <record id="Kopen_page_link" model="website.menu">
+  <field name="name">Kopen</field>
+  <field name="url">/shop</field>
+  <field name="parent_id" ref="website.main_menu" />
+  <field name="sequence" type="int">20</field>
+</record>
+
+
+  </data>
+</openerp>
