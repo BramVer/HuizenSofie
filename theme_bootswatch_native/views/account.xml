@@ -6,6 +6,10 @@
     <template id="website_portal_sale.account" name=" Mijn Account" inherit_id="website_portal.account">
         <xpath expr="//div[contains(@class,'o_my_documents')]" position="inside">
            <t name="User" t-name="user" style="font-family:Ropa Sans;">
+
+
+     <t t-if="user.type == verkoper or user.type == verkoper_koper">
+         <!-- PANDEN -->
     <h3 class="page-header">Uw panden</h3>
     <t t-if="not user.xx_housesOnSale_ids">
         <p>U biedt momenteel geen panden aan.</p>
@@ -26,14 +30,14 @@
                             <th class="col-sm-3" style="font-size: 18px; font-weight: bold;">
                                 <t t-esc="hos.xx_display_name"/>
                             </th>
-                            <th class="col-sm-2" style="font-weight: light;">
+                            <th class="col-sm-2" style="font-weight: lighter;">
                                 <t t-esc="hos.xx_zip"/>
                                 <t t-esc="hos.xx_city.name"/>
                             </th>
-                            <th class="col-sm-3" style="font-weight: light;">
+                            <th class="col-sm-2" style="font-weight: lighter;">
                                 <p>€ <t t-esc="hos.xx_current_price"/></p>
                             </th>
-                            <th class="col-sm-2" style="font-weight: light;">
+                            <th class="col-sm-3" style="font-weight: light;">
                                 <p>Status:  <colo style="color: rgb(50,192,50)"><t t-esc="hos.xx_status_id.name"/></colo></p>
                             </th>
                         </tr>
@@ -53,19 +57,19 @@
                     <!-- IF HOUSE IS SOLD -->
                     <t t-if="hos.xx_sold == true">
                         <tr>
-                            <th class="col-sm-3" style="font-size: 18px; font-weight: bold;">
+                            <td class="col-sm-3" style="font-size: 18px; font-weight: bold;">
                                 <t t-esc="hos.xx_display_name"/>
-                            </th>
-                            <th class="col-sm-2" style="font-weight: light;">
+                            </td>
+                            <td class="col-sm-2" style="font-weight: light;">
                                 <t t-esc="hos.xx_zip"/>
                                 <t t-esc="hos.xx_city.name"/>
-                            </th>
-                            <th class="col-sm-2" style="font-weight: light;">
+                            </td>
+                            <td class="col-sm-2" style="font-weight: light;">
                                 <p>€ <t t-esc="hos.xx_current_price"/></p>
-                            </th>
-                            <th class="col-sm-2" style="font-weight: light;">
+                            </td>
+                            <td class="col-sm-2" style="font-weight: light;">
                                 <p>Status:  <colo style="color: rgb(192,50,50)"><t t-esc="hos.xx_status_id.name"/></colo></p>
-                            </th>
+                            </td>
                         </tr>
                     </t>
                   </t>
@@ -73,6 +77,86 @@
             </div>
         </div>
     </t>
+     </t>
+
+
+
+    <!-- APPOINTMENTS -->
+
+    <!--
+    <h3 class="page-header">Uw afspraken</h3>
+               - IF USER HAS NOT MADE ANY APPOINTMENTS KEPT IN THE SYSTEM -
+    <t t-if="not user.xx_appointment">
+        <p>U heeft geen afspraken aangemaakt.</p>
+    </t>
+
+                 IF USER HAS MADE AN APPOINTMENT IN THE SYSTEM
+    <t t-if="user.xx_appointment">
+
+                 FOREACH APPOINTMENT
+        <div class="well well-sm wellekes">
+                <t t-foreach="user.xx_appointment.event" t-as="ev">
+                    <table class="table">
+                   <thead>
+                     <tr>
+                       <th>Datum</th>
+                       <th>Beschrijving</th>
+                       <th>Duur</th>
+                       <th>Locatie</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                                     IF DATE UNTIL APP IS GREATER THAN 0
+                       <t t-if="c.date_delay &gt; 0">
+                     <tr class="success">
+                       <td class="col-sm-4">
+                           <t t-esc="ev.start_datetime"/>
+                       </td>
+                       <td class="col-sm-2">
+                           <t t-esc="ev.name"/>
+                       </td>
+                       <td class="col-sm-2">
+                           <t t-if="ev.allday">
+                               Hele dag
+                           </t>
+                           <t t-if="not ev.allday">
+                            <t t-esc="ev.duration"/>
+                           </t>
+                       </td>
+                       <td class="col-sm-2">
+                           <t t-esc="ev.location"/>
+                       </td>
+                     </tr>
+                       </t>
+
+                             IF DATE UNTIL APP IS LESS THAN 0
+                       <t t-if="c.date_delay &lt;= 0">
+                     <tr class="danger">
+                       <td class="col-sm-4">
+                           <t t-esc="ev.start_datetime"/>
+                       </td>
+                       <td class="col-sm-2">
+                           <t t-esc="ev.name"/>
+                       </td>
+                       <td class="col-sm-2">
+                           <t t-if="ev.allday">
+                               Hele dag
+                           </t>
+                           <t t-if="not ev.allday">
+                            <t t-esc="ev.duration"/>
+                           </t>
+                       </td>
+                       <td class="col-sm-2">
+                           <t t-esc="ev.location"/>
+                       </td>
+                     </tr>
+                       </t>
+                   </tbody>
+                 </table>
+                </t>
+            </div>
+    </t>
+    -->
 </t>
         </xpath>
     </template>
