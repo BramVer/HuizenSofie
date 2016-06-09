@@ -9,7 +9,7 @@ class Transaction(models.Model):
     xx_price = fields.Integer(string="Prijs", required=True)
     xx_notaris = fields.Char(string="Notaris")
 
-    xx_buyer_id = fields.Many2one('res.partner', string="Koper")
+    xx_buyer_id = fields.Many2one('res.partner', string="Koper", domain=['|',('xx_type', '=', 'koper'), ('xx_type', '=', 'verkoper_koper')])
     xx_house_id = fields.Many2one('product.template', string="Woning", required=True)
     xx_transactionSeller = fields.Many2one('res.partner', string="Verkoper")
 
