@@ -14,29 +14,33 @@ class Calendar(models.Model):
 
     @api.multi
     def get_date_normal(self):
-        app_datetime = datetime.strptime(self.start_datetime, '%Y-%m-%d %I:%M:%S')
-        new_date_string = "" + app_datetime.day + "-" + app_datetime.month + "-" + app_datetime.year
+        app_datetime = datetime.strptime(self.start_datetime, '%Y-%m-%d %H:%M:%S')
+        new_date_string = "{0}-{1}-{2}".format(app_datetime.day, app_datetime.month, app_datetime.year)
         return new_date_string
 
     @api.multi
     def get_time_normal(self):
-        app_datetime = datetime.strptime(self.start_datetime, '%Y-%m-%d %I:%M:%S')
-        new_time_string = "" + app_datetime.hour + ":" + app_datetime.minute
+        app_datetime = datetime.strptime(self.start_datetime, '%Y-%m-%d %H:%M:%S')
+        new_time_string = "{0}:{1}".format(app_datetime.hour, app_datetime.minute)
         return new_time_string
 
     @api.multi
     def get_duration_normal(self):
         app_duration = self.duration * 60
-        app_hours = app_duration / 60
-        app_minutes = app_duration % 60
-        new_duration_string = "" + app_hours + ":" + app_minutes
-        return new_duration_string
+
+        app_hours = int(app_duration / 60)
+        app_minutes = int(app_duration % 60)
+
+        app_hours = str(app_hours).zfill(2)
+        app_minutes = str(app_minutes).zfill(2)
+        new_result = "{0}:{1}".format(app_hours, app_minutes)
+        return new_result
 
     @api.multi
     def get_happened(self):
-        app_datetime = datetime.strptime(self.stop_datetime, '%Y-%m-%d %I:%M:%S')
+        app_datetime = datetime.strptime(self.stop_datetime, '%Y-%m-%d %H:%M:%S')
         difference = (app_datetime - datetime.today()).days
         if difference < 0:
-            return False
-        else:
             return True
+        else:
+            return False
