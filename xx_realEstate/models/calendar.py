@@ -10,7 +10,6 @@ class Calendar(models.Model):
         create_obj = super(Calendar, self).create(vals)
         for partner in create_obj.attendee_ids:
             partner.partner_id.write({'xx_calendar_event': [create_obj.id]})
-        create_obj.get_happened()
         return create_obj
 
     @api.multi
@@ -37,8 +36,6 @@ class Calendar(models.Model):
     def get_happened(self):
         app_datetime = datetime.strptime(self.stop_datetime, '%Y-%m-%d %I:%M:%S')
         difference = (app_datetime - datetime.today()).days
-        from openerp.pydev import pydevd
-        pydevd.settrace('localhost', port=21000, stdoutToServer=True, stderrToServer=True)
         if difference < 0:
             return False
         else:
