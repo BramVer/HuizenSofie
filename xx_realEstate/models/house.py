@@ -23,7 +23,7 @@ class House(models.Model):
     xx_provence = fields.Selection(
         [('antwerpen', 'Antwerpen'), ('limburg', 'Limburg'), ('oostvlaanderen', 'Oost-Vlaanderen'),
          ('westvlaanderen', 'West-Vlaanderen'), ('brussel', 'Brussel'), ('henegouwen', 'Henegouwen'), ('luik', 'Luik'),
-         ('namen', 'Namen'), ('luxemburg', 'Luxemburg')], string='Provincie', required=True)
+         ('namen', 'Namen'), ('luxemburg', 'Luxemburg'), ('vlaamsbrabant', "Vlaams-Brabant"), ('waalsbrabant', 'Waals-Brabant')], string='Provincie', required=True)
     xx_starting_price = fields.Float('Start prijs', required=True)
     xx_current_price = fields.Float('Huidige prijs', required=True)
     xx_total_area = fields.Integer('Totale oppervlakte', required=True)
@@ -32,6 +32,7 @@ class House(models.Model):
     xx_sold = fields.Boolean('Verkocht')
     xx_buy_hire = fields.Selection([('huren', 'Huren'), ('kopen', 'Kopen'), ('beide', 'Beide')], string='Kopen/Huren',
                                    required=True)
+    xx_building_type = fields.Selection([('open', 'Open bebouwing'), ('gesloten', 'Gesloten bebouwing'), ('half', 'Half open bebouwing')], string='Soort bebouwing')
     xx_description = fields.Text('Omschrijving', required=True)
     xx_build_year = fields.Char('Bouwjaar')
     xx_reference = fields.Char('Referentie')
@@ -45,7 +46,7 @@ class House(models.Model):
     xx_visitor_ids = fields.Many2many("xx.house.visitors", string='Bezoekers', compute="_get_visitors", readonly=True,
                                       copy=False)
 
-    xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
+    xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True, domain=['|',('xx_type', '=', 'verkoper'), ('xx_type', '=', 'verkoper_koper')])
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
     xx_status_id = fields.Many2one('xx.house.status', string='Status', required=True)
 
@@ -125,10 +126,10 @@ class House(models.Model):
     def _onchange_current_price(self):
         self.xx_starting_price = self.xx_starting_price
 
-    @api.depends('xx_street', 'xx_street_number')
+    @api.depends('xx_street', 'xx_street_number', 'xx_city')
     def _get_name(self):
-        if self.xx_street and self.xx_street_number:
-            self.name = self.xx_street + ' ' + self.xx_street_number
+        if self.xx_city and self.xx_street and self.xx_street_number:
+            self.name = self.xx_city.name + ', ' + self.xx_street + ' ' + self.xx_street_number
 
     @api.onchange('xx_city')
     def _onchange_city(self):

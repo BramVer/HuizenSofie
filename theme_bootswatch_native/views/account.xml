@@ -93,10 +93,10 @@
         <p>U heeft geen afspraken aangemaakt.</p>
     </t>
 
-                <!-- IF USER HAS MADE AN APPOINTMENT IN THE SYSTEM -->
+    <!-- IF USER HAS MADE AN APPOINTMENT IN THE SYSTEM -->
     <t t-if="user.xx_calendar_event">
 
-                <!-- FOREACH APPOINTMENT -->
+        <!-- FOREACH APPOINTMENT -->
         <div class="well well-sm wellekes">
                 <t t-foreach="user.xx_calendar_event" t-as="ev">
                     <table class="table">
@@ -111,10 +111,10 @@
                    </thead>
                    <tbody>
         <!-- IF DATE UNTIL APP IS GREATER THAN 0 -->
-                      <!--  <t t-if="c.date_delay &gt; 0"> -->
+                <t t-if="ev.get_happened() == False">
                      <tr class="danger">
                        <td>
-                           <t t-esc="ev.display_time"/>
+                           <t t-esc="ev.get_date_normal()"/>   <t t-esc="ev.get_time_normal()"/>
                        </td>
                        <td>
                            <t t-esc="ev.name"/>
@@ -124,7 +124,7 @@
                                Hele dag
                            </t>
                            <t t-if="not ev.allday">
-                            <t t-esc="ev.duration"/> uur
+                            <t t-esc="ev.get_duration_normal()"/>
                            </t>
                        </td>
                        <td>
@@ -134,13 +134,13 @@
                            Nog te gebeuren
                        </td>
                      </tr>
-                      <!-- </t> -->
+                     </t>
 
                            <!--  IF DATE UNTIL APP IS LESS THAN 0 -->
-                      <!-- <t t-if="c.date_delay &lt;= 0"> -->
+                       <t t-if="ev.get_happened() == True">
                      <tr class="success">
                        <td>
-                           <t t-esc="ev.start_datetime"/>
+                           <t t-esc="ev.get_date_normal()"/> - <t t-esc="ev.get_time_normal()"/>
                        </td>
                        <td>
                            <t t-esc="ev.name"/>
@@ -150,7 +150,7 @@
                                Hele dag
                            </t>
                            <t t-if="not ev.allday">
-                            <t t-esc="ev.duration"/> uur
+                            <t t-esc="ev.get_duration_normal()"/>
                            </t>
                        </td>
                        <td>
@@ -160,7 +160,7 @@
                             Plaatsgevonden
                        </td>
                      </tr>
-                     <!--  </t> -->
+                     </t>
                    </tbody>
                  </table>
                 </t>
