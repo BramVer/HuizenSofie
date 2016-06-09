@@ -8,8 +8,10 @@
            <t name="User" t-name="user" style="font-family:Ropa Sans;">
 
 
-     <t t-if="user.type == verkoper or user.type == verkoper_koper">
-         <!-- PANDEN -->
+    <!-- PANDEN -->
+    <!-- If verkoper / verkoper_koper -->
+    <t t-if="user.xx_type == 'verkoper' or user.xx_type == 'verkoper_koper'">
+
     <h3 class="page-header">Uw panden</h3>
     <t t-if="not user.xx_housesOnSale_ids">
         <p>U biedt momenteel geen panden aan.</p>
@@ -25,10 +27,11 @@
                 <table class="table table-hover table-condensed" style="width: 100%; font-family:Ropa Sans; color:#0d3532; font-size:16px;">
                   <t t-foreach="user.xx_housesOnSale_ids" t-as="hos">
                     <!-- IF HOUSE IS NOT SOLD -->
-                    <t t-if="not hos.xx_sold == true">
+                    <t t-if="hos.xx_sold == False">
                         <tr>
+
                             <th class="col-sm-3" style="font-size: 18px; font-weight: bold;">
-                                <t t-esc="hos.xx_display_name"/>
+                                <a t-att-href="hos.link_current_house()"><t t-esc="hos.xx_display_name"/></a>
                             </th>
                             <th class="col-sm-2" style="font-weight: lighter;">
                                 <t t-esc="hos.xx_zip"/>
@@ -55,21 +58,21 @@
                 <table class="table table-hover table-condensed" style="width: 100%; font-family:Ropa Sans; color:#0d3532; font-size:16px;">
                   <t t-foreach="user.xx_housesOnSale_ids" t-as="hos">
                     <!-- IF HOUSE IS SOLD -->
-                    <t t-if="hos.xx_sold == true">
+                    <t t-if="hos.xx_sold == True">
                         <tr>
-                            <td class="col-sm-3" style="font-size: 18px; font-weight: bold;">
-                                <t t-esc="hos.xx_display_name"/>
-                            </td>
-                            <td class="col-sm-2" style="font-weight: light;">
+                            <th class="col-sm-3" style="font-size: 18px; font-weight: bold;">
+                                <a t-att-href="hos.link_current_house()"><t t-esc="hos.xx_display_name"/></a>
+                            </th>
+                            <th class="col-sm-2" style="font-weight: lighter;">
                                 <t t-esc="hos.xx_zip"/>
                                 <t t-esc="hos.xx_city.name"/>
-                            </td>
-                            <td class="col-sm-2" style="font-weight: light;">
+                            </th>
+                            <th class="col-sm-2" style="font-weight: lighter;">
                                 <p>€ <t t-esc="hos.xx_current_price"/></p>
-                            </td>
-                            <td class="col-sm-2" style="font-weight: light;">
+                            </th>
+                            <th class="col-sm-3" style="font-weight: light;">
                                 <p>Status:  <colo style="color: rgb(192,50,50)"><t t-esc="hos.xx_status_id.name"/></colo></p>
-                            </td>
+                            </th>
                         </tr>
                     </t>
                   </t>
@@ -77,86 +80,92 @@
             </div>
         </div>
     </t>
-     </t>
+</t>
+    <br/>
 
 
 
     <!-- APPOINTMENTS -->
 
-    <!--
     <h3 class="page-header">Uw afspraken</h3>
-               - IF USER HAS NOT MADE ANY APPOINTMENTS KEPT IN THE SYSTEM -
-    <t t-if="not user.xx_appointment">
+               <!-- IF USER HAS NOT MADE ANY APPOINTMENTS KEPT IN THE SYSTEM -->
+    <t t-if="not user.xx_calendar_event">
         <p>U heeft geen afspraken aangemaakt.</p>
     </t>
 
-                 IF USER HAS MADE AN APPOINTMENT IN THE SYSTEM
-    <t t-if="user.xx_appointment">
+                <!-- IF USER HAS MADE AN APPOINTMENT IN THE SYSTEM -->
+    <t t-if="user.xx_calendar_event">
 
-                 FOREACH APPOINTMENT
+                <!-- FOREACH APPOINTMENT -->
         <div class="well well-sm wellekes">
-                <t t-foreach="user.xx_appointment.event" t-as="ev">
+                <t t-foreach="user.xx_calendar_event" t-as="ev">
                     <table class="table">
                    <thead>
                      <tr>
-                       <th>Datum</th>
-                       <th>Beschrijving</th>
-                       <th>Duur</th>
-                       <th>Locatie</th>
+                       <th class="col-sm-3">Datum</th>
+                       <th class="col-sm-3">Beschrijving</th>
+                       <th class="col-sm-2">Duur</th>
+                       <th class="col-sm-2">Locatie</th>
+                       <th class="col-sm-2">Status</th>
                      </tr>
                    </thead>
                    <tbody>
-                                     IF DATE UNTIL APP IS GREATER THAN 0
-                       <t t-if="c.date_delay &gt; 0">
-                     <tr class="success">
-                       <td class="col-sm-4">
-                           <t t-esc="ev.start_datetime"/>
-                       </td>
-                       <td class="col-sm-2">
-                           <t t-esc="ev.name"/>
-                       </td>
-                       <td class="col-sm-2">
-                           <t t-if="ev.allday">
-                               Hele dag
-                           </t>
-                           <t t-if="not ev.allday">
-                            <t t-esc="ev.duration"/>
-                           </t>
-                       </td>
-                       <td class="col-sm-2">
-                           <t t-esc="ev.location"/>
-                       </td>
-                     </tr>
-                       </t>
-
-                             IF DATE UNTIL APP IS LESS THAN 0
-                       <t t-if="c.date_delay &lt;= 0">
+        <!-- IF DATE UNTIL APP IS GREATER THAN 0 -->
+                      <!--  <t t-if="c.date_delay &gt; 0"> -->
                      <tr class="danger">
-                       <td class="col-sm-4">
-                           <t t-esc="ev.start_datetime"/>
+                       <td>
+                           <t t-esc="ev.display_time"/>
                        </td>
-                       <td class="col-sm-2">
+                       <td>
                            <t t-esc="ev.name"/>
                        </td>
-                       <td class="col-sm-2">
+                       <td>
                            <t t-if="ev.allday">
                                Hele dag
                            </t>
                            <t t-if="not ev.allday">
-                            <t t-esc="ev.duration"/>
+                            <t t-esc="ev.duration"/> uur
                            </t>
                        </td>
-                       <td class="col-sm-2">
+                       <td>
                            <t t-esc="ev.location"/>
                        </td>
+                       <td>
+                           Nog te gebeuren
+                       </td>
                      </tr>
-                       </t>
+                      <!-- </t> -->
+
+                           <!--  IF DATE UNTIL APP IS LESS THAN 0 -->
+                      <!-- <t t-if="c.date_delay &lt;= 0"> -->
+                     <tr class="success">
+                       <td>
+                           <t t-esc="ev.start_datetime"/>
+                       </td>
+                       <td>
+                           <t t-esc="ev.name"/>
+                       </td>
+                       <td>
+                           <t t-if="ev.allday">
+                               Hele dag
+                           </t>
+                           <t t-if="not ev.allday">
+                            <t t-esc="ev.duration"/> uur
+                           </t>
+                       </td>
+                       <td>
+                           <t t-esc="ev.location"/>
+                       </td>
+                       <td>
+                            Plaatsgevonden
+                       </td>
+                     </tr>
+                     <!--  </t> -->
                    </tbody>
                  </table>
                 </t>
             </div>
     </t>
-    -->
 </t>
         </xpath>
     </template>

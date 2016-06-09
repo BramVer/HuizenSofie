@@ -148,6 +148,13 @@ class House(models.Model):
         }
 
     @api.multi
+    def link_current_house(self):
+        current_url = WEBSITE_URL + (
+            self.xx_street + "-" + self.xx_street_number + "-" + str(self.id)).lower()
+        return current_url
+
+
+    @api.multi
     def show_qr_image(self):
         return {
             'name': 'Go to website',
