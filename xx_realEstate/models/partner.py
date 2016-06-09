@@ -17,6 +17,7 @@ class User(models.Model):
     xx_cellphone = fields.Char(string="GSM-nummer")
     xx_has_login = fields.Boolean('Heeft login')
     xx_want_ebook = fields.Boolean('Wilt E-Book')
+    xx_calendar_event = fields.Many2many('calendar.event', string='Kalender')
     # wachtwoord
 
     email = fields.Char(string="E-mailadres", required=True)
@@ -49,14 +50,14 @@ class User(models.Model):
     def _onchange_ebook(self):
         if self.xx_want_ebook:
             email = self.env["xx.ebook"].search([('name', '=', self.email)])
-            if len(email)==0:
+            if len(email) == 0:
                 vals = {
-                    'name' : self.email
+                    'name': self.email
                 }
                 ebook_mail = self.env["xx.ebook"].create(vals)
         else:
             email = self.env["xx.ebook"].search([('name', '=', self.email)])
-            if len(email)==1:
+            if len(email) == 1:
                 self.env["xx.ebook"].browse(email.id).unlink()
 
     @api.constrains('xx_telephone', 'xx_cellphone')

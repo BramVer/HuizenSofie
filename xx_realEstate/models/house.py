@@ -23,7 +23,7 @@ class House(models.Model):
     xx_provence = fields.Selection(
         [('antwerpen', 'Antwerpen'), ('limburg', 'Limburg'), ('oostvlaanderen', 'Oost-Vlaanderen'),
          ('westvlaanderen', 'West-Vlaanderen'), ('brussel', 'Brussel'), ('henegouwen', 'Henegouwen'), ('luik', 'Luik'),
-         ('namen', 'Namen'), ('luxemburg', 'Luxemburg')], string='Provincie', required=True)
+         ('namen', 'Namen'), ('luxemburg', 'Luxemburg'), ('vlaamsbrabant', "Vlaams-Brabant"), ('waalsbrabant', 'Waals-Brabant')], string='Provincie', required=True)
     xx_starting_price = fields.Float('Start prijs', required=True)
     xx_current_price = fields.Float('Huidige prijs', required=True)
     xx_total_area = fields.Integer('Totale oppervlakte', required=True)
@@ -32,10 +32,11 @@ class House(models.Model):
     xx_sold = fields.Boolean('Verkocht')
     xx_buy_hire = fields.Selection([('huren', 'Huren'), ('kopen', 'Kopen'), ('beide', 'Beide')], string='Kopen/Huren',
                                    required=True)
+    xx_building_type = fields.Selection([('open', 'Open bebouwing'), ('gesloten', 'Gesloten bebouwing'), ('half', 'Half open bebouwing')], string='Soort bebouwing')
     xx_description = fields.Text('Omschrijving', required=True)
     xx_build_year = fields.Char('Bouwjaar')
     xx_reference = fields.Char('Referentie')
-    xx_visitor_amount = fields.Integer(string='Aantal bezoekers')
+    xx_visitor_amount = fields.Integer(compute='increase_visitor_amount', string='Aantal bezoekers', default=0)
 
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
     xx_documents = fields.One2many('xx.house.document', 'xx_house', 'Documenten')
@@ -45,19 +46,9 @@ class House(models.Model):
     xx_visitor_ids = fields.Many2many("xx.house.visitors", string='Bezoekers', compute="_get_visitors", readonly=True,
                                       copy=False)
 
-    xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
+    xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True, domain=['|',('xx_type', '=', 'verkoper'), ('xx_type', '=', 'verkoper_koper')])
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
     xx_status_id = fields.Many2one('xx.house.status', string='Status', required=True)
-
-    #     < div
-    #     style = "display:none" >
-    #     < p >
-    #     < t
-    #     t - set = "product.xx_visitor_amount"
-    #     t - value = "product.increase_visitor_amount()" / >
-    #
-    # < / p >
-    # < / div >
 
     @api.multi
     def increase_visitor_amount(self):
@@ -65,8 +56,6 @@ class House(models.Model):
         id_sofie = self.env['res.users'].search([('name', '=', 'Sofie Andriesen')]).id
         if not id_admin or id_sofie:
             self.xx_visitor_amount += 1
-        if self._uid and (not id_admin or id_sofie):
-            pass
         return self.xx_visitor_amount
 
     @api.constrains('xx_build_year')
@@ -137,10 +126,10 @@ class House(models.Model):
     def _onchange_current_price(self):
         self.xx_starting_price = self.xx_starting_price
 
-    @api.depends('xx_street', 'xx_street_number')
+    @api.depends('xx_street', 'xx_street_number', 'xx_city')
     def _get_name(self):
-        if self.xx_street and self.xx_street_number:
-            self.name = self.xx_street + ' ' + self.xx_street_number
+        if self.xx_city and self.xx_street and self.xx_street_number:
+            self.name = self.xx_city.name + ', ' + self.xx_street + ' ' + self.xx_street_number
 
     @api.onchange('xx_city')
     def _onchange_city(self):
@@ -158,6 +147,13 @@ class House(models.Model):
             'target': 'current',
             'url': current_url
         }
+
+    @api.multi
+    def link_current_house(self):
+        current_url = WEBSITE_URL + (
+            self.xx_street + "-" + self.xx_street_number + "-" + str(self.id)).lower()
+        return current_url
+
 
     @api.multi
     def show_qr_image(self):
@@ -242,7 +238,9 @@ class House(models.Model):
     def google_maps_link(self):
         map_string = "http://www.google.com/maps/embed/v1/place?q=Belgium";
         if self.xx_street:
-            map_string="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgmpckf0b-E7mKPzI0Irfp4ammqSUs240&q=" + str(self.xx_city.name) + "+" + str(self.xx_zip) +"," + str(self.xx_street) +"+" + str(self.xx_street_number)
+            map_string = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCgmpckf0b-E7mKPzI0Irfp4ammqSUs240&q=" + str(
+                self.xx_city.name) + "+" + str(self.xx_zip) + "," + str(self.xx_street) + "+" + str(
+                self.xx_street_number)
         return map_string
 
     @api.onchange('xx_house_type')
@@ -267,7 +265,7 @@ class House(models.Model):
     def default_get(self, vals):
         res = super(House, self).default_get(vals)
         xhd = self.env['xx.house.document']
-        docu_types = self.env['xx.house.document.type'].search([('name', '!=', False)])
+        docu_types = self.env['xx.house.document.type'].search([])
         if len(docu_types) > 0:
 
             documents = []
@@ -337,9 +335,6 @@ class HouseAttribute(models.Model):
     def _onchange_attribute(self):
         current_attributetype_obj = self.name
         self.xx_unit_type = current_attributetype_obj.xx_unit
-
-
-
 
 
 class HouseAttributeType(models.Model):
@@ -423,5 +418,3 @@ class HouseStatus(models.Model):
                     raise exceptions.ValidationError(
                         "Vooraleer deze positie gebruikt mag worden moet eerst positie %s gebruikt worden" % str(
                             self.xx_position - 1))
-
-
