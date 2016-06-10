@@ -55,24 +55,25 @@ class House(models.Model):
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
     xx_status_id = fields.Many2one('xx.house.status', string='Status', required=True)
 
-    #     < select
+
+    #     <select
     #     name = "attribute_id"
     #
-    #     class ="form-control" >
+    #     class ="form-control">
     #
-    #     < option
-    #     value = "" > Attribute... < / option >
-    #     < t
+    #     <option
+    #     value = ""> Attribute... </option>
+    #     <t
     #     t - foreach = "product.fetch_attributes()"
-    #     t -as="attribute" >
-    #     < option
-    #     t - att - value = "attribute" >
-    #     < t
-    #     t - esc = "attribute" / >
+    #     t -as="attribute">
+    #     <option
+    #     t - att - value = "attribute">
+    #     <t
+    #     t - esc = "attribute"/>
     #
-    # < / option >
-    # < / t >
-    # < / select >
+    # </option >
+    # </t >
+    # </select >
 
 
 
