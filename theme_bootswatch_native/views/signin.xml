@@ -7,7 +7,7 @@
         <li class="divider" groups="base.group_public"/>
         <li groups="base.group_public">
             <a style="color:#0d3532" t-attf-href="/web/login">
-                <b>Sign in</b>
+                <b>Inloggen</b>
             </a>
         </li>
     </xpath>

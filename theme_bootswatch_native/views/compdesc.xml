@@ -6,7 +6,7 @@
     <!-- COMPANY INFO -->
     <address itemscope="itemscope" itemtype="http://schema.org/Organization">
     <!-- TODO widget contact must add itemprop attributes -->
-        <div t-field="res_company.partner_id" t-field-options="{                 &quot;widget&quot;: &quot;contact&quot;,                 &quot;fields&quot;: [&quot;name&quot;, &quot;address&quot;, &quot;phone&quot;, &quot;mobile&quot;, &quot;fax&quot;, &quot;email&quot;]}"/>
+        <div style="font-size: 20px" t-field="res_company.partner_id" t-field-options="{                 &quot;widget&quot;: &quot;contact&quot;,                 &quot;fields&quot;: [&quot;name&quot;, &quot;address&quot;, &quot;phone&quot;, &quot;mobile&quot;, &quot;fax&quot;, &quot;email&quot;]}"/>
     </address>
 
     <!-- GMAPS -->
