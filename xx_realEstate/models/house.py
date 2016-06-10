@@ -24,8 +24,8 @@ class House(models.Model):
         [('antwerpen', 'Antwerpen'), ('limburg', 'Limburg'), ('oostvlaanderen', 'Oost-Vlaanderen'),
          ('westvlaanderen', 'West-Vlaanderen'), ('brussel', 'Brussel'), ('henegouwen', 'Henegouwen'), ('luik', 'Luik'),
          ('namen', 'Namen'), ('luxemburg', 'Luxemburg')], string='Provincie', required=True)
-    xx_starting_price = fields.Float('Start prijs', required=True)
-    xx_current_price = fields.Float('Huidige prijs', required=True)
+    xx_starting_price = fields.Monetary('Start prijs', required=True)
+    xx_current_price = fields.Monetary('Huidige prijs', required=True)
     xx_total_area = fields.Integer('Totale oppervlakte', required=True)
     xx_living_area = fields.Integer('Bewoonbare oppervlakte', required=True)
     xx_unique_epc = fields.Char('EPC code')
@@ -48,6 +48,37 @@ class House(models.Model):
     xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True)
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
     xx_status_id = fields.Many2one('xx.house.status', string='Status', required=True)
+
+    # Fields for website
+    xx_attributes_selection = fields.Selection(selection='_get_attributes', string='Attributen')
+
+    @api.multi
+    def _get_attributes(self):
+        res = {}
+        for attribute in self.env['xx.house.attribute.type'].search([]):
+            res[attribute.id] = attribute.name
+        return res.items()
+
+    #     < select
+    #     name = "attribute_id"
+    #
+    #     class ="form-control" >
+    #
+    #     < option
+    #     value = "" > Attribute... < / option >
+    #     < t
+    #     t - foreach = "product.fetch_attributes()"
+    #     t -as="attribute" >
+    #     < option
+    #     t - att - value = "attribute" >
+    #     < t
+    #     t - esc = "attribute" / >
+    #
+    # < / option >
+    # < / t >
+    # < / select >
+
+
 
     @api.multi
     def increase_visitor_amount(self):

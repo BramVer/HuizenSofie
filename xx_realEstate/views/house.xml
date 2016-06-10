@@ -178,6 +178,7 @@
                         <br/>
                         <group>
                             <group>
+                                <field name="xx_attributes_selection"/>
                                 <field name="xx_seller_id"/>
                                 <field name="xx_house_type"/>
                                 <field name="xx_buy_hire"/>
