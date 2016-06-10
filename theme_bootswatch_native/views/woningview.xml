@@ -26,8 +26,8 @@
     <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" class="js_sale">
       <section t-attf-class="container mt8 oe_website_sale #{(compute_currency(product.lst_price) - product.price) &gt; 0.1 and 'discount'}" id="product_detail">
         <div class="row">
-          <div class="col-sm-4">
-            <ol class="breadcrumb">
+          <div class="col-sm-4" style="font-family: Ropa Sans;" >
+            <ol class="breadcrumb" style="font-family: Ropa Sans;" >
               <li>
                 <a t-att-href="keep(category=0)" style="color:#0d3532">Woningen</a>
               </li>
@@ -39,14 +39,11 @@
               </li>
             </ol>
           </div>
-          <div class="col-sm-3 mb8">
-            <t t-call="website_sale.search"/>
-          </div>
-          <div id="website_published_button" class="col-sm-3">
-            <t t-call="website.publish_management" groups="base.group_sale_manager">
-              <t t-set="object" t-value="product"/>
-              <t t-set="publish_edit" t-value="True"/>
-              <t t-set="action" t-value="'product.product_template_action'"/>
+          <div id="website_published_button" class="col-sm-offset-3 col-sm-3">
+            <t style="font-family: Ropa Sans;" t-call="website.publish_management" groups="base.group_sale_manager">
+              <t style="font-family: Ropa Sans;" t-set="object" t-value="product"/>
+              <t style="font-family: Ropa Sans;" t-set="publish_edit" t-value="True"/>
+              <t style="font-family: Ropa Sans;" t-set="action" t-value="'product.product_template_action'"/>
             </t>
           </div>
         </div>
