@@ -35,7 +35,7 @@
                 <p>Email<br/><input type="email" id="email"/></p><br/>
               </div>
               <p><input type="button" value="submit"/><input type="button" value="exit" id="btnExit"/></p>
-              <a href="pdf">Voorbeeld folder</a>
+              <a href="/theme_bootswatch_native/static/src/img/folder.pdf" target="_blank">Voorbeeld folder</a>
             </form>
         </div>
       </div>

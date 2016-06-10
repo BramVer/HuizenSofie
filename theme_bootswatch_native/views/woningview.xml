@@ -158,11 +158,16 @@
             </t>
           </div>
           <div class="col-sm-5 col-md-5 col-lg-4 col-lg-offset-1" id="product_details">
-            <h1 itemprop="name" t-field="product.xx_display_name" style="color:#0d3532; font-family:Ropa Sans; font-size:40px">Product Name</h1>
-            <span itemprop="url" style="display:none;" t-esc="'/shop/product/%s' % slug(product)"/>
-            <span t-field="product.xx_starting_price" style="white-space: nowrap;font-size:30px; color:#0d3532; font-family:Ropa Sans;" t-field-options="{                    &quot;widget&quot;: &quot;monetary&quot;,                    &quot;display_currency&quot;: &quot;website.currency_id&quot;                }"/>
+            <h1 itemprop="name" t-field="product.xx_display_name" style="color:#0d3532; font-family:Ropa Sans; font-size:60px">Product Naam</h1>
+                <!-- ADRES -->
+            <div style="font-family: Ropa Sans; font-size: 24px">
+              <span><t t-esc="product.xx_street"/> <t t-esc="product.xx_street_number"/>,</span><br/>
+              <span><t t-esc="product.xx_zip"/> <t t-esc="product.xx_city.name"/></span><br/>
+            </div>
+            <strong><span itemprop="url" style="display:none;" t-esc="'/shop/product/%s' % slug(product)"/>
+            <span t-field="product.xx_starting_price" style="white-space: nowrap;font-size:32px; color:#0d3532; font-family:Ropa Sans;" t-field-options="{                    &quot;widget&quot;: &quot;monetary&quot;,                    &quot;display_currency&quot;: &quot;website.currency_id&quot;                }"/>
             <span itemprop="price" style="display:none;" t-esc="product.price"/>
-            <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/>
+            <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/></strong>
             <div>
               <p>
                 <br/>
@@ -178,7 +183,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-12 text-left mt64 mb0">
-                  <h2 style="color:#0d3532; font-size:60px">Omschrijving&amp;nbsp;</h2>
+                  <h2 style="color:#0d3532; font-size:42px">Omschrijving&amp;nbsp;</h2>
                   <h3 class="text-muted">&amp;nbsp;</h3>
                 </div>
                 <div class="col-md-12 mb48 mt0" style="color:#0d3532; font-size:20px;">
@@ -201,7 +206,7 @@
             </div>
           </section>
         </t>
-        <h2 style="color:#0d3535; font-size:60px">Specificaties</h2>
+        <h2 style="color:#0d3535; font-size:42px">Specificaties</h2>
         <br/>
         <t t-set="i" t-value="0"/>
         <!-- SPEC TABLE W FOREACH LOOP -->
@@ -247,7 +252,7 @@ message: ''
             <h3>
               <br/>
               <div style="text-align: left;">
-                <span style="font-size: 48px; line-height: 1.1; font-family:Ropa Sans; color:#0d3532;">Delen</span>
+                <span style="font-size: 42px; line-height: 1.1; font-family:Ropa Sans; color:#0d3532;">Delen</span>
                 <span style="color: inherit; line-height: 1.1;"> &amp;nbsp;</span>
                 <br/>
                 <a style="text-decoration:none" href="">

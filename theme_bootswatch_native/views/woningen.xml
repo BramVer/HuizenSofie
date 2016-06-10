@@ -22,7 +22,7 @@
                         </div>
                         <div class="col-md-2">
                           <select name="prijs">
-                            <option value="0">Maak u keuze...</option>
+                            <option value="0">Maak uw keuze...</option>
                             <option value="1">Minder dan 2 euro</option>
                             <option value="2">€2 - €40000</option>
                             <option value="3">€40000 - €200000</option>

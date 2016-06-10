@@ -3,7 +3,7 @@
 
 <data>
 
-    <template id="website_portal_sale.account" name=" Mijn Account" inherit_id="website_portal.account">
+    <template id="website_portal_sale.account" name="Mijn Account" inherit_id="website_portal.account">
         <xpath expr="//div[contains(@class,'o_my_documents')]" position="inside">
            <t name="User" t-name="user" style="font-family:Ropa Sans;">
 
@@ -114,7 +114,7 @@
                 <t t-if="ev.get_happened() == False">
                      <tr class="danger">
                        <td>
-                           <t t-esc="ev.get_date_normal()"/>&#009;&#032;<t t-esc="ev.get_time_normal()"/>
+                           <t t-esc="ev.get_date_normal()"/> om &#009;<t t-esc="ev.get_time_normal()"/>
                        </td>
                        <td>
                            <t t-esc="ev.name"/>
@@ -145,7 +145,7 @@
                        <t t-if="ev.get_happened() == True">
                      <tr class="success">
                        <td>
-                           <t t-esc="ev.get_date_normal()"/>&#009;&#032;<t t-esc="ev.get_time_normal()"/>
+                           <t t-esc="ev.get_date_normal()"/> om &#009;<t t-esc="ev.get_time_normal()"/>
                        </td>
                        <td>
                            <t t-esc="ev.name"/>
