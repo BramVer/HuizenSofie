@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
-
         <template name="Kopen" id="website_sale.products" page="True">
             <t t-call="website.layout">
                 <t t-set="additional_title">Kopen</t>
