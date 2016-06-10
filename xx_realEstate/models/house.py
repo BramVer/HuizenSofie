@@ -13,6 +13,8 @@ class House(models.Model):
     _name = 'product.template'
     _inherit = 'product.template'
 
+    xx_starting_price = fields.Monetary('Start prijs', required=True)
+    xx_current_price = fields.Monetary('Huidige prijs', required=True)
     xx_display_name = fields.Char('Weergave naam', required=True)
     xx_house_type = fields.Many2one('xx.house.type', 'Huis type', required=True)
     name = fields.Char(compute='_get_name', store=True, default='', string='Adres')
@@ -23,16 +25,18 @@ class House(models.Model):
     xx_provence = fields.Selection(
         [('antwerpen', 'Antwerpen'), ('limburg', 'Limburg'), ('oostvlaanderen', 'Oost-Vlaanderen'),
          ('westvlaanderen', 'West-Vlaanderen'), ('brussel', 'Brussel'), ('henegouwen', 'Henegouwen'), ('luik', 'Luik'),
-         ('namen', 'Namen'), ('luxemburg', 'Luxemburg'), ('vlaamsbrabant', "Vlaams-Brabant"), ('waalsbrabant', 'Waals-Brabant')], string='Provincie', required=True)
-    xx_starting_price = fields.Float('Start prijs', required=True)
-    xx_current_price = fields.Float('Huidige prijs', required=True)
+         ('namen', 'Namen'), ('luxemburg', 'Luxemburg'), ('vlaamsbrabant', "Vlaams-Brabant"),
+         ('waalsbrabant', 'Waals-Brabant')], string='Provincie', required=True)
+
     xx_total_area = fields.Integer('Totale oppervlakte', required=True)
     xx_living_area = fields.Integer('Bewoonbare oppervlakte', required=True)
     xx_unique_epc = fields.Char('EPC code')
     xx_sold = fields.Boolean('Verkocht')
     xx_buy_hire = fields.Selection([('huren', 'Huren'), ('kopen', 'Kopen'), ('beide', 'Beide')], string='Kopen/Huren',
                                    required=True)
-    xx_building_type = fields.Selection([('open', 'Open bebouwing'), ('gesloten', 'Gesloten bebouwing'), ('half', 'Half open bebouwing')], string='Soort bebouwing')
+    xx_building_type = fields.Selection(
+        [('open', 'Open bebouwing'), ('gesloten', 'Gesloten bebouwing'), ('half', 'Half open bebouwing')],
+        string='Soort bebouwing')
     xx_description = fields.Text('Omschrijving', required=True)
     xx_build_year = fields.Char('Bouwjaar')
     xx_reference = fields.Char('Referentie')
@@ -46,7 +50,8 @@ class House(models.Model):
     xx_visitor_ids = fields.Many2many("xx.house.visitors", string='Bezoekers', compute="_get_visitors", readonly=True,
                                       copy=False)
 
-    xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True, domain=['|',('xx_type', '=', 'verkoper'), ('xx_type', '=', 'verkoper_koper')])
+    xx_seller_id = fields.Many2one('res.partner', string='Verkoper', required=True,
+                                   domain=['|', ('xx_type', '=', 'verkoper'), ('xx_type', '=', 'verkoper_koper')])
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
     xx_status_id = fields.Many2one('xx.house.status', string='Status', required=True)
 
@@ -153,7 +158,6 @@ class House(models.Model):
         current_url = WEBSITE_URL + (
             self.xx_street + "-" + self.xx_street_number + "-" + str(self.id)).lower()
         return current_url
-
 
     @api.multi
     def show_qr_image(self):

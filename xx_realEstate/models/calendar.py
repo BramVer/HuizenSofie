@@ -33,7 +33,8 @@ class Calendar(models.Model):
 
         app_hours = str(app_hours).zfill(2)
         app_minutes = str(app_minutes).zfill(2)
-        new_result = "{0}:{1}".format(app_hours, app_minutes)
+        #new_result = "{0}:{1}".format(app_hours, app_minutes)
+        new_result = "" + app_hours + ":" + app_minutes
         return new_result
 
     @api.multi

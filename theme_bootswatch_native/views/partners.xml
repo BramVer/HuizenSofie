@@ -3,17 +3,20 @@
 <data>
 
     <template name="Partners" id="website.Partners" page="True">
-<t name="Partners" t-name="website.Partners">
+    <t name="Partners" t-name="website.Partners">
 
    <t t-call="website.layout">
+
+            <div class="col-md-12 text-center mt16 mb0">
+              <h2 style="font-family:Ropa Sans; color:#0d3532; font-size:42px; margin-top:5%;">ONZE PARTNERS</h2>
+            </div>
+
    <div id="wrap">
      <div class="container">
-       <h1 style="font-family:Ropa Sans; color:#0d3532; font-size:30px">Dit zijn onze partners</h1>
-       <ul style="font-family:Ropa Sans; color:#0d3532; font-size:45px" class="services">
-         <li>-</li>
-         <li>-</li>
-         <li>-</li>
-       </ul>
+         <div class="partnertekst" style="font-family: Ropa Sans; font-size: 20px">
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor scelerisque diam vitae tempus. Integer non placerat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer sollicitudin malesuada felis, eget consequat enim egestas sed. Etiam eu maximus ex, at luctus massa. Etiam aliquam libero nisi, in volutpat velit feugiat a. Mauris sagittis ligula velit, at varius augue fringilla vitae. Sed ante libero, faucibus quis pellentesque non, hendrerit non ipsum. Cras neque elit, dignissim sed massa in, tincidunt efficitur arcu. Maecenas sit amet ante tortor. Donec tellus tellus, vehicula ac massa vitae, sodales tincidunt ipsum. Integer ac mauris erat. Phasellus ut ornare ex. Phasellus scelerisque tincidunt lectus, in egestas purus rutrum vitae. Aenean tincidunt lectus vulputate viverra bibendum.
+         </div>
+
        <!-- === Snippets' area === -->
        <div class="oe_structure"/>
      </div>

@@ -9,6 +9,6 @@ Dit is de module voor viaSofie
     'depends': ['base', 'product', 'calendar'],
     'data': ['views/partner.xml', 'views/transaction.xml', 'views/attribute.xml', 'views/house.xml', 'views/city.xml',
              'views/house_type.xml', 'views/document.xml', 'views/house_sequence.xml', 'views/visitor.xml',
-             'views/status.xml', 'views/ebook.xml'],
+             'views/status.xml', 'views/ebook.xml', 'security/ir.model.access.csv'],
     'installable': True,
 }

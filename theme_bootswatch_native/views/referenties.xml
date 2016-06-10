@@ -9,8 +9,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 class="text-center">Referenties</h1>
-              <h3 class="text-center text-muted">U staat niet alleen in uw zoektocht.</h3>
+              <h1 class="text-center" style="font-size: 42px">REFERENTIES</h1>
+              <h3 class="text-center text-muted" style="font-size: 24px">U staat niet alleen in uw zoektocht.</h3>
             </div>
           </div>
         </div>
@@ -22,9 +22,9 @@
               <h5>
                 <span style="font-weight: normal;">
                   <span>
-                    <font style="font-size: 14px;">L</font>
+                    <font style="font-size: 20px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</font>
                   </span>
-                  <span>orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</span>
+                  <span></span>
                 </span>
               </h5>
             </div>
@@ -39,16 +39,16 @@
               <img alt="Odoo image and text block" class="img img-responsive mb16 shadow img-rounded img-thumbnail" src="/web/image/1019" style="width: 50%;"/>
             </div>
             <div class="col-md-6 mt16">
-              <h5>Piet uyt den Broecke - Mortsel</h5>
+              <h5 style="font-size: 24px">Piet uyt den Broecke - Mortsel</h5>
               <h4>
                 <br/>
                 <span style="font-weight: normal;">
-                  <font style="font-size: 14px;">Het huis was keigoed verkocht aan mij en ik ben blij dat ik nu een huis heb en geen doos.&amp;nbsp;</font>
+                  <font style="font-size: 20px;">Het huis was keigoed verkocht aan mij en ik ben blij dat ik nu een huis heb en geen doos.&amp;nbsp;</font>
                 </span>
               </h4>
               <h4>
                 <span style="font-weight: normal;">
-                  <font style="font-size: 14px;">9/10 sterren voor mevrouw Sofie!!&amp;nbsp;</font>
+                  <font style="font-size: 20px;">9/10 sterren voor mevrouw Sofie!!&amp;nbsp;</font>
                 </span>
               </h4>
             </div>
@@ -60,11 +60,11 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 mt16">
-              <h5>Claude Zacque - Brasschaat</h5>
+              <h5 style="font-size: 24px">Claude Zacque - Brasschaat</h5>
               <h4>&amp;nbsp;</h4>
               <h4>
                 <span style="font-weight: normal;">
-                  <font style="font-size: 14px;">La service était vraiment fooooooormidable. Formidable, forminable etcetc</font>
+                  <font style="font-size: 20px;">La service était vraiment fooooooormidable. Formidable, forminable etcetc</font>
                 </span>
               </h4>
             </div>
