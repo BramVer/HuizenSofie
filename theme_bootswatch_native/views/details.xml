@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+<data>
+    <template name="Account" t-name="website_portal.account">
+        <t name="User" t-name="user" style="font-family:Ropa Sans;">
+
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container mb64">
+                    <div class="col-md-8 o_my_documents">
+                        <div class="oe_structure"/>
+                    </div>
+                    <div t-if="sales_rep" class="col-md-3">
+                      <t t-call="website_portal.contact"/>
+                      <div class="oe_structure"/>
+                    </div>
+                    <div id="o_my_sidebar" class="col-md-3 col-md-offset-1 o_my_sidebar">
+                        <div class="o_my_details">
+                            <h3 class="page-header">Mijn details</h3>
+                            <!--<div t-field="user.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;email&quot;, &quot;phone&quot;, &quot;address&quot;, &quot;name&quot;]}"/>-->
+                            <div>
+                                    <strong>Naam:&#009;</strong><t t-esc="user.name"/><br/>
+                                    <strong>Email:&#009;</strong><t t-esc="user.email"/><br/>
+                                    <t t-if="user.xx_telephone">
+                                        <strong>Telefoon:&#009;</strong><t t-esc="user.xx_telephone"/><br/>
+                                    </t>
+                                    <t t-if="user.xx_cellphone">
+                                        <strong>GSM:&#009;</strong><t t-esc="user.xx_cellphone"/><br/>
+                                    </t>
+                                    <t t-esc="user.xx_street"/>&#009;<t t-esc="user.xx_houseNumber"/><br/>
+                                    <t t-esc="user.xx_zip"/>&#009;<t t-esc="user.xx_city.name"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 oe_structure"/>
+                </div>
+            </div>
+        </t>
+        </t>
+
+</template>
+
+
+</data>
+</openerp>
