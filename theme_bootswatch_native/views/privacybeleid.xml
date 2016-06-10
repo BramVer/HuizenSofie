@@ -4,81 +4,18 @@
 
     <template name="Privacybeleid" id="website.Privacybeleid" page="True">
 
-       <t t-call="website.layout">
-    <div class="oe_structure">
-      <section class="s_image_text mb0">
-        <div class="container">
-          <div class="row">
-            <div class="mt16 col-md-4 mb16">
-              <img class="img img-responsive mb16" src="/web/image/393" alt="Odoo image and text block" style="animation: none paused; transform: translateX(-30.3%) translateY(70.6%) scaleX(1.18) scaleY(1.14); transition: none;"/>
-            </div>
-            <div style="margin-top:10%" class="mt16 col-md-8 mb48">
-              <h3>
-                <br/>
-              </h3>
-              <h3 style="color:#0d3532">
-                <font style="font-size: 48px;">Privacybeleid</font>
-              </h3>
-              <p>&amp;nbsp;
-                                <span style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans"/>
-                                <br/>
-                                <span style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;Via Sofie hecht veel belang aan het beschermen van de privacy van de bezoekers van haar &amp;nbsp; &amp;nbsp;website.</span>
-                            </p>
-              <p/>
-              <p/>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;Ons
-privacybeleid is van toepassing op de diensten geleverd door Via
-Sofie. We zijn echter </p>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;niet verantwoordelijk voor het privacybeleid
-van andere sites en bronnen.</p>
-              <p/>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;We zijn er van bewust dat u vertrouwen stelt in ons en zien het dan ook als onze &amp;nbsp;</p>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;verantwoordelijkheid om uw privacy te beschermen. </p>
-              <p/>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">
-                <br/>
-              </p>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;Door gebruik te maken van deze website geeft u aan het privacybeleid te accepteren.</p>
-              <p/>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;Wanneer u zich aanmeldt voor één van onze diensten, zoals een nieuwsbrief, e-book of &amp;nbsp;</p>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;klantenaccount vragen we u om persoonsgegevens te
-verstrekken. Deze gegevens worden </p>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;gebruikt om de dienst uit te kunnen
-voeren.</p>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">
+        <t t-call="website.layout">
 
-              &amp;nbsp;</p>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;Uw gegevens worden ook gebruikt om u op de &amp;nbsp;hoogte te houden van onze activiteiten. </p>
-              <p/>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;De informatie wordt niet met derden gedeeld. Onze werknemers zijn verplicht om de &amp;nbsp;</p>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;vertrouwelijkheid van uw gegevens te respecteren.</p>
-              <p/>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;We controleren regelmatig of we aan dit privacybeleid voldoen. Als u vragen heeft over dit &amp;nbsp;privacybeleid, kunt u contact met ons opnemen:</p>
-              <p/>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">
-                <b>&amp;nbsp;</b>
-              </p>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans"><b>&amp;nbsp;Adres: </b>Mussenhoevelaan 101,2530 Boechout
+<div class="oe_structure">
 
-                            </p>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;<b>Telefoonnummer</b>: 0483713710
-                            </p>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans"><b>&amp;nbsp;Emailadres</b>:
-                                <a href="/page/www.google.be">info@viasofie.be</a></p>
-              <p/>
-              <p lang="en-US" style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans"/>
-              <p/>
-              <p style="line-height: 100%; font-size:20px; color:#0d3532; font-family:Ropa Sans">&amp;nbsp;Als
-u uw gegevens aan wilt passen of uzelf uit onze bestanden wilt laten
-halen, kunt u &amp;nbsp;contact met ons op nemen.</p>
-              <p/>
-            </div>
-          </div>
+
+
         </div>
-      </section>
-    </div>
   </t>
-    </template>
+
+
+
+</template>
 
 
 </data>

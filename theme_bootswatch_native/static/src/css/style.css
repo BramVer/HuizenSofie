@@ -25,7 +25,7 @@
 
 #ebookOverlay form {
 	left: 45%;
-	top: 20%;
+	top: -20%;
 	background-color: rgb(232, 232, 232);
 	padding: 10px;
 }
