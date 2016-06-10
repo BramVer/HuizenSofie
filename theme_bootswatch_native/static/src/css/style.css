@@ -140,60 +140,7 @@ h3 {
 	/*padding-bottom: 8px;*/
 }
 
-#soort p {
-	position: relative;
-	margin-left: 100px;
-	margin-top: -30px;
-}
 
-#soort input {
-	position: relative;
-	margin-left: -40px;
-}
-
-#loc p {
-	position: relative;
-	margin-left: 100px;
-	margin-top: -30px;
-}
-
-#loc input {
-	position: relative;
-	margin-left: -40px;
-}
-
-#kamer p {
-	position: relative;
-	margin-left: 100px;
-	margin-top: -30px;
-}
-
-#kamer input {
-	position: relative;
-	margin-left: -40px;
-}
-
-#extra p {
-	position: relative;
-	margin-left: 100px;
-	margin-top: -30px;
-}
-
-#extra input {
-	position: relative;
-	margin-left: -40px;
-}
-
-#prijs p {
-	position: relative;
-	margin-left: 100px;
-	margin-top: -30px;
-}
-
-#prijs input {
-	position: relative;
-	margin-left: -40px;
-}
 /*END SEARCHBAR*/
 
 /* EBOOK */
