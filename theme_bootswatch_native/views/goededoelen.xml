@@ -3,7 +3,7 @@
 <data>
 
     <template name="Goede doelen" id="website.Goededoelen" page="True">
-  <t t-call="website.layout">
+ <t t-call="website.layout">
     <div id="wrap">
       <div class="container">
         <h1>&amp;nbsp;</h1>
@@ -74,7 +74,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-3 mt0">
-                  <img class="img img-responsive mb16 img-thumbnail" src="/web/image/352" alt="Key" style="transform: translateX(-0.4%) translateY(-52.8%);"/>
+                  <img class="img img-responsive mb16" src="/web/image/352" alt="Key" style="transform: translateX(-0.4%) translateY(-52.8%);"/>
                 </div>
               </div>
             </div>
