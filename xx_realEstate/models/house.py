@@ -55,28 +55,6 @@ class House(models.Model):
     xx_transaction_id = fields.Many2one('xx.transaction', string='Transactie')
     xx_status_id = fields.Many2one('xx.house.status', string='Status', required=True)
 
-
-    #     <select
-    #     name = "attribute_id"
-    #
-    #     class ="form-control">
-    #
-    #     <option
-    #     value = ""> Attribute... </option>
-    #     <t
-    #     t - foreach = "product.fetch_attributes()"
-    #     t -as="attribute">
-    #     <option
-    #     t - att - value = "attribute">
-    #     <t
-    #     t - esc = "attribute"/>
-    #
-    # </option >
-    # </t >
-    # </select >
-
-
-
     @api.multi
     def increase_visitor_amount(self):
         id_admin = self.env['res.users'].search([('name', '=', 'Administrator')]).id
