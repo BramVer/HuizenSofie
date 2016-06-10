@@ -3,7 +3,7 @@
 
 <data>
 
-    <template id="website_portal_sale.account" name=" Mijn Account" inherit_id="website_portal.account">
+    <template id="website_portal_sale.account" name="Mijn Account" inherit_id="website_portal.account">
         <xpath expr="//div[contains(@class,'o_my_documents')]" position="inside">
            <t name="User" t-name="user" style="font-family:Ropa Sans;">
 
@@ -12,7 +12,7 @@
     <!-- If verkoper / verkoper_koper -->
     <t t-if="user.xx_type == 'verkoper' or user.xx_type == 'verkoper_koper'">
 
-    <h3 class="page-header">Uw panden</h3>
+    <h3 class="page-header" style="font-size: 32px">Uw panden</h3>
     <t t-if="not user.xx_housesOnSale_ids">
         <p>U biedt momenteel geen panden aan.</p>
     </t>
@@ -22,13 +22,13 @@
 
         <!-- FOREACH HOUSE STILL FOR SALE -->
         <div class="well well-sm wellekes">
-            <h4 class="text-center">TE KOOP</h4>
+            <h4 class="text-center" style="font-size: 20px">TE KOOP</h4>
             <div class="table-responsive">
                 <table class="table table-hover table-condensed" style="width: 100%; font-family:Ropa Sans; color:#0d3532; font-size:16px;">
                   <t t-foreach="user.xx_housesOnSale_ids" t-as="hos">
                     <!-- IF HOUSE IS NOT SOLD -->
                     <t t-if="hos.xx_sold == False">
-                        <tr>
+                        <tr style="">
 
                             <th class="col-sm-3" style="font-size: 18px; font-weight: bold;">
                                 <a t-att-href="hos.link_current_house()"><t t-esc="hos.xx_display_name"/></a>
@@ -98,23 +98,23 @@
 
         <!-- FOREACH APPOINTMENT -->
         <div class="well well-sm wellekes">
-                <t t-foreach="user.xx_calendar_event" t-as="ev">
                     <table class="table">
                    <thead>
                      <tr>
                        <th class="col-sm-3">Datum</th>
                        <th class="col-sm-3">Beschrijving</th>
-                       <th class="col-sm-2">Duur</th>
+                       <th class="col-sm-1">Duur</th>
                        <th class="col-sm-2">Locatie</th>
-                       <th class="col-sm-2">Status</th>
+                       <th class="col-sm-3">Status</th>
                      </tr>
                    </thead>
                    <tbody>
         <!-- IF DATE UNTIL APP IS GREATER THAN 0 -->
+                <t t-foreach="user.xx_calendar_event" t-as="ev">
                 <t t-if="ev.get_happened() == False">
                      <tr class="danger">
                        <td>
-                           <t t-esc="ev.get_date_normal()"/>   <t t-esc="ev.get_time_normal()"/>
+                           <t t-esc="ev.get_date_normal()"/> om &#009;<t t-esc="ev.get_time_normal()"/>
                        </td>
                        <td>
                            <t t-esc="ev.name"/>
@@ -128,7 +128,12 @@
                            </t>
                        </td>
                        <td>
+                           <t t-if="ev.location">
                            <t t-esc="ev.location"/>
+                           </t>
+                           <t t-if="not ev.location">
+                               /
+                           </t>
                        </td>
                        <td>
                            Nog te gebeuren
@@ -140,7 +145,7 @@
                        <t t-if="ev.get_happened() == True">
                      <tr class="success">
                        <td>
-                           <t t-esc="ev.get_date_normal()"/> - <t t-esc="ev.get_time_normal()"/>
+                           <t t-esc="ev.get_date_normal()"/> om &#009;<t t-esc="ev.get_time_normal()"/>
                        </td>
                        <td>
                            <t t-esc="ev.name"/>
@@ -154,20 +159,27 @@
                            </t>
                        </td>
                        <td>
+                           <t t-if="ev.location">
                            <t t-esc="ev.location"/>
+                           </t>
+                           <t t-if="not ev.location">
+                               /
+                           </t>
                        </td>
                        <td>
                             Plaatsgevonden
                        </td>
                      </tr>
                      </t>
+                </t>
                    </tbody>
                  </table>
-                </t>
             </div>
     </t>
 </t>
         </xpath>
     </template>
+
+
 </data>
 </openerp>
