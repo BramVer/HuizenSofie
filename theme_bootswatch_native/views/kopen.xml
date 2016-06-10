@@ -27,9 +27,6 @@
        <h5><strong><a itemprop="name" t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))" t-field="product.xx_display_name" style="color:#0d3532; font-size:25px;"/></strong></h5>
       <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" class="product_price" t-if="product.product_variant_ids">
           <b>
-              <t t-if="(compute_currency(product.lst_price) - product.price) &gt; 0.1">
-                <del class="text-danger mr8" style="white-space: nowrap;" t-field="product.lst_price" t-field-options="{                   &quot;widget&quot;: &quot;monetary&quot;,                   &quot;from_currency&quot;: &quot;product.currency_id&quot;,                   &quot;display_currency&quot;: &quot;website.currency_id&quot;                 }"/>
-              </t>
              <span t-field="product.xx_current_price" style="white-space: nowrap; color:#0d3532; font-size:20px; font-family:Ropa Sans" t-field-options="{                    &quot;widget&quot;: &quot;monetary&quot;,                    &quot;display_currency&quot;: &quot;website.currency_id&quot;                }">
               </span>
               <span itemprop="price" style="display:none;" t-esc="product.price"/>

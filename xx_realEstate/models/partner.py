@@ -43,22 +43,10 @@ class User(models.Model):
 
     @api.onchange('xx_city')
     def _onchange_city(self):
-        if self.xx_city:
-            self.xx_zip = self.xx_city.xx_zip
+        for p in self:
+            if p.xx_city:
+                p.xx_zip = p.xx_city.xx_zip
 
-    @api.onchange('xx_want_ebook')
-    def _onchange_ebook(self):
-        if self.xx_want_ebook:
-            email = self.env["xx.ebook"].search([('name', '=', self.email)])
-            if len(email) == 0:
-                vals = {
-                    'name': self.email
-                }
-                ebook_mail = self.env["xx.ebook"].create(vals)
-        else:
-            email = self.env["xx.ebook"].search([('name', '=', self.email)])
-            if len(email) == 1:
-                self.env["xx.ebook"].browse(email.id).unlink()
 
     @api.constrains('xx_telephone', 'xx_cellphone')
     def _check_telephone_or_cellphone_empty(self):

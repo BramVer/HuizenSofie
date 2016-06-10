@@ -38,7 +38,7 @@
               <div id="email">
                 <p>Email<br/><input type="email" id="email"/></p><br/>
               </div>
-              <p><input type="button" value="submit"/><input type="button" value="exit" id="btnExit"/></p><br/>
+              <p><input type="btnApart" value="submit"/><input type="button" value="exit" id="btnExit"/></p><br/>
             </form>
         </div>
         <section class="s_title" style="z-index: -1">

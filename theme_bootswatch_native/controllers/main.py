@@ -29,7 +29,22 @@ class website_houses(openerp.addons.website_sale.controllers.main.website_sale):
                 filtered_products_list = product_obj.search([('id', 'in', filtered_products_list._ids), ('xx_house_type', '=', soort)])
                 post["soort"] = soort
             if (gemeente):
-                gemeentes = request.httprequest.form.getlist('gemeente')
+                gemeente_string = request.httprequest.form.get('gemeente')
+                gem = ""
+                zip = ""
+
+                words = gemeente_string.split()
+
+                for word in words:
+                    if product_obj.search([('xx_city', 'ilike', word)]):
+                        gem = word
+                    else:
+                        if product_obj.search([('xx_zip', '=ilike', word)]):
+                            zip = word
+
+                filtered_products_list = product_obj.search([('id', 'in', filtered_products_list._ids),'|', ('xx_zip', '=ilike', zip), ('xx_city', 'ilike', gem)])
+
+
             if (prijs):
                 prijzen = request.httprequest.form.get('prijs')
 
@@ -64,5 +79,21 @@ class website_houses(openerp.addons.website_sale.controllers.main.website_sale):
 
 
         return old_sold
+
+class MyControllerWelcome(openerp.http.Controller):
+
+    @http.route('/', type='http', auth="public")
+    def createEbook(self, email = False):
+
+        if email:
+            email_string = request.httprequest.form.get('email')
+            ebook_obj = http.request.env["xx.ebook"]
+
+            vals = {
+                "name" : email_string
+            }
+
+            ebook_obj.create(vals)
+
 
 
