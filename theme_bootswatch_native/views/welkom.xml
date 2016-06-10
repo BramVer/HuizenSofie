@@ -7,7 +7,7 @@
     <t name="Welkom" t-name="website.Welkom">
     <t t-call="website.layout">
       <div id="wrap" class="oe_structure oe_empty">
-<<<<<<< HEAD
+
         <div id="ebookOverlay">
             <h2>Schrijf je in!</h2>
             <form>
