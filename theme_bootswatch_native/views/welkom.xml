@@ -7,6 +7,17 @@
     <t name="Welkom" t-name="website.Welkom">
     <t t-call="website.layout">
       <div id="wrap" class="oe_structure oe_empty">
+<<<<<<< HEAD
+        <div id="ebookOverlay">
+            <h2>Schrijf je in!</h2>
+            <form>
+              <div id="email">
+                <p>Email<br/><input type="email" id="email"/></p><br/>
+              </div>
+              <p><input type="button" value="submit"/><input type="button" value="exit" id="btnExit"/></p>
+              <a href="/theme_bootswatch_native/static/src/img/folder.pdf" target="_blank">Voorbeeld folder</a>
+            </form>
+        </div>
         <section class="parallax s_parallax oe_img_bg oe_custom_bg" style="background-image: url(/web/image/367); height: 550px; overflow: hidden; background-attachment: fixed; background-position: 0px 0px;" data-scroll-background-ratio="1" data-scroll-background-offset="-25.5" >
             <br/>
             <br/>
@@ -23,7 +34,6 @@
             <h2 class="text-center" style="color: #fbfbfb; font-size: 82px; font-weight: normal; text-shadow: 2px 2px #777; transform: scale(1,1.5); letter-spacing: -7px;">Verder gaan in vastgoed.</h2>
             <div class="oe_structure"/>
         </section>
-       <br/>
         <section id="ebookSec">
           <div class="wrapper">
             <img src="/theme_bootswatch_native/static/src/img/e-book.png"/>
@@ -32,15 +42,6 @@
             <p>Schrijf je hier in <br/>voor onze folder!</p>
           </div>
         </section>
-        <div id="ebookOverlay">
-            <h2>Schrijf je in!</h2>
-            <form>
-              <div id="email">
-                <p>Email<br/><input type="email" id="email"/></p><br/>
-              </div>
-              <p><input type="button" value="submit"/><input type="button" value="exit" id="btnExit"/></p><br/>
-            </form>
-        </div>
         <section class="s_title" style="z-index: -1">
           <div class="container">
             <div class="row">
