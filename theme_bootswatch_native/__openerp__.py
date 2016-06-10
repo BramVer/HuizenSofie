@@ -27,7 +27,9 @@
              'views/goededoelen.xml',
              'views/partners.xml',
              'views/disclaimer.xml',
-             'views/privacybeleid.xml'
+             'views/privacybeleid.xml',
+             'views/search.xml',
+             'views/details.xml'
 
 
 

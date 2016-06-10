@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-	<!-- Adds all assets in Odoo -->
-         <template id="assets_backend" name="theme_bootswatch_native" inherit_id="web.assets_backend">
-            <xpath expr="." position="inside">
-		<!--These links will be called when loading your Odoo -->
-                <script type="text/javascript" src="/theme_bootswatch_native/static/src/js/search.js"></script>
-            </xpath>
+
+
+        <template name="Custom_Website_assets" t-name="website.assets_frontend">
+
+
+
+    <link id="bootstrap_css" rel="stylesheet" href="/website/static/src/less/import_bootstrap.less"/>
+
+    <link rel="stylesheet" href="/website/static/src/css/website.css"/>
+
+    <script type="text/javascript" src="/web/static/src/js/framework/session_instance.js"/>
+    <script type="text/javascript" src="/website/static/src/js/website.js"/>
+    <script type="text/javascript" src="/website/static/src/js/website.share.js"/>
+
+    <script type="text/javascript" src="/website/static/src/js/website.snippets.animation.js"/>
+    <script type="text/javascript" src="theme_bootswatch_native/static/src/js/search.js"/>
+
+    <t t-call="web.bootstrap"/>
+
+    <link rel="stylesheet" href="/web/static/src/less/variables.less"/>
+    <link rel="stylesheet" href="/web/static/src/less/utils.less"/>
+
+
+
         </template>
     </data>
 </openerp>

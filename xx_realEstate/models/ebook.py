@@ -5,7 +5,7 @@ class Ebook_email(models.Model):
     _name = 'xx.ebook'
 
     name = fields.Char(string="E-mailaddres", required=True)
-    xx_previous_date = fields.Date(string="Datum")
+    xx_previous_date = fields.Date(string="Laatste verzenddatum")
 
     @api.multi
     def send_single_ebook(self):
