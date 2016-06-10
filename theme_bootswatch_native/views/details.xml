@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+<data>
+
+    <template name="Account" t-name="website_portal.account">
+
+
+  <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container mb64">
+                    <div class="col-md-8 o_my_documents">
+                        <div class="oe_structure"/>
+                    </div>
+                    <div t-if="sales_rep" class="col-md-3">
+                      <t t-call="website_portal.contact"/>
+                      <div class="oe_structure"/>
+                    </div>
+                    <div id="o_my_sidebar" class="col-md-3 col-md-offset-1 o_my_sidebar">
+                        <div class="o_my_details">
+                            <h3 class="page-header">Mijn details <a href="/my/account" class="btn btn-default btn-xs">Change</a></h3>
+                            <div t-field="user.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;email&quot;, &quot;phone&quot;, &quot;address&quot;, &quot;name&quot;]}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-12 oe_structure"/>
+                </div>
+            </div>
+        </t>
+
+
+</template>
+
+
+</data>
+</openerp>
