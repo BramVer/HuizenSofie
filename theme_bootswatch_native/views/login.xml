@@ -62,12 +62,14 @@
       <template name="Wijzig" t-name="auth_signup.reset_password">
             <t t-call="web.login_layout">
                 <div t-if="message">
+
                     <p class="alert alert-success" t-if="message">
                         <t t-esc="message"/>
                     </p>
                     <a href="/web/login" class="btn btn-link pull-right" style="color:#0d3532; font-family:Ropa Sans; font-size:25px;">Terug</a>
                 </div>
                  <div style="margin-top:25%">
+                     <div style="margin-top:20%; padding:20%; background-color:rgba(230,230,230,0.2)">
                 <form class="oe_reset_password_form" role="form" method="post" t-if="not message">
                   <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
 
@@ -92,15 +94,18 @@
                     <div class="clearfix oe_login_buttons">
                         <a style="color:#0d3532; font-family:Ropa Sans; font-size:25px;" t-if="not token" t-attf-href="/web/login?{{ keep_query() }}" class="btn btn-link pull-right">Terug</a>
                         <a style="color:#0d3532; font-family:Ropa Sans; font-size:25px;" t-if="invalid_token" href="/web/login" class="btn btn-link pull-right">Terug</a>
-                        <button style="background-color:#0d3532;" type="submit" class="btn btn-primary pull-left">Bevestigen</button>
+                        <button style="background-color:#0d3532; font-family:Ropa Sans" type="submit" class="btn btn-primary pull-left">Bevestigen</button>
                     </div>
 
                 </form>
+                         </div>
                 </div>
 
             </t>
 
       </template>
-
   </data>
 </openerp>
+
+
+

@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <openerp>
   <data>
-<template id="website.show_sign_in" inherit_id="website.layout" customize_show="True" name="Show Logo">
+<template id="website.show_sign_in" customize_show="True" inherit_id="website.layout" name="Show Sign In">
+
 
     <xpath expr="//ul[@id='top_menu']" position="inside">
         <li class="divider" groups="base.group_public"/>
         <li groups="base.group_public">
-            <a style="color:#0d3532" t-attf-href="/web/login">
+            <a t-attf-href="/web/login" style="font-family:Ropa Sans; color:#0d3532;">
                 <b>Inloggen</b>
             </a>
         </li>
     </xpath>
+
+
+
       </template>
 </data>
 

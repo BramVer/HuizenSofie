@@ -1,0 +1,17 @@
+<openerp>
+    <data>
+
+
+
+ <template id="MYSITE_layout" inherit_id="website.layout" name="MYSITE layout" priority="17">
+    <xpath expr="//head//link" position="after">
+
+         <link rel="shortcut icon" type="image/png" href="/theme_bootswatch_native/static/src/img/fav.png"/>
+
+    </xpath>
+</template>
+
+
+
+    </data>
+</openerp>
