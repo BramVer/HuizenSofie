@@ -29,8 +29,10 @@
              'views/disclaimer.xml',
              'views/privacybeleid.xml',
              'views/search.xml',
-             'views/details.xml'
-
+             'views/details.xml',
+             'views/login.xml',
+             'views/myaccount.xml',
+             'views/favicon.xml'
 
 
 

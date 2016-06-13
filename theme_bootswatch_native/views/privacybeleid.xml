@@ -10,7 +10,7 @@
         <div class="container">
           <div class="row">
             <div class="mt16 col-md-4 mb16">
-              <img class="img img-responsive mb16" src="/web/image/393" alt="Odoo image and text block" style="animation: none paused; transform: translateX(-30.3%) translateY(70.6%) scaleX(1.18) scaleY(1.14); transition: none;"/>
+              <img class="img img-responsive mb16" src="/theme_bootswatch_native/static/src/img/priv.png" alt="Odoo image and text block" style="animation: none paused; transform: translateX(-30.3%) translateY(70.6%) scaleX(1.18) scaleY(1.14); transition: none;"/>
             </div>
             <div style="margin-top:10%" class="mt16 col-md-8 mb48">
               <h3>

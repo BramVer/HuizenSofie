@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <openerp>
-  <data>
-<template name="Huizen" id="website_sale.products_item">
+    <data>
+        <template name="Huizen" id="website_sale.products_item">
+
 
   <form action="/shop/cart/update" method="post">
   <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
@@ -39,8 +40,8 @@
 
 
 
-</template>
+        </template>
 
 
-  </data>
+    </data>
 </openerp>

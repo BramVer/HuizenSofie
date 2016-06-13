@@ -40,7 +40,7 @@
             </ol>
           </div>
           <div id="website_published_button" class="col-sm-offset-3 col-sm-3">
-            <t style="font-family: Ropa Sans;" t-call="website.publish_management" groups="base.group_sale_manager">
+            <t style="font-family: Ropa Sans;" t-call="website.publish_management">
               <t style="font-family: Ropa Sans;" t-set="object" t-value="product"/>
               <t style="font-family: Ropa Sans;" t-set="publish_edit" t-value="True"/>
               <t style="font-family: Ropa Sans;" t-set="action" t-value="'product.product_template_action'"/>

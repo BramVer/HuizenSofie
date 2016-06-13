@@ -1,0 +1,12 @@
+<openerp>
+
+    <data>
+
+     <template id="website_portal.my_account_link" name="Link to frontend portal" inherit_id="website.layout">
+     <xpath expr="//li[@id='o_logout']" position="before">
+     <li><a href="/my/home" role="menuitem" style="color:#0d3532">Mijn Account</a></li>
+     </xpath>
+    </template>
+
+    </data>
+</openerp>

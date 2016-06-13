@@ -1,11 +1,11 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_xx_transaction,access_xx_transaction,model_xx_transaction,base.group_user,1,0,0,0
 access_xx_house_type,access_xx_house_type,model_xx_house_type,,1,0,0,0
- access_xx_house_attribute,access_xx_house_attribute,model_xx_house_attribute,base.group_user,1,0,0,0
- access_xx_house_attribute_type,access_xx_house_attribute_type,model_xx_house_attribute_type,base.group_user,1,0,0,0 
-access_xx_city,access_xx_city,model_xx_city,base.group_user,1,0,0,0 
+ access_xx_house_attribute,access_xx_house_attribute,model_xx_house_attribute,,1,0,0,0
+ access_xx_house_attribute_type,access_xx_house_attribute_type,model_xx_house_attribute_type,,1,0,0,0 
+access_xx_city,access_xx_city,model_xx_city,,1,0,0,0 
 access_xx_house_document,access_xx_house_document,model_xx_house_document,base.group_user,1,0,0,0
- access_xx_house_document_type,access_xx_house_document_type,model_xx_house_document_type,base.group_user,1,0,0,0
+ access_xx_house_document_type,access_xx_house_document_type,model_xx_house_document_type,,1,0,0,0
  access_xx_house_visitors,access_xx_house_visitors,model_xx_house_visitors,base.group_user,1,0,0,0 
 access_xx_house_status,access_xx_house_status,model_xx_house_status,base.group_user,1,0,0,0
  access_xx_ebook,access_xx_ebook,model_xx_ebook,,1,0,1,0

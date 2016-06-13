@@ -40,6 +40,16 @@
 
 </template>
 
+    <template id="website_payment.pay_meth_link" name="Custom_manage" inherit_id="website_portal.account">
+
+
+        <xpath expr="//div[@class='o_my_details']" position="inside">
+            <a href="/my/payment_method"></a>
+        </xpath>
+
+    </template>
+
+
 
 </data>
 </openerp>
