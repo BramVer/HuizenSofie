@@ -16,9 +16,9 @@
                     </div>
                     <div id="o_my_sidebar" class="col-md-3 col-md-offset-1 o_my_sidebar">
                         <div class="o_my_details">
-                            <h3 class="page-header">Mijn details</h3>
+                            <h3 style="color:#0d3532;" class="page-header">Mijn details</h3>
                             <!--<div t-field="user.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;email&quot;, &quot;phone&quot;, &quot;address&quot;, &quot;name&quot;]}"/>-->
-                            <div>
+                            <div  style="color:#0d3532;">
                                     <strong>Naam:&#009;</strong><t t-esc="user.name"/><br/>
                                     <strong>Email:&#009;</strong><t t-esc="user.email"/><br/>
                                     <t t-if="user.xx_telephone">

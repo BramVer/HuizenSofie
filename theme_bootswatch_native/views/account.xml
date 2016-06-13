@@ -5,16 +5,16 @@
 
     <template id="website_portal_sale.account" name="Mijn Account" inherit_id="website_portal.account">
         <xpath expr="//div[contains(@class,'o_my_documents')]" position="inside">
-           <t name="User" t-name="user" style="font-family:Ropa Sans;">
+           <t name="User" t-name="user" style="font-family:Ropa Sans; color:#0d3532">
 
 
     <!-- PANDEN -->
     <!-- If verkoper / verkoper_koper -->
     <t t-if="user.xx_type == 'verkoper' or user.xx_type == 'verkoper_koper'">
 
-    <h3 class="page-header" style="font-size: 32px">Uw panden</h3>
+    <h3 class="page-header">Uw panden</h3>
     <t t-if="not user.xx_housesOnSale_ids">
-        <p>U biedt momenteel geen panden aan.</p>
+        <p style="color:#0d3532;">U biedt momenteel geen panden aan.</p>
     </t>
 
     <!-- IF USER HAS OFFERED HOUSES TO SELL -->
@@ -22,7 +22,7 @@
 
         <!-- FOREACH HOUSE STILL FOR SALE -->
         <div class="well well-sm wellekes">
-            <h4 class="text-center" style="font-size: 20px">TE KOOP</h4>
+            <h4 class="text-center" style="font-size: 20px; color:#0d3532;">TE KOOP</h4>
             <div class="table-responsive">
                 <table class="table table-hover table-condensed" style="width: 100%; font-family:Ropa Sans; color:#0d3532; font-size:16px;">
                   <t t-foreach="user.xx_housesOnSale_ids" t-as="hos">
@@ -53,7 +53,7 @@
 
         <!-- FOREACH HOUSE ALREADY SOLD -->
         <div class="well well-sm wellekes">
-            <h4 class="text-center">VERKOCHT</h4>
+            <h4 class="text-center" style="color:#0d3532;">VERKOCHT</h4>
             <div class="table-responsive">
                 <table class="table table-hover table-condensed" style="width: 100%; font-family:Ropa Sans; color:#0d3532; font-size:16px;">
                   <t t-foreach="user.xx_housesOnSale_ids" t-as="hos">
@@ -61,7 +61,7 @@
                     <t t-if="hos.xx_sold == True">
                         <tr>
                             <th class="col-sm-3" style="font-size: 18px; font-weight: bold;">
-                                <a t-att-href="hos.link_current_house()"><t t-esc="hos.xx_display_name"/></a>
+                                <a t-att-href="hos.link_current_house()"><t style="color:#0d3532;" t-esc="hos.xx_display_name"/></a>
                             </th>
                             <th class="col-sm-2" style="font-weight: lighter;">
                                 <t t-esc="hos.xx_zip"/>
@@ -87,10 +87,10 @@
 
     <!-- APPOINTMENTS -->
 
-    <h3 class="page-header">Uw afspraken</h3>
+    <h3 style="color:#0d3532;" class="page-header">Uw afspraken</h3>
                <!-- IF USER HAS NOT MADE ANY APPOINTMENTS KEPT IN THE SYSTEM -->
     <t t-if="not user.xx_calendar_event">
-        <p>U heeft geen afspraken aangemaakt.</p>
+        <p style="color:#0d3532;">U heeft geen afspraken aangemaakt.</p>
     </t>
 
     <!-- IF USER HAS MADE AN APPOINTMENT IN THE SYSTEM -->
@@ -98,7 +98,7 @@
 
         <!-- FOREACH APPOINTMENT -->
         <div class="well well-sm wellekes">
-                    <table class="table">
+                    <table style="color:#0d3532;" class="table">
                    <thead>
                      <tr>
                        <th class="col-sm-3">Datum</th>
@@ -114,7 +114,7 @@
                 <t t-if="ev.get_happened() == False">
                      <tr class="danger">
                        <td>
-                           <t t-esc="ev.get_date_normal()"/> om &#009;<t t-esc="ev.get_time_normal()"/>
+                           <t t-esc="ev.get_date_normal()"/> om 	<t t-esc="ev.get_time_normal()"/>
                        </td>
                        <td>
                            <t t-esc="ev.name"/>
@@ -145,7 +145,7 @@
                        <t t-if="ev.get_happened() == True">
                      <tr class="success">
                        <td>
-                           <t t-esc="ev.get_date_normal()"/> om &#009;<t t-esc="ev.get_time_normal()"/>
+                           <t t-esc="ev.get_date_normal()"/> om 	<t t-esc="ev.get_time_normal()"/>
                        </td>
                        <td>
                            <t t-esc="ev.name"/>

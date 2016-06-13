@@ -4,7 +4,7 @@
 
     <template name="Disclaimer" id="website.Disclaimer" page="True">
 
-        <t t-call="website.layout">
+       <t t-call="website.layout">
     <div class="oe_structure">
       <section class="s_text_block">
         <div class="container">
@@ -61,6 +61,20 @@ onrechtstreekse schade die ontstaat door het gebruik van de website
               <p style="line-height: 100%;font-family:Ropa Sans; color:#0d3532; font-size:20px">
                 <b>maken inbreuk op intellectuele rechten.</b>
               </p>
+              <p style="line-height: 100%;font-family:Ropa Sans; color:#0d3532; font-size:20px">
+                <b>
+                  <br/>
+                </b>
+              </p>
+              <p style="line-height: 100%;font-family:Ropa Sans; color:#0d3532; font-size:20px">
+                <b>Erkend vastgoedmakelaar:</b>
+              </p>
+              <p style="line-height: 100%;font-family:Ropa Sans; color:#0d3532; font-size:20px">
+                <b>Sofie Andriesen BIV 509141</b>
+              </p>
+              <p style="line-height: 100%;font-family:Ropa Sans; color:#0d3532; font-size:20px">
+                <b>ondernemingsnummer: 0541.508.141</b>
+              </p>
               <p/>
               <p>&amp;nbsp;</p>
               <p>
@@ -72,6 +86,7 @@ onrechtstreekse schade die ontstaat door het gebruik van de website
       </section>
     </div>
   </t>
+
     </template>
 
 </data>
