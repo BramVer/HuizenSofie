@@ -16,16 +16,15 @@
                                                 <form id="form_search-hover" action="/shop" method="post">
                                                     <input type="hidden" name="csrf_token"
                                                            t-att-value="request.csrf_token()"/>
-                                                    <input type="hidden" name="searched" t-att-value="True"/>
                                                     <div class="col-md-8">
                                                         <input name="gemeente" type="text"
-                                                               placeholder="Zoeken op adres, postcode, ..."/>
+                                                               placeholder="Zoeken op gemeente, postcode, ..."/>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <input name="min_price" type="text"
-                                                               placeholder="Min prijs"/>
+                                                               placeholder="min prijs"/>
                                                         <input name="max_price" type="text"
-                                                               placeholder="Max prijs"/>
+                                                               placeholder="max prijs"/>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <input class="btnApart" value="Zoeken" type="submit"/>
@@ -36,13 +35,13 @@
                                                         <div class="row">
                                                             <div class="wrapper">
                                                                 <div class="col-sm-3">
-                                                                    <div id="soort">
+                                                                    <div id="house_type">
                                                                         <h3>Soort woning</h3>
                                                                         <select
-                                                                                name="attribute_id"
+                                                                                name="house_type"
                                                                                 class="form-control">
                                                                             <option
-                                                                                    value="">Attribute...
+                                                                                    value="">Huis type...
                                                                             </option>
                                                                             <t t-foreach="house_types"
                                                                                t-as="attribute">
@@ -58,10 +57,10 @@
                                                                         <h3>Aantal slaapkamers</h3>
                                                                         <select name="slaapkamers">
                                                                             <option value="">Aantal slaapkamers...</option>
-                                                                            <option value="0">1+</option>
-                                                                            <option value="1">2+</option>
-                                                                            <option value="2">3+</option>
-                                                                            <option value="3">4+</option>
+                                                                            <option value="0">1</option>
+                                                                            <option value="1">2</option>
+                                                                            <option value="2">3</option>
+                                                                            <option value="3">4</option>
                                                                             <option value="4">5+</option>
                                                                         </select>
                                                                     </div>
@@ -73,30 +72,30 @@
                                                                             <option value="">Bewouwing...</option>
                                                                             <option value="open">Open</option>
                                                                             <option value="gesloten">Gesloten</option>
-                                                                            <option value="halfopen">Halfopen</option>
+                                                                            <option value="half">Half open</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-3">
-                                                                    <div id="soort">
+                                                                    <div id="attribute">
                                                                         <h3>Opties</h3>
-                                                                        <input type="checkbox" name="soort"
+                                                                        <input type="checkbox" name="tuin"
                                                                                value="tuin">
                                                                             <p>Tuin</p>
                                                                         </input>
-                                                                        <input type="checkbox" name="soort"
-                                                                               value="kelder">
-                                                                            <p>Kelder</p>
+                                                                        <input type="checkbox" name="terras"
+                                                                               value="terras">
+                                                                            <p>Terras</p>
                                                                         </input>
-                                                                        <input type="checkbox" name="soort"
-                                                                               value="zolder">
-                                                                            <p>Zolder</p>
+                                                                        <input type="checkbox" name="garage"
+                                                                               value="garage">
+                                                                            <p>Garage</p>
                                                                         </input>
-                                                                        <input type="checkbox" name="soort"
+                                                                        <input type="checkbox" name="zwembad"
                                                                                value="zwembad">
                                                                             <p>Zwembad</p>
                                                                         </input>
-                                                                        <input type="checkbox" name="soort"
+                                                                        <input type="checkbox" name="lift"
                                                                                value="lift">
                                                                             <p>Lift</p>
                                                                         </input>

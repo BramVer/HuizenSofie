@@ -13,8 +13,23 @@ class Ebook_email(models.Model):
         # Call mail function
 
 
-    @api.onchange('name')
+    @api.constrains('name')
     def _check_unique_email(self):
-        ebook = self.search([('name', '=', self.name)])
-        if len(ebook) != 0:
+        ebook = self.search([('name', '=ilike', self.name)])
+        if len(ebook) != 1:
             raise exceptions.ValidationError('Email reeds in gebruik')
+
+    @api.model
+    def create(self, vals):
+        new_transaction = super(Ebook_email, self).create(vals)
+        return new_transaction
+
+    @api.multi
+    def create_from_website(self, name):
+        self.sudo().create(
+            {
+                "name": name,
+                "xx_previous_date": False
+            })
+
+

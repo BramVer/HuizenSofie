@@ -3,51 +3,41 @@
     <data>
         <template name="Huizen" id="website_sale.products_item">
 
-            <form action="/shop/cart/update" method="post">
-                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                <div itemscope="itemscope" itemtype="http://schema.org/Product">
-                    <div class="ribbon-wrapper">
-                        <div class="ribbon btn btn-danger">Sale</div>
-                    </div>
-                    <div class="oe_product_image">
-                        <a itemprop="url"
-                           t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))">
-                            <span itemprop="image" t-field="product.xx_image1"
-                                  t-field-options="{&quot;widget&quot;: &quot;image&quot; #{None if product_image_big else &quot;, \&quot;resize\&quot;: \&quot;300x300\&quot;&quot;}}"
-                                  t-att-alt="product.name"/>
-                        </a>
-                    </div>
-                    <t t-if="show_publish">
-                        <div id="website_published_button" class="" groups="base.group_sale_manager">
-                            <t t-call="website.publish_management">
-                                <t t-set="object" t-value="product"/>
-                                <t t-set="publish_edit" t-value="True"/>
-                                <t t-set="action" t-value="'product.product_template_action'"/>
-                            </t>
-                        </div>
-                    </t>
-                    <section>
-                        <h5>
-                            <strong>
-                                <a itemprop="name"
-                                   t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))"
-                                   t-field="product.xx_display_name" style="color:#0d3532; font-size:25px;"/>
-                            </strong>
-                        </h5>
-                        <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer"
-                             class="product_price" t-if="product.product_variant_ids">
-                            <b>
-                                <span t-field="product.xx_current_price"
-                                      style="white-space: nowrap; color:#0d3532; font-size:20px; font-family:Ropa Sans"
-                                      t-field-options="{                    &quot;widget&quot;: &quot;monetary&quot;,                    &quot;display_currency&quot;: &quot;website.currency_id&quot;                }">
-                                </span>
-                                <span itemprop="price" style="display:none;" t-esc="product.price"/>
-                                <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/>
-                            </b>
-                        </div>
-                    </section>
-                </div>
-            </form>
+
+  <form action="/shop/cart/update" method="post">
+  <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+  <div itemscope="itemscope" itemtype="http://schema.org/Product">
+  <div class="ribbon-wrapper">
+    <div class="ribbon btn btn-danger">Sale</div>
+  </div>
+  <div class="oe_product_image">
+      <a itemprop="url" t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))">
+          <span itemprop="image" t-field="product.xx_image1" t-field-options="{&quot;widget&quot;: &quot;image&quot; #{None if product_image_big else &quot;, \&quot;resize\&quot;: \&quot;300x300\&quot;&quot;}}" t-att-alt="product.name"/>
+      </a>
+  </div>
+  <t t-if="show_publish">
+    <div id="website_published_button" class="" groups="base.group_sale_manager">
+        <t t-call="website.publish_management">
+          <t t-set="object" t-value="product"/>
+          <t t-set="publish_edit" t-value="True"/>
+          <t t-set="action" t-value="'product.product_template_action'"/>
+        </t>
+    </div>
+  </t>
+  <section>
+       <h5><strong><a itemprop="name" t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))" t-field="product.xx_display_name" style="color:#0d3532; font-size:25px;"/></strong></h5>
+      <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" class="product_price" t-if="product.product_variant_ids">
+          <b>
+             <span t-field="product.xx_current_price" style="white-space: nowrap; color:#0d3532; font-size:20px; font-family:Ropa Sans" t-field-options="{                    &quot;widget&quot;: &quot;monetary&quot;,                    &quot;display_currency&quot;: &quot;website.currency_id&quot;                }">
+              </span>
+              <span itemprop="price" style="display:none;" t-esc="product.price"/>
+              <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/>
+          </b>
+      </div>
+  </section>
+  </div>
+  </form>
+
 
 
         </template>
