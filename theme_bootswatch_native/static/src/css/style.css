@@ -4,7 +4,7 @@
 #ebookSec {
 	font-family: Ropa Sans;
   	position: absolute;
-  	top: 140px;
+  	top: 170px;
   	right: 70px;
   	padding: 10px;
   	text-align: center;
@@ -16,6 +16,7 @@
 	position: fixed;
 	padding: 50px 400px;
 	left: 0%;
+	top: 100px;
 	width: 100%;
 	height: 100%;
 	text-align: center;
@@ -140,60 +141,7 @@ h3 {
 	/*padding-bottom: 8px;*/
 }
 
-#soort p {
-	position: relative;
-	margin-left: 100px;
-	margin-top: -30px;
-}
 
-#soort input {
-	position: relative;
-	margin-left: -40px;
-}
-
-#loc p {
-	position: relative;
-	margin-left: 100px;
-	margin-top: -30px;
-}
-
-#loc input {
-	position: relative;
-	margin-left: -40px;
-}
-
-#kamer p {
-	position: relative;
-	margin-left: 100px;
-	margin-top: -30px;
-}
-
-#kamer input {
-	position: relative;
-	margin-left: -40px;
-}
-
-#extra p {
-	position: relative;
-	margin-left: 100px;
-	margin-top: -30px;
-}
-
-#extra input {
-	position: relative;
-	margin-left: -40px;
-}
-
-#prijs p {
-	position: relative;
-	margin-left: 100px;
-	margin-top: -30px;
-}
-
-#prijs input {
-	position: relative;
-	margin-left: -40px;
-}
 /*END SEARCHBAR*/
 
 /* EBOOK */

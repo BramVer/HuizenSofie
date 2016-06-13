@@ -10,11 +10,13 @@
 
         <div id="ebookOverlay">
             <h2>Schrijf je in!</h2>
-            <form>
+            <form onsubmit="myFunction()">
+              <input type="hidden" name="csrf_token"
+                     t-att-value="request.csrf_token()"/>
               <div id="email">
-                <p>Email<br/><input type="email" id="email"/></p><br/>
+                <p>Email<br/><input type="email" id="email" name="email"/></p><br/>
               </div>
-              <p><input type="button" value="submit"/><input type="button" value="exit" id="btnExit"/></p>
+              <p><input type="submit" value="submit"/><input type="button" value="exit" id="btnExit"/></p>
               <a href="/theme_bootswatch_native/static/src/img/folder.pdf" target="_blank">Voorbeeld folder</a>
             </form>
         </div>

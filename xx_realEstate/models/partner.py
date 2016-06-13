@@ -147,3 +147,9 @@ class User(models.Model):
                 url = url.replace('[1]', 'signup')
             res[partner.id] = url
         return res
+
+    @api.model
+    def default_get(self, vals):
+        res = super(User, self).default_get(vals)
+        res.update({'xx_type': "verkoper"})
+        return res
