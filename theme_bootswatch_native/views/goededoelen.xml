@@ -74,7 +74,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-3 mt0">
-                  <img class="img img-responsive mb16" src="/web/image/352" alt="Key" style="transform: translateX(-0.4%) translateY(-52.8%);"/>
+                  <img class="img img-responsive mb16" src="/theme_bootswatch_native/static/src/img/key.png" alt="Key" style="transform: translateX(-0.4%) translateY(-52.8%);"/>
                 </div>
               </div>
             </div>

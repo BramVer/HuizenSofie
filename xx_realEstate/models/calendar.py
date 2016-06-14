@@ -39,8 +39,9 @@ class Calendar(models.Model):
 
     @api.multi
     def get_happened(self):
-        app_datetime = datetime.strptime(self.stop_datetime, '%Y-%m-%d %H:%M:%S')
-        difference = (app_datetime - datetime.today()).days
+        if self.stop_datetime:
+            app_datetime = datetime.strptime(self.stop_datetime, '%Y-%m-%d %H:%M:%S')
+            difference = (app_datetime - datetime.today()).days
         if difference < 0:
             return True
         else:

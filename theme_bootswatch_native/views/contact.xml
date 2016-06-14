@@ -3,94 +3,97 @@
   <data>
 
       <template name="Contact" id="website.Contact" page="True">
-<t name="Product" t-name="website_sale.product">
-  <t t-call="website.layout">
-    <div id="wrap">
-      <div class="oe_structure">
-        <section class="s_text_block col-md-12" style="height: 136px; overflow: hidden; z-index:-1;">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 mt16 text-center mb32">
-                <h2 style="font-size: 42px">Heeft u nog een vraag?</h2>
-                <h3 class="text-muted">
-                  <font style="font-size: 24px;">Aarzel niet om contact op te nemen</font>
-                </h3>
+ <t name="Product" t-name="website_sale.product">
+    <t t-call="website.layout">
+      <div id="wrap">
+        <div class="oe_structure">
+          <section class="s_text_block col-md-12" style="height: 136px; overflow: hidden; z-index:-1;">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 mt16 text-center mb32">
+                  <h2 style="font-size: 42px; color:#0d3532;">Heeft u nog een vraag?</h2>
+                  <h3 style="color:#0d3532;" class="text-muted">
+                    <font style="font-size: 24px; color:#0d3532;">Aarzel niet om contact op te nemen</font>
+                  </h3>
+                </div>
+                <h4/>
               </div>
-              <h4/>
             </div>
+          </section>
+          <section id="ebookSec">
+            <div class="wrapper">
+            </div>
+            <div id="text" style="display: block; overflow: hidden; height: 29.4569px; padding: 0px; margin: 0px; width: 0.958877px; opacity: 0.0411227;">&amp;nbsp;
+            <p style="color:#0d3532">Schrijf je hier in <br/>voor onze folder!</p>
           </div>
-        </section>
-        <section id="ebookSec">
-          <div class="wrapper">
-            <img src="/theme_bootswatch_native/static/src/img/e-book.png"/>
-          </div>
-          <div id="text">
-            <p>Schrijf je hier in <br/>voor onze folder!</p>
-          </div>
-        </section>
-        <div id="ebookOverlay">
-            <h2>Schrijf je in!</h2>
+          </section>
+          <div id="ebookOverlay" style="display: none;">
+            <h2 style="color:#0d3532;">Schrijf je in!</h2>
             <form>
               <div id="email">
-                <p>Email<br/><input type="email" id="email"/></p><br/>
+                <p style="color:#0d3532;">Email<br/><input type="email" id="email"/></p>
+                <br/>
               </div>
-              <p><input type="button" value="submit"/><input type="button" value="exit" id="btnExit"/></p>
+              <p>
+                <input type="button" value="submit"/>
+                <input type="button" value="exit" id="btnExit"/>
+              </p>
               <a href="/theme_bootswatch_native/static/src/img/folder.pdf" target="_blank">Voorbeeld folder</a>
             </form>
+          </div>
         </div>
-      </div>
-      <div class="container">
-        <h1/>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="oe_structure">
-              <div>
-                <h4>
-                  <i style="font-weight: normal;">
-                    <font style="font-size: 20px;">Als u na het bekijken van de advies pagina nog vragen hebt, of u wil een afspraak maken met Sofie, vul dan hieronder het formulier in. We zullen u zo snel mogelijk te woord staan.&amp;nbsp;</font>
-                  </i>
-                </h4>
-              </div>
-              <section class="html_form_field col-md-12 col-md-6 mt0" data-field-id="0" data-form-type="textbox">
-                <div class="form-group"  style="font-family: Ropa Sans; font-size: 20px">
-                  <b>
-                    <h5>Uw naam :</h5>
-                  </b>
-                  <input class="form-control" name="field1" type="text" required="True"/>
+        <div class="container">
+          <h1/>
+          <div class="row">
+            <div class="col-md-8">
+              <div class="oe_structure">
+                <div>
+                  <h4>
+                    <i style="font-weight: normal; color:#0d3532;">
+                      <font style="font-size: 20px;">Als u na het bekijken van de advies pagina nog vragen hebt, of u wil een afspraak maken met Sofie, vul dan hieronder het formulier in. We zullen u zo snel mogelijk te woord staan.&amp;nbsp;</font>
+                    </i>
+                  </h4>
                 </div>
-              </section>
-              <section class="html_form_field col-md-12 col-md-6 mt0" data-field-id="0" data-form-type="textbox">
-                <div class="form-group">
-                  <b>
-                    <h5>Uw e-mail :</h5>
-                  </b>
-                  <input class="form-control" name="field1" type="email" required="True"/>
-                </div>
-              </section>
-              <section class="html_form_field  col-md-12" data-field-id="0" data-form-type="textarea" style="height: 376px; overflow: hidden;">
-                <div class="form-group">
-                  <label for="field1">
-                    <h5>Uw vraag :
+                <section class="html_form_field col-md-12 col-md-6 mt0" data-field-id="0" data-form-type="textbox">
+                  <div class="form-group" style="font-family: Ropa Sans; font-size: 20px">
+                    <b>
+                      <h5 style="color:#0d3532;">Uw naam :</h5>
+                    </b>
+                    <input class="form-control" name="field1" type="text" required="True"/>
+                  </div>
+                </section>
+                <section class="html_form_field col-md-12 col-md-6 mt0" data-field-id="0" data-form-type="textbox">
+                  <div class="form-group">
+                    <b>
+                      <h5 style="color:#0d3532;">Uw e-mail :</h5>
+                    </b>
+                    <input class="form-control" name="field1" type="email" required="True"/>
+                  </div>
+                </section>
+                <section class="html_form_field  col-md-12" data-field-id="0" data-form-type="textarea" style="height: 376px; overflow: hidden;">
+                  <div class="form-group">
+                    <label for="field1">
+                      <h5 style="color:#0d3532;">Uw vraag :
                   </h5>
-                  </label>
-                  <br/>
-                  <textarea class="form-control" name="field1" style="margin: 0px -1px 0px 0px; height: 218px; width: 720px;" required="True"/>
-                </div>
-                <input name="form_id" type="hidden" value="1"/>
-                <input style="font-family:Ropa Sans" class="btn btn-primary btn-md" type="submit" value="Versturen"/>
-              </section>
+                    </label>
+                    <br/>
+                    <textarea class="form-control" name="field1" style="margin: 0px -1px 0px 0px; height: 218px; width: 720px;" required="True"/>
+                  </div>
+                  <input name="form_id" type="hidden" value="1"/>
+                  <input style="font-family:Ropa Sans; background-color:#0d3532" class="btn btn-primary btn-md" type="submit" value="Versturen"/>
+                </section>
+              </div>
+            </div>
+            <div class="col-md-4 mb32">
+             <t t-call="website.company_description"/>
             </div>
           </div>
-          <div class="col-md-4 mb32">
-            <t t-call="website.company_description"/>
-          </div>
         </div>
+        <div class="oe_structure"/>
       </div>
-      <div class="oe_structure"/>
-    </div>
+    </t>
   </t>
-</t>
-</template>
+      </template>
 
       <record id="contact_page_link" model="website.menu">
   <field name="name">Contact</field>
