@@ -162,7 +162,7 @@
               <span><t t-esc="product.xx_zip"/> <t t-esc="product.xx_city.name"/></span><br/>
             </div>
             <strong><span itemprop="url" style="display:none;" t-esc="'/shop/product/%s' % slug(product)"/>
-            <span t-field="product.xx_starting_price" style="white-space: nowrap;font-size:32px; color:#0d3532; font-family:Ropa Sans;" t-field-options="{                    &quot;widget&quot;: &quot;monetary&quot;,                    &quot;display_currency&quot;: &quot;website.currency_id&quot;                }"/>
+            <span t-field="product.xx_current_price" style="white-space: nowrap;font-size:32px; color:#0d3532; font-family:Ropa Sans;" t-field-options="{                    &quot;widget&quot;: &quot;monetary&quot;,                    &quot;display_currency&quot;: &quot;website.currency_id&quot;                }"/>
             <span itemprop="price" style="display:none;" t-esc="product.price"/>
             <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/></strong>
             <div>

@@ -38,7 +38,6 @@
                             <page string="Extra informatie">
                                 <group col="2">
                                     <field name="xx_type"/>
-                                    <field name="xx_want_ebook"/>
                                 </group>
                             </page>
                             <page string="Huizen te koop"

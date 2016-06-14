@@ -14,13 +14,19 @@ class Calendar(models.Model):
 
     @api.multi
     def get_date_normal(self):
-        app_datetime = datetime.strptime(self.start_datetime, '%Y-%m-%d %H:%M:%S')
+        if self.start_datetime:
+            app_datetime = datetime.strptime(self.start_datetime, '%Y-%m-%d %H:%M:%S')
+        else:
+            app_datetime = datetime.strptime(self.start_date, '%Y-%m-%d')
         new_date_string = "{0}-{1}-{2}".format(app_datetime.day, app_datetime.month, app_datetime.year)
         return new_date_string
 
     @api.multi
     def get_time_normal(self):
-        app_datetime = datetime.strptime(self.start_datetime, '%Y-%m-%d %H:%M:%S')
+        if self.start_datetime:
+            app_datetime = datetime.strptime(self.start_datetime, '%Y-%m-%d %H:%M:%S')
+        else:
+            app_datetime = datetime.strptime(self.start_date, '%Y-%m-%d')
         new_time_string = "{0}:{1}".format(app_datetime.hour, app_datetime.minute)
         return new_time_string
 
@@ -41,7 +47,13 @@ class Calendar(models.Model):
     def get_happened(self):
         if self.stop_datetime:
             app_datetime = datetime.strptime(self.stop_datetime, '%Y-%m-%d %H:%M:%S')
+<<<<<<< HEAD
             difference = (app_datetime - datetime.today()).days
+=======
+        else:
+            app_datetime = datetime.strptime(self.stop_date, '%Y-%m-%d')
+        difference = (app_datetime - datetime.today()).days
+>>>>>>> d4c8e6c7752ac9e50627581ec29723de36c98e6e
         if difference < 0:
             return True
         else:
