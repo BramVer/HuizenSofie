@@ -2,8 +2,8 @@
 <openerp>
   <data>
 <template name="Woningview" id="website_sale.product" page="True">
+<t name="Woningview" t-name="website_sale.product">
 
-  <t name="Woningview" t-name="website_sale.product">
   <t t-call="website.layout">
     <script>
   window.fbAsyncInit = function() {
@@ -26,8 +26,8 @@
     <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" class="js_sale">
       <section t-attf-class="container mt8 oe_website_sale #{(compute_currency(product.lst_price) - product.price) &gt; 0.1 and 'discount'}" id="product_detail">
         <div class="row">
-          <div class="col-sm-4" style="font-family: Ropa Sans;" >
-            <ol class="breadcrumb" style="font-family: Ropa Sans;" >
+          <div class="col-sm-4" style="font-family: Ropa Sans;">
+            <ol class="breadcrumb" style="font-family: Ropa Sans;">
               <li>
                 <a t-att-href="keep(category=0)" style="color:#0d3532">Woningen</a>
               </li>
@@ -157,19 +157,22 @@
           <div class="col-sm-5 col-md-5 col-lg-4 col-lg-offset-1" id="product_details">
             <h1 itemprop="name" t-field="product.xx_display_name" style="color:#0d3532; font-family:Ropa Sans; font-size:60px">Product Naam</h1>
                 <!-- ADRES -->
-            <div style="font-family: Ropa Sans; font-size: 24px">
-              <span><t t-esc="product.xx_street"/> <t t-esc="product.xx_street_number"/>,</span><br/>
-              <span><t t-esc="product.xx_zip"/> <t t-esc="product.xx_city.name"/></span><br/>
+            <div style="font-family: Ropa Sans; font-size: 24px; color:#0d3532;">
+              <span><t t-esc="product.xx_street"/> <t t-esc="product.xx_street_number"/>,</span>
+              <span><t t-esc="product.xx_zip"/> <t t-esc="product.xx_city.name"/></span>
+              <span t-if="product.xx_building_type"><br/>Bouwtype: <strong><t t-esc="product.xx_building_type"/></strong></span>
+               <span t-if="product.xx_build_year"><br/>Bouwjaar: <strong><t t-esc="product.xx_build_year"/></strong></span>
+               <span t-if="product.xx_total_area"><br/>Oppervlakte: <strong><t t-esc="product.xx_total_area"/></strong></span>
+               <span t-if="product.xx_unique_epc"><br/>EPC: <strong><t t-esc="product.xx_unique_epc"/></strong></span><br/>
             </div>
             <strong><span itemprop="url" style="display:none;" t-esc="'/shop/product/%s' % slug(product)"/>
-            <span t-field="product.xx_current_price" style="white-space: nowrap;font-size:32px; color:#0d3532; font-family:Ropa Sans;" t-field-options="{                    &quot;widget&quot;: &quot;monetary&quot;,                    &quot;display_currency&quot;: &quot;website.currency_id&quot;                }"/>
+           <br/><span t-field="product.xx_current_price" style="white-space: nowrap;font-size:32px; color:#0d3532; font-family:Ropa Sans;" t-field-options="{                    &quot;widget&quot;: &quot;monetary&quot;,                    &quot;display_currency&quot;: &quot;website.currency_id&quot;                }"/>
             <span itemprop="price" style="display:none;" t-esc="product.price"/>
             <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/></strong>
             <div>
               <p>
-                <br/>
               </p>
-              <p style="font-size:20px; color:#0d3532; font-family:Ropa Sans; font-size:25px;" t-field="product.xx_description"/>
+             <p id="sel" style="font-size:20px; color:#0d3532; font-family:Ropa Sans; font-size:25px;" t-field="product.xx_description"/>
             </div>
           </div>
         </div>
@@ -235,7 +238,7 @@ FB.ui(
 {
 method: 'feed',
 name: '<t t-esc="product.xx_display_name"/>',
-link: '127.0.0.1:8069',
+link: '0.0.0.1:8069/shop/product/brasschaat-mollei-35-4',
 picture: 'http://s33.postimg.org/jknuzivxb/def_logos_via_sofie_RGB_09.png',
 caption: '',
 description:  '<t t-esc="product.xx_street"/> <t t-esc="product.xx_street_number"/> <t t-esc="product.xx_city.name"/>',
@@ -274,7 +277,10 @@ message: ''
       <div itemprop="description" t-field="product.website_description" class="oe_structure mt16" id="product_full_description"/>
     </div>
   </t>
+
+
 </t>
+
 
 </template>
   </data>
