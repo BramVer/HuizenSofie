@@ -47,13 +47,9 @@ class Calendar(models.Model):
     def get_happened(self):
         if self.stop_datetime:
             app_datetime = datetime.strptime(self.stop_datetime, '%Y-%m-%d %H:%M:%S')
-<<<<<<< HEAD
-            difference = (app_datetime - datetime.today()).days
-=======
         else:
             app_datetime = datetime.strptime(self.stop_date, '%Y-%m-%d')
         difference = (app_datetime - datetime.today()).days
->>>>>>> d4c8e6c7752ac9e50627581ec29723de36c98e6e
         if difference < 0:
             return True
         else:
