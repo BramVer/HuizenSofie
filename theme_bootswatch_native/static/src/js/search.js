@@ -1,12 +1,12 @@
 $(document).ready(function(){
-	$('#specs').hide();
+	$('#filter').hide();
 });
 
 
 $(document).ready(function(){
-	$('#btnOptions').click(function(e){
+	$('#options-btn').click(function(e){
 		e.preventDefault();
-		$("#specs").toggle(750);
+		$("#filter").toggle(0);
 	});
 });
 

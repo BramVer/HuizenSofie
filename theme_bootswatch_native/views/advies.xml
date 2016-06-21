@@ -11,7 +11,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center mt16 mb32">
-              <h2 style="font-size: 42px">ADVIES</h2>
+              <h2 style="font-size: 42px; color:#0d3532;">ADVIES</h2>
               <h3 class="text-muted" style="font-size: 24px">Uw vragen worden hier beantwoord<br/></h3>
             </div>
           </div>
@@ -19,14 +19,14 @@
       </section>
       <section class="s_faq_collapse">
         <div class="container">
-          <h2 class="page-header" style="font-size: 32px">&amp;nbsp;&amp;nbsp; Aankoopproces&amp;nbsp;</h2>
+          <h2 class="page-header" style="color:#0d3532; font-size: 32px">&amp;nbsp;&amp;nbsp; Aankoopproces&amp;nbsp;</h2>
           <div id="myCollapse1464617160540" class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div aria-expanded="true" data-target="#myCollapseTab1464617160540" data-parent="#myCollapse1464617160540" class="panel-heading" role="tab" data-toggle="collapse">
-                <h4 class="panel-title" style="font-size: 20px"> U wilt een huis aankopen, hoe brengt u het best een bod uit?<br/></h4>
+              <div aria-expanded="false" data-target="#myCollapseTab1464617160540" data-parent="#myCollapse1464617160540" class="panel-heading collapsed" role="tab" data-toggle="collapse">
+                <h4 class="panel-title" style="color:#0d3532;"> U wil een huis aankopen, hoe brengt u het best een bod uit?<br/></h4>
               </div>
-              <div style="" aria-expanded="true" id="myCollapseTab1464617160540" class="panel-collapse collapse in" role="tabpanel">
-                <div class="panel-body" style="font-family: Ropa Sans; font-size: 20px">
+              <div style="" aria-expanded="false" id="myCollapseTab1464617160540" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body" style="color:#0d3532; font-family: Ropa Sans; font-size: 20px">
                   <p>Indien u een
 woning wenst aan te kopen kan u best op een aantal zaken letten:</p>
                   <p>
@@ -49,7 +49,7 @@ lenen.</p>
             </div>
             <div class="panel panel-default">
               <div aria-expanded="false" data-target="#myCollapseTab1464617160548" data-parent="#myCollapse1464617160540" class="panel-heading collapsed" role="tab" data-toggle="collapse">
-                <h4 class="panel-title">Met welke notariskosten moet u rekening houden bij de aankoop van een woning?<br/></h4>
+                <h4 style="color:#0d3532;" class="panel-title">Met welke notariskosten moet u rekening houden bij de aankoop van een woning?<br/></h4>
               </div>
               <div style="height: 0px;" aria-expanded="false" id="myCollapseTab1464617160548" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body" style="font-family: Ropa Sans; font-size: 20px">
@@ -66,14 +66,14 @@ lenen.</p>
       </section>
       <section class="s_faq_collapse">
         <div class="container">
-          <h2 class="page-header" style="font-size: 32px">&amp;nbsp;&amp;nbsp; Verkoopproces&amp;nbsp;</h2>
+          <h2 class="page-header" style="color:#0d3532; font-size: 32px">&amp;nbsp;&amp;nbsp; Verkoopproces&amp;nbsp;</h2>
           <div id="myCollapse1464616318262" class="panel-group" role="tablist">
             <div class="panel panel-default">
               <div aria-expanded="false" data-target="#myCollapseTab1464616318262" data-parent="#myCollapse1464616318262" class="panel-heading collapsed" role="tab" data-toggle="collapse">
-                <h4 class="panel-title">Wie betaalt de kosten van de verkoop?</h4>
+                <h4 class="panel-title" style="color:#0d3532;">Wie betaalt de kosten van de verkoop?</h4>
               </div>
               <div style="height: 0px;" aria-expanded="false" id="myCollapseTab1464616318262" class="panel-collapse collapse" role="tabpanel">
-                <div class="panel-body" style="font-family: Ropa Sans; font-size: 20px">
+                <div class="panel-body" style="color:#0d3532; font-family: Ropa Sans; font-size: 20px">
                   <p> </p>
                   <p> De kosten van de koopovereenkomst en andere bijkomende kosten zijn in principe voor de koper (artikel 1593 van het burgerlijk wetboek). Het is echter aan de partijen toegestaan om dit anders te regelen. In het laatste geval is het aan te raden om dit op te nemen in de compromis.</p>
                   <p> </p>
@@ -81,11 +81,11 @@ lenen.</p>
               </div>
             </div>
             <div class="panel panel-default">
-              <div aria-expanded="true" data-target="#myCollapseTab1464616318272" data-parent="#myCollapse1464616318262" class="panel-heading" role="tab" data-toggle="collapse">
-                <h4 class="panel-title">Welke notaris mag de verkoopakte verlijden?<br/></h4>
+              <div aria-expanded="false" data-target="#myCollapseTab1464616318272" data-parent="#myCollapse1464616318262" class="panel-heading collapsed" role="tab" data-toggle="collapse">
+                <h4 class="panel-title" style="color:#0d3532;">Welke notaris mag de verkoopakte verlijden?<br/></h4>
               </div>
-              <div style="" aria-expanded="true" id="myCollapseTab1464616318272" class="panel-collapse collapse in" role="tabpanel">
-                <div class="panel-body" style="font-family: Ropa Sans; font-size: 20px">
+              <div style="" aria-expanded="false" id="myCollapseTab1464616318272" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body" style="color:#0d3532; font-family: Ropa Sans; font-size: 20px">
                   <p> </p>
                   <p> </p>
                   <p> </p>
@@ -110,10 +110,10 @@ lenen.</p>
             </div>
             <div class="panel panel-default">
               <div aria-expanded="false" data-target="#myCollapseTab1464616318282" data-parent="#myCollapse1464616318262" class="panel-heading collapsed" role="tab" data-toggle="collapse">
-                <h4 class="panel-title">Wat indien ik mijn woning verkoop en ik een negatief keuringsverslag heb? <br/></h4>
+                <h4 class="panel-title" style="color:#0d3532;">Wat indien ik mijn woning verkoop en ik een negatief keuringsverslag heb? <br/></h4>
               </div>
               <div style="height: 0px;" aria-expanded="false" id="myCollapseTab1464616318282" class="panel-collapse collapse" role="tabpanel">
-                <div class="panel-body" style="font-family: Ropa Sans; font-size: 20px">
+                <div class="panel-body" style="color:#0d3532; font-family: Ropa Sans; font-size: 20px">
                   <p> </p>
                   <p> </p>
                   <p> </p>
@@ -161,14 +161,14 @@ lenen.</p>
       </section>
       <section class="s_faq_collapse">
         <div class="container">
-          <h2 class="page-header" style="font-size: 32px">&amp;nbsp;&amp;nbsp; Algemeen&amp;nbsp;</h2>
+          <h2 class="page-header" style="color:#0d3532; font-size: 32px">&amp;nbsp;&amp;nbsp; Algemeen&amp;nbsp;</h2>
           <div id="myCollapse1464616350154" class="panel-group" role="tablist">
             <div class="panel panel-default">
               <div aria-expanded="false" data-target="#myCollapseTab1464616350154" data-parent="#myCollapse1464616350154" class="panel-heading collapsed" role="tab" data-toggle="collapse">
-                <h4 class="panel-title">Wat is een compromis?<br/></h4>
+                <h4 class="panel-title" style="color:#0d3532;">Wat is een compromis?<br/></h4>
               </div>
               <div style="height: 0px;" aria-expanded="false" id="myCollapseTab1464616350154" class="panel-collapse collapse" role="tabpanel">
-                <div class="panel-body" style="font-family: Ropa Sans; font-size: 20px">
+                <div class="panel-body" style="color:#0d3532; font-family: Ropa Sans; font-size: 20px">
                   <p> </p>
                   <p> </p>
                   <p>De compromis of de onderhandse overeenkomst is in principe vormvrij. De compromis&amp;nbsp; is een koop-verkoopovereenkomst waarbij koper en verkoper overeenkomen dat de verkoper er zich toe verbindt om de eigendom van een zaak&amp;nbsp; over te dragen aan de koper. De koper van zijn kant verbindt zich ertoe om een geldprijs te betalen.</p>
@@ -184,10 +184,10 @@ lenen.</p>
             </div>
             <div class="panel panel-default">
               <div aria-expanded="false" data-target="#myCollapseTab1464616350161" data-parent="#myCollapse1464616350154" class="panel-heading collapsed" role="tab" data-toggle="collapse">
-                <h4 class="panel-title">Waarom moet er nog een authentieke akte worden opgesteld nà de ondertekening van de compromis?<br/></h4>
+                <h4 class="panel-title" style="color:#0d3532;">Waarom moet er nog een authentieke akte worden opgesteld nà de ondertekening van de compromis?<br/></h4>
               </div>
               <div style="height: 0px;" aria-expanded="false" id="myCollapseTab1464616350161" class="panel-collapse collapse" role="tabpanel">
-                <div class="panel-body" style="font-family: Ropa Sans; font-size: 20px">
+                <div class="panel-body" style="color:#0d3532;font-family: Ropa Sans; font-size: 20px">
                   <p> </p>
                   <p> </p>
                   <p> </p>
@@ -198,10 +198,10 @@ lenen.</p>
             </div>
             <div class="panel panel-default">
               <div aria-expanded="false" data-target="#myCollapseTab1464616350167" data-parent="#myCollapse1464616350154" class="panel-heading collapsed" role="tab" data-toggle="collapse">
-                <h4 class="panel-title">Hoe lang blijft een energieprestatiecertificaat geldig?<br/></h4>
+                <h4 class="panel-title" style="color:#0d3532;">Hoe lang blijft een energieprestatiecertificaat geldig?<br/></h4>
               </div>
               <div style="height: 0px;" aria-expanded="false" id="myCollapseTab1464616350167" class="panel-collapse collapse" role="tabpanel">
-                <div class="panel-body" style="font-family: Ropa Sans; font-size: 20px">
+                <div class="panel-body" style="color:#0d3532; font-family: Ropa Sans; font-size: 20px">
                   <p> </p>
                   <p> </p>
                   <p> </p>
@@ -213,10 +213,10 @@ lenen.</p>
             </div>
             <div class="panel panel-default">
               <div aria-expanded="false" data-target="#myCollapseTab1464618616921" data-parent="#myCollapse1464616350154" class="panel-heading collapsed" role="tab" data-toggle="collapse">
-                <h4 class="panel-title">Wat geeft het kadastraal inkomen weer?<br/></h4>
+                <h4 class="panel-title" style="color:#0d3532;">Wat geeft het kadastraal inkomen weer?<br/></h4>
               </div>
               <div style="height: 0px;" aria-expanded="false" id="myCollapseTab1464618616921" class="panel-collapse collapse" role="tabpanel">
-                <div class="panel-body" style="font-family: Ropa Sans; font-size: 20px">
+                <div class="panel-body" style="color:#0d3532; font-family: Ropa Sans; font-size: 20px">
                   <p> </p>
                   <p> </p>
                   <p> </p>

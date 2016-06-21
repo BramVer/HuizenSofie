@@ -129,6 +129,19 @@
               </div>
             </div>
           </div>
+
+          <!-- EBOOK -->
+        <div style="font-family: Ropa Sans; font-size: 32px; background-color: #0d3532; padding: 40px 0">
+            <div class="text-center" style="color: rgb(225,225,225)">Schrijf je in voor onze nieuwsbrief</div>
+            <form class="form-inline text-center" style="font-size: 20px">
+                <div class="form-group">
+                    <input type="text" class="col-sm-2 form-control" id="name" name="name" placeholder="Uw emailadres" required="True"/>
+                    <input type="hidden" name="form_id" value="1"/>
+                </div>
+                <button type="submit" style="margin-top: -2px;" class="btn btn-primary" value="Inschrijven">Inschrijven</button>
+            </form>
+          </div>
+
         </section>
       </div>
     </t>

@@ -14,11 +14,11 @@
 	font-family: Ropa Sans;
 	display: none;
 	position: fixed;
-	padding: 50px 400px;
+	padding: 160px 400px;
 	left: 0%;
-	top: 100px;
+	top: -40px;
 	width: 100%;
-	height: 100%;
+	height: 120%;
 	text-align: center;
 	background-color: rgba(0, 0, 0, 0.7);
 	z-index: 999;
@@ -71,74 +71,84 @@
 /*SEARCHBAR*/
 
 .search {
-	padding: 90px 150px;
-	background-image: url(../img/parquet-flooring.jpg);
-	background-attachment: fixed;
-}
-
-.search-side {
-	display: block;
-	box-shadow: 8px 0px -1px #000;
-	border-radius: 5px;
-	height: auto;
-	background-color: rgba(0, 0, 0, 0.5);
-	list-style-type: none;
-}
-
-.search-side input {
-	margin: 10px 30px;
-	width: 80%;
-}
-
-form button{
-	margin: 5px;
-	border-radius: 0px;
-	border-style: solid;
-	border-color: #5D5D5D;
-	background-color: rgba(144, 144, 144, 0);
-	color: #FFFFFF;
-	list-style-type: none;
-}
-
-/*@media (max-width: 890px) {
-	form button {
-		margin-left: -30px;
-	}
-}*/
-
-form button:hover {
-	background-color: rgba(255, 255, 255, 0.5)
-}
-
-h3 {
-	text-align: center;
-}
-
-
-#btnOptions {
-	text-align: center;
-	margin-left: 44.5%;
-	margin-right: auto;
-	margin-bottom: 10px;
-	border: none;
+	margin-top: 140px;
+	margin-bottom: 140px;
 }
 
 .filter {
-	vertical-align: middle;
+	margin-bottom: 100px;
+}
+
+.search input{outline: none;}
+
+.search input {
 	display: inline-block;
-	padding: 5px;
-	list-style-type: none;
-}
-
-#btnSoort, #btnLoc, #btnKamer, #btnExtra, #btnPrijs {
+	height: 40px;
 	width: 100%;
-	margin-right: 10px;
+	border-style: none;
 }
 
-#soort, #loc, #kamer, #extra, #prijs {
-	color: #FFFFFF;
-	list-style-type: none;
-	/*padding-bottom: 8px;*/
+#search {
+	padding: 5px;
+	padding-left: 0px;
+	border-radius: 5px;
+	background-color: white;
+}
+
+#search input:first-of-type {
+	border-right-style: ridge;
+}
+
+.btn-default {
+	background: rgb(13, 53, 50);
+	color: white;
+}
+
+#house_type {
+	color: black;
+}
+
+#loc {
+	color: black;
+}
+
+#loc option:first-of-type{
+	color: rgb(145, 145, 145);
+}
+
+#loc option {
+	color: black;
+}
+
+#kamer option:first-of-type{
+	color: rgb(145, 145, 145);
+}
+
+#kamer option{
+	color: black;
+}
+
+#attribute {
+	color: black;
+	height: 15px;
+	text-align: center;
+	right: auto;
+	left: auto;
+}
+
+#attribute label {
+	display: block;
+	padding-left: 15px;
+	font-weight: normal;
+	text-align: left;
+}
+
+#attribute input {
+	position: relative;
+	top: -1px;
+	width: 13px;
+	height: 13px;
+	margin-right: 10px;
 }
 
 
