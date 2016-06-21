@@ -120,10 +120,10 @@
                            <t t-esc="ev.name"/>
                        </td>
                        <td>
-                           <t t-if="ev.allday">
+                           <t t-if="ev.allday == True">
                                Hele dag
                            </t>
-                           <t t-if="not ev.allday">
+                           <t t-if="ev.allday == False">
                             <t t-esc="ev.get_duration_normal()"/>
                            </t>
                        </td>
@@ -151,10 +151,10 @@
                            <t t-esc="ev.name"/>
                        </td>
                        <td>
-                           <t t-if="ev.allday">
+                           <t t-if="ev.allday == True">
                                Hele dag
                            </t>
-                           <t t-if="not ev.allday">
+                           <t t-if="ev.allday == False">
                             <t t-esc="ev.get_duration_normal()"/>
                            </t>
                        </td>

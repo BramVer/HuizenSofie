@@ -58,10 +58,10 @@ class User(models.Model):
         if not re.match("[^@]+@[^@]+\.[^@]+", self.email):
             raise exceptions.ValidationError("Email is niet geldig")
 
-    @api.onchange('email')
+    @api.constrains('email')
     def _check_unique_email(self):
         user = self.search([('email', '=', self.email)])
-        if len(user) != 0:
+        if len(user) != 1:
             raise exceptions.ValidationError('Email reeds in gebruik bij %s' % user[0].name)
 
     @api.multi

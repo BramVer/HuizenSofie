@@ -33,7 +33,7 @@
             <br/>
             <br/>
             <br/>
-            <h2 class="text-center" style="color: #fbfbfb; font-size: 82px; font-weight: normal; text-shadow: 2px 2px #777; transform: scale(1,1.5); letter-spacing: -7px;">Verder gaan in vastgoed.</h2>
+            <h2 class="text-center col-sm-offset-9" style="margin-top: 225px; color: #fbfbfb; font-size: 50px; font-weight: normal; text-shadow: 2px 2px #777; transform: scale(1,1.5); letter-spacing: -5px;">Verder gaan in vastgoed.</h2>
             <div class="oe_structure"/>
         </section>
         <section id="ebookSec">
@@ -67,7 +67,7 @@
                 <p>&amp;nbsp;</p>
                 <div class="o_image_floating pull-right s_image_floating o_hide_link o_margin_s">
                   <div class="o_container">
-                    <img class="img img-rounded img-responsive img-circle shadow" src="/theme_bootswatch_native/static/src/img/sofie.png" alt="Foto Sofie Andriesen" style=""/>
+                    <img class="img img-rounded img-responsive img-circle shadow" src="/theme_bootswatch_native/static/src/img/key.png" alt="Foto Sofie Andriesen" style=""/>
                     <mark class="text-center">
                       <a href="#">
                         <strong class="o_default_snippet_text">Click Here</strong>
