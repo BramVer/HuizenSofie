@@ -16,7 +16,7 @@
                                                 <input type="hidden" name="csrf_token"
                                                        t-att-value="request.csrf_token()"/>
                                                 <div class="form-group col-lg-4" id="gemeente">
-                                                    <input name="gemeente" type="text" placeholder="Zoeken op gemeente, postcode, ..."/>
+                                                    <input name="gemeente" type="text" placeholder="Zoeken op gemeente en postcode"/>
                                                 </div>
                                                 <div class="form-group col-lg-2">
                                                     <input name="min_price" type="text" placeholder="min prijs"/>
