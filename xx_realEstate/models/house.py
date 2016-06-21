@@ -41,6 +41,7 @@ class House(models.Model):
     xx_build_year = fields.Char('Bouwjaar')
     xx_reference = fields.Char('Referentie')
     xx_visitor_amount = fields.Integer(compute='increase_visitor_amount', string='Aantal bezoekers', default=0)
+    xx_published = fields.Char(string='Gepubliceerd', compute='_get_published')
 
     xx_attribute = fields.One2many('xx.house.attribute', 'xx_house', 'Attributen')
     xx_documents = fields.One2many('xx.house.document', 'xx_house', 'Documenten')
@@ -103,6 +104,13 @@ class House(models.Model):
                 'xx_visitor_count': len(record.xx_visitors),
                 'xx_visitor_ids': xx_visitor_ids
             })
+
+    @api.multi
+    def _get_published(self):
+        if self.website_published:
+            self.xx_published = "Ja"
+        else:
+            self.xx_published = "Nee"
 
     @api.model
     def create(self, vals):
