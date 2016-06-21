@@ -22,10 +22,10 @@
           <h2 class="page-header" style="font-size: 32px">&amp;nbsp;&amp;nbsp; Aankoopproces&amp;nbsp;</h2>
           <div id="myCollapse1464617160540" class="panel-group" role="tablist">
             <div class="panel panel-default">
-              <div aria-expanded="true" data-target="#myCollapseTab1464617160540" data-parent="#myCollapse1464617160540" class="panel-heading" role="tab" data-toggle="collapse">
+              <div aria-expanded="false" data-target="#myCollapseTab1464617160540" data-parent="#myCollapse1464617160540" class="panel-heading" role="tab" data-toggle="collapse">
                 <h4 class="panel-title" style="font-size: 20px"> U wilt een huis aankopen, hoe brengt u het best een bod uit?<br/></h4>
               </div>
-              <div style="" aria-expanded="true" id="myCollapseTab1464617160540" class="panel-collapse collapse in" role="tabpanel">
+              <div style="" aria-expanded="false" id="myCollapseTab1464617160540" class="panel-collapse collapse in" role="tabpanel">
                 <div class="panel-body" style="font-family: Ropa Sans; font-size: 20px">
                   <p>Indien u een
 woning wenst aan te kopen kan u best op een aantal zaken letten:</p>
@@ -81,10 +81,10 @@ lenen.</p>
               </div>
             </div>
             <div class="panel panel-default">
-              <div aria-expanded="true" data-target="#myCollapseTab1464616318272" data-parent="#myCollapse1464616318262" class="panel-heading" role="tab" data-toggle="collapse">
+              <div aria-expanded="false" data-target="#myCollapseTab1464616318272" data-parent="#myCollapse1464616318262" class="panel-heading" role="tab" data-toggle="collapse">
                 <h4 class="panel-title">Welke notaris mag de verkoopakte verlijden?<br/></h4>
               </div>
-              <div style="" aria-expanded="true" id="myCollapseTab1464616318272" class="panel-collapse collapse in" role="tabpanel">
+              <div style="" aria-expanded="false" id="myCollapseTab1464616318272" class="panel-collapse collapse in" role="tabpanel">
                 <div class="panel-body" style="font-family: Ropa Sans; font-size: 20px">
                   <p> </p>
                   <p> </p>
