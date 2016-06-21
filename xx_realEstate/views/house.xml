@@ -170,10 +170,6 @@
                                     icon="fa-arrow-left"/>
                             <button name="next_status" string="Volgende status" type="object" class="oe_stat_button"
                                     icon="fa-arrow-right"/>
-                            <button class="oe_stat_button" name="website_publish_button"
-                                    type="object" icon="fa-globe">
-                                <field name="website_published" widget="website_button"/>
-                            </button>
                         </div>
                         <h1>
                             <label for="xx_display_name" string="Weergave naam"/>
@@ -199,6 +195,7 @@
                         </group>
                         <separator/>
                         <group>
+                            <field name="xx_published" readonly="1"/>
                             <field name="xx_status_id" readonly="1"/>
                             <field name="xx_sold" readonly="1"/>
                             <field name="xx_transaction_id" readonly="1"/>
