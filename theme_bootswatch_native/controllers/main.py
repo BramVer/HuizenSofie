@@ -29,7 +29,7 @@ class website_houses(openerp.addons.website_sale.controllers.main.website_sale):
         if gemeente:
             gemeente_string = gemeente
             post["gemeente"] = gemeente
-            gem = ""
+            gem = "Ditisgeenechtegemeente"
             zip = ""
 
             words = gemeente_string.split()
@@ -140,7 +140,6 @@ class website_houses(openerp.addons.website_sale.controllers.main.website_sale):
         new_product_ids = product_obj.search([('id', 'in', filtered_products_list._ids)], limit=PPG,
                                              offset=pager['offset'],
                                              order='website_published desc, website_sequence desc')
-
         house_type = []
         for h_type in http.request.env['xx.house.type'].search([]):
             house_type.append(h_type.name)
