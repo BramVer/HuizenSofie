@@ -106,6 +106,13 @@ class House(models.Model):
             })
 
     @api.multi
+    def change_publish(self):
+        if self.website_published:
+            self.website_published = False
+        else:
+            self.website_published = True
+
+    @api.multi
     def _get_published(self):
         if self.website_published:
             self.xx_published = "Ja"
