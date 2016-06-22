@@ -132,7 +132,7 @@ class House(models.Model):
     @api.multi
     def write(self, vals):
         write_obj = super(House, self).write(vals)
-        write_obj.generate_image(new_obj.xx_street, new_obj.xx_street_number, new_obj.id)
+        write_obj.generate_image(write_obj.xx_street, write_obj.xx_street_number, write_obj.id)
         return write_obj
 
     @api.onchange('xx_starting_price')
