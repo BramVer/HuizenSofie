@@ -150,7 +150,7 @@ class House(models.Model):
     def _get_name(self):
         if self.xx_city and self.xx_street and self.xx_street_number:
             self.name = self.xx_city.name + ', ' + self.xx_street + ' ' + self.xx_street_number
-            self.generate_image(self.xx_street, self.xx_street_number, self.id)
+            self.generate_image(self.xx_street, str(self.xx_street_number).replace(' ', '-'), self.id)
 
     @api.onchange('xx_city')
     def _onchange_city(self):
@@ -160,7 +160,7 @@ class House(models.Model):
     @api.multi
     def show_current_house(self):
         current_url = WEBSITE_URL + (
-            self.xx_street + "-" + self.xx_street_number + "-" + str(self.id)).lower()
+            str(self.xx_street).replace(' ', '-') + "-" + self.xx_street_number + "-" + str(self.id)).lower()
         return {
             'name': 'Go to website',
             'res_model': 'ir.actions.act_url',
@@ -172,7 +172,7 @@ class House(models.Model):
     @api.multi
     def link_current_house(self):
         current_url = WEBSITE_URL + (
-            self.xx_street + "-" + self.xx_street_number + "-" + str(self.id)).lower()
+            str(self.xx_street).replace(' ', '-') + "-" + self.xx_street_number + "-" + str(self.id)).lower()
         return current_url
 
     @api.multi
