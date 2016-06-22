@@ -126,13 +126,13 @@ class House(models.Model):
             'xx_reference': str(len(self.search_read([], ['id']))) + str(datetime.datetime.now().microsecond)}
         vals.update(reference_dict)
         new_obj = super(House, self).create(vals)
-        new_obj.generate_image(new_obj.xx_street, new_obj.xx_street_number, new_obj.id)
+        generate_image(new_obj.xx_street, new_obj.xx_street_number, new_obj)
         return new_obj
 
     @api.multi
     def write(self, vals):
         write_obj = super(House, self).write(vals)
-        write_obj.generate_image(write_obj.xx_street, write_obj.xx_street_number, write_obj.id)
+        generate_image(write_obj.xx_street, write_obj.xx_street_number, write_obj)
         return write_obj
 
     @api.onchange('xx_starting_price')
@@ -341,10 +341,10 @@ class QrCode(models.Model):
     def generate_image(self, street, number, house_id):
         options = {'width': 500, 'height': 500}
         current_url = WEBSITE_URL + (
-            street + "-" + number + "-" + str(house_id)).lower()
+            street + "-" + number + "-" + str(house_id.id)).lower()
         ret_val = createBarcodeDrawing('QR', value=str(current_url), **options)
         image = base64.encodestring(ret_val.asString('png'))
-        self.write({'image': image})
+        house_id.write({'image': image})
 
 
 class HouseAttribute(models.Model):
