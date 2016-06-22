@@ -150,6 +150,7 @@ class House(models.Model):
     def _get_name(self):
         if self.xx_city and self.xx_street and self.xx_street_number:
             self.name = self.xx_city.name + ', ' + self.xx_street + ' ' + self.xx_street_number
+            self.generate_image(self.xx_street, self.xx_street_number, self.id)
 
     @api.onchange('xx_city')
     def _onchange_city(self):
