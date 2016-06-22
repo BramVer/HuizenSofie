@@ -129,11 +129,6 @@ class House(models.Model):
         new_obj.generate_image(new_obj.xx_street, new_obj.xx_street_number, new_obj.id)
         return new_obj
 
-    @api.multi
-    def write(self, vals):
-        self.generate_image(self.xx_street, self.xx_street_number, self.id)
-        super(House, self).write(vals)
-
     @api.onchange('xx_starting_price')
     def _onchange_starting_price(self):
         if self.xx_current_price:
@@ -155,6 +150,7 @@ class House(models.Model):
     def _get_name(self):
         if self.xx_city and self.xx_street and self.xx_street_number:
             self.name = self.xx_city.name + ', ' + self.xx_street + ' ' + self.xx_street_number
+            self.generate_image(self.xx_street, self.xx_street_number, self.id)
 
     @api.onchange('xx_city')
     def _onchange_city(self):
