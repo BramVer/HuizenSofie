@@ -90,10 +90,10 @@
                                             </form>
                                         </div>
                                     </div>
-                                    <t t-call="website_sale.pricelist_list"/>
-                                    <t t-call="website.pager"/>
                                 </div>
                             </div>
+                                    <t t-call="website_sale.pricelist_list"/>
+                                    <t t-call="website.pager"/>
                         </div>
                         <div class="row">
                             <div class="hidden" id="products_grid_before"/>

@@ -72,8 +72,8 @@
 
 .bg-search {
 	padding: 170px 150px;
-	width: 100%;
 	background-image: url(../img/bgSearch.png);
+	background-size: cover;
 	background-attachment: fixed;
 }
 
