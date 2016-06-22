@@ -117,32 +117,32 @@
                   parent="main_residences_menu" sequence="4"/>
 
 
-        <menuitem id="residenceList_menu" name="Woning lijst" parent="residences_menu"
+        <menuitem id="residenceList_menu" name="Woningen" parent="residences_menu"
                   action="residence_list_action"/>
 
-        <menuitem id="houseTypeList_menu" name="Huistype lijst" parent="residences_menu"
+        <menuitem id="houseTypeList_menu" name="Huistypes" parent="residences_menu"
                   action="house_type_list_action"/>
 
-        <menuitem id="house_document" name="Documenten lijst" parent="attributes_menu"
+        <menuitem id="house_document" name="Documenten" parent="attributes_menu"
                   action="house_document_action"/>
 
-        <menuitem id="house_visitor" name="Bezichtigingen lijst" parent="visitors_menu"
+        <menuitem id="house_visitor" name="Bezichtigingen" parent="visitors_menu"
                   action="xx_visitor_list_action"/>
 
-        <menuitem id="house_attribute_type" name="Huis attribuut types" parent="attributes_menu"
+        <menuitem id="house_attribute_type" name="Huis attributen" parent="attributes_menu"
                   action="house_attribute_type_action"/>
 
 
-        <menuitem id="house_city" name="Gemeente lijst" parent="settings_menu"
+        <menuitem id="house_city" name="Gemeenten" parent="settings_menu"
                   action="house_city_action"/>
 
-        <menuitem id="house_status" name="Status lijst" parent="settings_menu"
+        <menuitem id="house_status" name="Statussen" parent="settings_menu"
                   action="house_status_action"/>
 
-        <menuitem id="house_ebook" name="Ebook lijst" parent="settings_menu"
+        <menuitem id="house_ebook" name="Ebook mails" parent="settings_menu"
                   action="house_ebook_action"/>
 
-        <menuitem id="transactionList_menu" name="Transactie lijst" parent="transactions_menu"
+        <menuitem id="transactionList_menu" name="Transacties" parent="transactions_menu"
                   action="transaction_list_action"/>
 
         <record id="xx_house_form" model="ir.ui.view">
@@ -170,10 +170,8 @@
                                     icon="fa-arrow-left"/>
                             <button name="next_status" string="Volgende status" type="object" class="oe_stat_button"
                                     icon="fa-arrow-right"/>
-                            <button class="oe_stat_button" name="website_publish_button"
-                                    type="object" icon="fa-globe">
-                                <field name="website_published" widget="website_button"/>
-                            </button>
+                            <button name="change_publish" string="Publiceer" type="object" class="oe_stat_button" icon="fa-toggle-on"/>
+
                         </div>
                         <h1>
                             <label for="xx_display_name" string="Weergave naam"/>
@@ -199,6 +197,7 @@
                         </group>
                         <separator/>
                         <group>
+                            <field name="xx_published" readonly="1"/>
                             <field name="xx_status_id" readonly="1"/>
                             <field name="xx_sold" readonly="1"/>
                             <field name="xx_transaction_id" readonly="1"/>
