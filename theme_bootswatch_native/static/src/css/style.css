@@ -70,18 +70,39 @@
 
 /*SEARCHBAR*/
 
-.search {
-	margin-top: 140px;
-	margin-bottom: 140px;
+.bg-search {
+	padding: 170px 150px;
+	width: 100%;
+	background-image: url(../img/bgSearch.png);
+	background-attachment: fixed;
 }
 
-.filter {
-	margin-bottom: 100px;
+.search {
+	display: block;
+	height: auto;
+	list-style-type: none;
 }
+
+
+#filter {
+	background-color: white;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: rgb(145, 145, 145);
+	padding-bottom: 100px;
+}
+
+@media only screen and (max-width: 760px) {
+	#filter{padding-bottom: 180px;}
+}
+
+
 
 .search input{outline: none;}
 
 .search input {
+	margin-top: 10px;
+	padding-top: 5px;
 	display: inline-block;
 	height: 40px;
 	width: 100%;
@@ -108,8 +129,16 @@
 	color: black;
 }
 
+#house_type select {
+	margin-top: 30px;
+}
+
 #loc {
 	color: black;
+}
+
+#loc select {
+	margin-top: 30px;
 }
 
 #loc option:first-of-type{

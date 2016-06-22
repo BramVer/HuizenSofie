@@ -10,12 +10,12 @@
           <div class="row">
             <div class="col-md-2 col-md-offset-0">
               <h4 class="mt16">
-                <a href="/page/Disclaimer" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans; font-size:30px">Disclaimer</a>
+                <a href="/page/Disclaimer" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans; font-size:28px">Disclaimer</a>
               </h4>
             </div>
             <div class="col-md-2" style="color:#0d3532">
               <h4 class="mt16">
-                <a href="/page/Partners" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans;font-size: 30px">Partners</a>
+                <a href="/page/Partners" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans;font-size: 28px">Partners</a>
               </h4>
               <p>
                 <br/>
@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-2" style="color:#0d3532">
               <h4 class="mt16">
-                <a href="/page/Privacybeleid" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans;font-size: 30px">Privacybeleid</a>
+                <a href="/page/Privacybeleid" style="color:#0d3532; text-decoration:none; font-family:Ropa Sans;font-size: 28px">Privacybeleid</a>
               </h4>
               <p>
                 <br/>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-md-3">
               <h4 class="mt16" style="color:#0d3532">
-                <font style="font-size: 30px; font-family:Ropa Sans; text-decoration:none;"><a style="text-decoration:none; color:#0d3532;" href="/page/Goededoelen">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Goede doelen</a></font>
+                <font style="font-size: 28px; font-family:Ropa Sans; text-decoration:none;"><a style="text-decoration:none; color:#0d3532;" href="/page/Goededoelen">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Goede doelen</a></font>
               </h4>
               <p>
                 <br/>
@@ -39,7 +39,7 @@
             </div>
             <div class="col-md-2">
               <h4 class="mt16" style="color:#0d3532">
-                <font style="font-size: 30px; font-family:Ropa Sans">Volg ons&amp;nbsp;</font>
+                <font style="font-size: 28px; font-family:Ropa Sans">Volg ons&amp;nbsp;</font>
               </h4>
               <a class="oe_share_facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8069%2F%23scrollTop%3D511" style="color: #0d3532; text-decoration:none;" target="_Blank">
                 <font style="font-size: 22px;">&amp;nbsp;</font>
