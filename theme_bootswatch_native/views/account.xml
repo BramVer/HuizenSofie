@@ -12,7 +12,7 @@
     <!-- If verkoper / verkoper_koper -->
     <t t-if="user.xx_type == 'verkoper' or user.xx_type == 'verkoper_koper'">
 
-    <h3 class="page-header">Uw panden</h3>
+    <h3 class="page-header" style="padding-top: 50px; ">Uw panden</h3>
     <t t-if="not user.xx_housesOnSale_ids">
         <p style="color:#0d3532;">U biedt momenteel geen panden aan.</p>
     </t>
@@ -87,7 +87,7 @@
 
     <!-- APPOINTMENTS -->
 
-    <h3 style="color:#0d3532;" class="page-header">Uw afspraken</h3>
+    <h3 style="color:#0d3532; padding-top: 50px; " class="page-header" >Uw afspraken</h3>
                <!-- IF USER HAS NOT MADE ANY APPOINTMENTS KEPT IN THE SYSTEM -->
     <t t-if="not user.xx_calendar_event">
         <p style="color:#0d3532;">U heeft geen afspraken aangemaakt.</p>

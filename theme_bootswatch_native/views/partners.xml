@@ -3,12 +3,12 @@
 <data>
 
     <template name="Partners" id="website.Partners" page="True">
-    <t name="Partners" t-name="website.Partners">
+    <t name="Partners" t-name="website.Partners" >
 
    <t t-call="website.layout">
 
             <div class="col-md-12 text-center mt16 mb0">
-              <h2 style="font-family:Ropa Sans; color:#0d3532; font-size:42px; margin-top:5%;">ONZE PARTNERS</h2>
+              <h2 style="padding-top: 50px; font-family:Ropa Sans; color:#0d3532; font-size:42px; margin-top:5%;">ONZE PARTNERS</h2>
             </div>
 
    <div id="wrap">

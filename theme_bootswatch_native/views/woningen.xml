@@ -3,7 +3,7 @@
     <data>
         <template name="Kopen" id="website_sale.products" page="True">
             <t t-call="website.layout">
-                <t t-set="additional_title">Kopen</t>
+                <div style="padding-top: 50px"><t t-set="additional_title">Kopen</t></div>
                 <div id="wrap" class="js_sale">
                     <div class="oe_structure"/>
                     <div class="container oe_website_sale">

@@ -24,7 +24,7 @@
 </script>
     <t t-set="additional_title" t-value="product.xx_display_name"/>
     <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" class="js_sale">
-      <section t-attf-class="container mt8 oe_website_sale #{(compute_currency(product.lst_price) - product.price) &gt; 0.1 and 'discount'}" id="product_detail">
+      <section t-attf-class="container mt8 oe_website_sale #{(compute_currency(product.lst_price) - product.price) &gt; 0.1 and 'discount'}" id="product_detail" style="padding-top: 50px">
         <div class="row">
           <div class="col-sm-4" style="font-family: Ropa Sans;">
             <ol class="breadcrumb" style="font-family: Ropa Sans;">
