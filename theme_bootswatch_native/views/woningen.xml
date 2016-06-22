@@ -8,89 +8,91 @@
                     <div class="oe_structure"/>
                     <div class="container oe_website_sale">
                         <div class="products_pager">
-                            <div class="row" style="width: 100%;">
-                                <div class="search">
-                                    <div class="container">
-                                        <form id="form_search-hover" action="/shop" method="post">
-                                            <div class="row" id="search">
-                                                <input type="hidden" name="csrf_token"
-                                                       t-att-value="request.csrf_token()"/>
-                                                <div class="form-group col-lg-4" id="gemeente">
-                                                    <input name="gemeente" type="text" placeholder="Zoeken op gemeente en postcode"/>
+                            <div class="bg bg-search">
+                                <div class="row" style="width: 100%;">
+                                    <div class="search">
+                                        <div class="container">
+                                            <form id="form_search-hover" action="/shop" method="post">
+                                                <div class="row" id="search">
+                                                    <input type="hidden" name="csrf_token"
+                                                           t-att-value="request.csrf_token()"/>
+                                                    <div class="form-group col-lg-4" id="gemeente">
+                                                        <input name="gemeente" type="text" placeholder="Zoeken op gemeente, postcode, ..."/>
+                                                    </div>
+                                                    <div class="form-group col-lg-2">
+                                                        <input name="min_price" type="text" placeholder="min prijs"/>
+                                                    </div>
+                                                    <div class="form-group col-lg-2">
+                                                        <input name="max_price" type="text" placeholder="max prijs"/>
+                                                    </div>                                                
+                                                    <div class="form-group col-lg-2">
+                                                        <input type="button" class="btn btn-default" id="options-btn" value="Meer Opties"/>
+                                                    </div>
+                                                    <div class="form-group col-lg-2">
+                                                        <input class="btn btn-default search-btn" value="Zoeken" type="submit"/>
+                                                    </div>
                                                 </div>
-                                                <div class="form-group col-lg-2">
-                                                    <input name="min_price" type="text" placeholder="min prijs"/>
-                                                </div>
-                                                <div class="form-group col-lg-2">
-                                                    <input name="max_price" type="text" placeholder="max prijs"/>
-                                                </div>                                                
-                                                <div class="form-group col-lg-2">
-                                                    <input type="button" class="btn btn-default" id="options-btn" value="Meer Opties"/>
-                                                </div>
-                                                <div class="form-group col-lg-2">
-                                                    <input class="btn btn-default search-btn" value="Zoeken" type="submit"/>
-                                                </div>
-                                            </div>
-                                            <div class="row" id="filter">
-                                                <div class="wrapper">
-                                                    <div class="form-group col-sm-3">
-                                                        <div id="house_type">
-                                                            <h3>Soort woning</h3>
-                                                            <select name="house_type" style="color: rgb(145, 145, 145)">
-                                                                <option
-                                                                        value="">Huis type...
-                                                                </option>
-                                                                <t t-foreach="house_types" t-as="attribute">
-                                                                    <option t-att-value="attribute">
-                                                                        <t t-esc="attribute"/>
+                                                <div class="row" id="filter">
+                                                    <div class="wrapper">
+                                                        <div class="form-group col-sm-3">
+                                                            <div id="house_type">
+                                                                <h3>Soort woning</h3>
+                                                                <select name="house_type" style="color: rgb(145, 145, 145)">
+                                                                    <option
+                                                                            value="">Huis type...
                                                                     </option>
-                                                                </t>
-                                                            </select>
+                                                                    <t t-foreach="house_types" t-as="attribute">
+                                                                        <option t-att-value="attribute" style="color: black">
+                                                                            <t t-esc="attribute"/>
+                                                                        </option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="form-group col-sm-3">
-                                                        <div id="kamer">
-                                                            <h3 style="color: black">Aantal slaapkamers</h3>
-                                                            <select name="slaapkamers" style="color: rgb(145, 145, 145)">
-                                                                <option value="">Aantal slaapkamers...</option>
-                                                                <option value="0">1</option>
-                                                                <option value="1">2</option>
-                                                                <option value="2">3</option>
-                                                                <option value="3">4</option>
-                                                                <option value="4">5+</option>
-                                                            </select>
+                                                        <div class="form-group col-sm-3">
+                                                            <div id="kamer">
+                                                                <h3 style="color: black">Aantal slaapkamers</h3>
+                                                                <select name="slaapkamers" style="color: rgb(145, 145, 145)">
+                                                                    <option value="">Aantal slaapkamers...</option>
+                                                                    <option value="0">1</option>
+                                                                    <option value="1">2</option>
+                                                                    <option value="2">3</option>
+                                                                    <option value="3">4</option>
+                                                                    <option value="4">5+</option>
+                                                                </select>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="form-group col-sm-3">
-                                                        <div id="loc" style="color: rgb(145, 145, 145)">
-                                                            <h3 style="color: black">Bebouwing</h3>
-                                                            <select name="soort_bebouwing">
-                                                                <option value="">Bewouwing...</option>
-                                                                <option value="open">Open</option>
-                                                                <option value="gesloten">Gesloten</option>
-                                                                <option value="half">Half open</option>
-                                                            </select>
+                                                        <div class="form-group col-sm-3">
+                                                            <div id="loc" style="color: rgb(145, 145, 145)">
+                                                                <h3 style="color: black">Bebouwing</h3>
+                                                                <select name="soort_bebouwing">
+                                                                    <option value="">Bewouwing...</option>
+                                                                    <option value="open">Open</option>
+                                                                    <option value="gesloten">Gesloten</option>
+                                                                    <option value="half">Half open</option>
+                                                                </select>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="form-group col-sm-3">
-                                                        <div class="text-center">
-                                                            <div id="attribute">
-                                                                <h3>Opties</h3>
-                                                                <label><input type="checkbox" name="tuin" value="tuin"/>Tuin</label>
-                                                                <label><input type="checkbox" name="terras" value="terras"/>Terras</label>
-                                                                <label><input type="checkbox" name="garage" value="garage"/>Garage</label>
-                                                                <label><input type="checkbox" name="zwembad" value="zwembad"/>Zwembad</label>
-                                                                <label><input type="checkbox" name="lift" value="lift"/>Lift</label>
+                                                        <div class="form-group col-sm-3">
+                                                            <div class="text-center">
+                                                                <div id="attribute">
+                                                                    <h3>Opties</h3>
+                                                                    <label><input type="checkbox" name="tuin" value="tuin"/>Tuin</label>
+                                                                    <label><input type="checkbox" name="terras" value="terras"/>Terras</label>
+                                                                    <label><input type="checkbox" name="garage" value="garage"/>Garage</label>
+                                                                    <label><input type="checkbox" name="zwembad" value="zwembad"/>Zwembad</label>
+                                                                    <label><input type="checkbox" name="lift" value="lift"/>Lift</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
                                     </div>
+                                    <t t-call="website_sale.pricelist_list"/>
+                                    <t t-call="website.pager"/>
                                 </div>
-                                <t t-call="website_sale.pricelist_list"/>
-                                <t t-call="website.pager"/>
                             </div>
                         </div>
                         <div class="row">

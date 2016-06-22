@@ -170,6 +170,8 @@
                                     icon="fa-arrow-left"/>
                             <button name="next_status" string="Volgende status" type="object" class="oe_stat_button"
                                     icon="fa-arrow-right"/>
+                            <button name="change_publish" string="Publiceer" type="object" class="oe_stat_button" icon="fa-toggle-on"/>
+
                         </div>
                         <h1>
                             <label for="xx_display_name" string="Weergave naam"/>
