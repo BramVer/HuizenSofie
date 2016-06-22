@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../odoo-9.0/addons/.idea/addons.iml" filepath="$PROJECT_DIR$/../../odoo-9.0/addons/.idea/addons.iml" />
+      <module fileurl="file://$USER_HOME$/odoo-9.0/addons/.idea/addons.iml" filepath="$USER_HOME$/odoo-9.0/addons/.idea/addons.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/custom.iml" filepath="$PROJECT_DIR$/.idea/custom.iml" />
     </modules>
   </component>
