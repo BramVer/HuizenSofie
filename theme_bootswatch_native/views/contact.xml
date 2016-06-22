@@ -7,7 +7,7 @@
     <t t-call="website.layout">
       <div id="wrap">
         <div class="oe_structure">
-          <section class="s_text_block col-md-12" style="height: 136px; overflow: hidden; z-index:-1;">
+          <section class="s_text_block col-md-12" style="padding-top: 50px; height: 136px; overflow: hidden; z-index:-1;">
             <div class="container">
               <div class="row">
                 <div class="col-md-12 mt16 text-center mb32">

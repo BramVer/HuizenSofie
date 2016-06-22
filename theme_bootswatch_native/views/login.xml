@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <openerp>
   <data>
-<template name="Login" t-name="web.login">
+<template name="Login" t-name="web.login" >
 
-            <t t-call="web.login_layout">
+            <t t-call="web.login_layout" >
 
 
                 <div style="margin-top:20%; padding:20%; background-color:rgba(230,230,230,0.2)">
