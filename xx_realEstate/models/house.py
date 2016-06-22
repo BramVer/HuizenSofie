@@ -129,6 +129,10 @@ class House(models.Model):
         new_obj.generate_image(new_obj.xx_street, new_obj.xx_street_number, new_obj.id)
         return new_obj
 
+    @api.multi
+    def write(self, vals):
+        return super(House, self).write(vals)
+
     @api.onchange('xx_starting_price')
     def _onchange_starting_price(self):
         if self.xx_current_price:

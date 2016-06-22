@@ -7,7 +7,7 @@
  <t name="Advies" t-name="website.Advies">
   <t t-call="website.layout">
     <div class="oe_structure oe_empty" id="wrap">
-      <section class="s_text_block">
+      <section class="s_text_block" style="padding-top: 50px">
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center mt16 mb32">

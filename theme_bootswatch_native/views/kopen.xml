@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
-        <template name="Huizen" id="website_sale.products_item">
+        <template name="Huizen" id="website_sale.products_item" >
 
 
   <form action="/shop/cart/update" method="post">

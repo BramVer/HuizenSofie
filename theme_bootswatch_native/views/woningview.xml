@@ -24,7 +24,7 @@
 </script>
     <t t-set="additional_title" t-value="product.xx_display_name"/>
     <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" class="js_sale">
-      <section t-attf-class="container mt8 oe_website_sale #{(compute_currency(product.lst_price) - product.price) &gt; 0.1 and 'discount'}" id="product_detail">
+      <section t-attf-class="container mt8 oe_website_sale #{(compute_currency(product.lst_price) - product.price) &gt; 0.1 and 'discount'}" id="product_detail" style="padding-top: 50px">
         <div class="row">
           <div class="col-sm-4" style="font-family: Ropa Sans;">
             <ol class="breadcrumb" style="font-family: Ropa Sans;">
@@ -56,42 +56,42 @@
                     <div class="carousel-inner container" style="">
                       <t t-if="product.xx_image1">
                         <div style="margin-top:30%;" class="item active">
-                          <span t-if="p.product.xx_image1" t-field="product.xx_image1" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="0"/>
+                          <span t-field="product.xx_image1" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="0"/>
                         </div>
                       </t>
                       <t t-if="product.xx_image2">
                         <div style="margin-top:30%;" class="item">
-                          <span t-if="p.product.xx_image8" t-field="product.xx_image2" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="1"/>
+                          <span t-field="product.xx_image2" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="1"/>
                         </div>
                       </t>
                       <t t-if="product.xx_image3">
                         <div style="margin-top:30%;" class="item">
-                          <span t-if="p.product.xx_image3" t-field="product.xx_image3" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="2"/>
+                          <span  t-field="product.xx_image3" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="2"/>
                         </div>
                       </t>
                       <t t-if="product.xx_image4">
                         <div style="margin-top:30%;" class="item">
-                          <span t-if="p.product.xx_image4" t-field="product.xx_image4" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="3"/>
+                          <span  t-field="product.xx_image4" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="3"/>
                         </div>
                       </t>
                       <t t-if="product.xx_image5">
                         <div style="margin-top:30%;" class="item">
-                          <span t-if="p.product.xx_image5" t-field="product.xx_image5" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="4"/>
+                          <span t-field="product.xx_image5" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="4"/>
                         </div>
                       </t>
                       <t t-if="product.xx_image6">
                         <div style="margin-top:30%;" class="item">
-                          <span t-if="p.product.xx_image6" t-field="product.xx_image6" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="5"/>
+                          <span t-field="product.xx_image6" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="5"/>
                         </div>
                       </t>
                       <t t-if="product.xx_image7">
                         <div style="margin-top:30%;" class="item">
-                          <span t-if="p.product.xx_image7" t-field="product.xx_image7" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="6"/>
+                          <span  t-field="product.xx_image7" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="6"/>
                         </div>
                       </t>
                       <t t-if="product.xx_image8">
                         <div style="margin-top:30%;" class="item">
-                          <span t-if="p.product.xx_image8" t-field="product.xx_image8" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="7"/>
+                          <span t-field="product.xx_image8" t-field-options="{&quot;widget&quot;: &quot;image&quot;}" data-index="7"/>
                         </div>
                       </t>
                       <t t-if="product.xx_image9">
@@ -155,14 +155,16 @@
             </t>
           </div>
           <div class="col-sm-5 col-md-5 col-lg-4 col-lg-offset-1" id="product_details">
-            <h1 itemprop="name" t-field="product.xx_display_name" style="color:#0d3532; font-family:Ropa Sans; font-size:60px">Product Naam</h1>
+            <h1 itemprop="name" t-field="product.xx_display_name" style="color:#0d3532; font-family:Ropa Sans; font-size:35px">Product Naam</h1>
                 <!-- ADRES -->
             <div style="font-family: Ropa Sans; font-size: 24px; color:#0d3532;">
               <span><t t-esc="product.xx_street"/> <t t-esc="product.xx_street_number"/>,</span>
               <span><t t-esc="product.xx_zip"/> <t t-esc="product.xx_city.name"/></span>
               <span t-if="product.xx_building_type"><br/>Bouwtype: <strong><t t-esc="product.xx_building_type"/></strong></span>
                <span t-if="product.xx_build_year"><br/>Bouwjaar: <strong><t t-esc="product.xx_build_year"/></strong></span>
-               <span t-if="product.xx_total_area"><br/>Oppervlakte: <strong><t t-esc="product.xx_total_area"/> m²</strong></span>
+D
+               <span t-if="product.xx_total_area"><br/>Oppervlakte: <strong>m²<t t-esc="product.xx_total_area"/></strong></span>
+
                <span t-if="product.xx_unique_epc"><br/>EPC: <strong><t t-esc="product.xx_unique_epc"/></strong></span><br/>
             </div>
             <strong><span itemprop="url" style="display:none;" t-esc="'/shop/product/%s' % slug(product)"/>
@@ -238,7 +240,7 @@ FB.ui(
 {
 method: 'feed',
 name: '<t t-esc="product.xx_display_name"/>',
-link: '0.0.0.1:8069/shop/product/brasschaat-mollei-35-4',
+link: '<t t-esc="product.link_current_house()"/>',
 picture: 'http://s33.postimg.org/jknuzivxb/def_logos_via_sofie_RGB_09.png',
 caption: '',
 description:  '<t t-esc="product.xx_street"/> <t t-esc="product.xx_street_number"/> <t t-esc="product.xx_city.name"/>',
@@ -280,6 +282,8 @@ message: ''
 
 
 </t>
+
+
 
 
 </template>
