@@ -12,10 +12,6 @@
                 </xpath>
                 <xpath expr="//sheet" position="before">
                     <sheet>
-                        <div class="oe_button_box" name="button_box">
-                            <button type="object" name="action_apply" class="oe_stat_button" icon="fa-user-plus"
-                                    string="Maak login"/>
-                        </div>
                         <group>
                             <h1>
                                 <field name="name"/>
