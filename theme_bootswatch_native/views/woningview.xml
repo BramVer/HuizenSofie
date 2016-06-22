@@ -162,7 +162,7 @@
               <span><t t-esc="product.xx_zip"/> <t t-esc="product.xx_city.name"/></span>
               <span t-if="product.xx_building_type"><br/>Bouwtype: <strong><t t-esc="product.xx_building_type"/></strong></span>
                <span t-if="product.xx_build_year"><br/>Bouwjaar: <strong><t t-esc="product.xx_build_year"/></strong></span>
-               <span t-if="product.xx_total_area"><br/>Oppervlakte: <strong><t t-esc="product.xx_total_area"/></strong></span>
+               <span t-if="product.xx_total_area"><br/>Oppervlakte: <strong><t t-esc="product.xx_total_area"/> m²</strong></span>
                <span t-if="product.xx_unique_epc"><br/>EPC: <strong><t t-esc="product.xx_unique_epc"/></strong></span><br/>
             </div>
             <strong><span itemprop="url" style="display:none;" t-esc="'/shop/product/%s' % slug(product)"/>
