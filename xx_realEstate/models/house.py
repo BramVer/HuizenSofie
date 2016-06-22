@@ -4,7 +4,7 @@ import base64
 from openerp.tools.translate import _
 import datetime
 
-WEBSITE_URL = 'http://0.0.0.0:8069/shop/product/'
+WEBSITE_URL = 'http://193.1:8069/shop/product/'
 QR_URL = 'http://0.0.0.0:8069/web/image?model=product.template&id='
 QR_ATTRIBUTE = '&field=image'
 
